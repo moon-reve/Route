@@ -123,6 +123,9 @@
               <div class="divider-title">5월 8일의 기록 (2)</div>
             </div>
 
+            <!-- 빈 상태 -->
+            <p class="log-empty" id="log-empty" style="display:none;">오늘의 항로를 기록해보세요</p>
+
             <!-- 로그 카드 -->
             <div class="section-log">
 
@@ -193,6 +196,7 @@
 
   <script>
     const dayLabels = { 8: '5월 8일', 12: '5월 12일' };
+    const today = new Date().getDate();
 
     function selectDay(day) {
       // 선택 상태 업데이트
@@ -214,13 +218,25 @@
         }
       });
 
+      // 빈 상태 / 카드 영역 토글
+      const empty = document.getElementById('log-empty');
+      const sectionLog = document.querySelector('.section-log');
+      if (count === 0) {
+        empty.style.display = 'block';
+        sectionLog.style.display = 'none';
+      } else {
+        empty.style.display = 'none';
+        sectionLog.style.display = '';
+      }
+
       // 디바이더 타이틀 업데이트
       const label = dayLabels[day] || `5월 ${day}일`;
-      document.querySelector('.divider-title').textContent = `${label}의 기록 (${count})`;
+      const countText = count > 0 ? ` (${count})` : '';
+      document.querySelector('.divider-title').textContent = `${label}의 기록${countText}`;
     }
 
-    // 초기 상태: 8일 선택
-    selectDay(8);
+    // 초기 상태: 오늘 날짜 선택 (기록 없으면 빈 상태)
+    selectDay(today);
   </script>
 </body>
 </html>

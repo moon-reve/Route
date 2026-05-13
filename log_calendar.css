@@ -223,6 +223,15 @@ body {
   color: #5F5E5E;
 }
 
+/* 빈 상태 메시지 */
+.log-empty {
+  font-size: 14px;
+  color: #555555;
+  text-align: center;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
 /* ════════ SECTION LOG: column, gap 16px ════════ */
 .section-log {
   display: flex;
