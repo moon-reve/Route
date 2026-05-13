@@ -189,16 +189,26 @@ body {
   color: #FFFFFF;
 }
 
-/* Log indicator dot */
+/* Log indicator dots */
+.cal-dots {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: center;
+}
+
 .cal-dot {
   width: 4px;
   height: 4px;
   border-radius: 50%;
   display: block;
+  flex-shrink: 0;
 }
 
-.cal-dot--gold { background: #D4A853; }
-.cal-dot--sage { background: #8FAF8A; }
+.cal-dot--gold       { background: #D4A853; }
+.cal-dot--sage       { background: #8FAF8A; }
+.cal-dot--terracotta { background: #C4876A; }
+.cal-dot--orange     { background: #E8941A; }
 
 /* ════════ SECTION DIVIDER ════════ */
 .section-divider {
