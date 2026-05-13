@@ -25,9 +25,18 @@
     </div>
   </div>
   <script>
-    setTimeout(function() {
+    function goLogin() {
       window.location.href = 'login.html';
-    }, 800);
+    }
+
+    // 5000ms 후 자동 이동
+    var timer = setTimeout(goLogin, 5000);
+
+    // 터치 / 클릭 시 즉시 이동
+    document.querySelector('.screen').addEventListener('click', function() {
+      clearTimeout(timer);
+      goLogin();
+    });
   </script>
 </body>
 </html>
