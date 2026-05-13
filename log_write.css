@@ -42,13 +42,11 @@ body {
 }
 
 /* ════════ HEADER ════════ */
-/* row, flex-end, center, gap 116px, padding 10px 0 */
 .log-header {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
-  gap: 116px;
+  justify-content: center;
   padding: 10px 0;
 }
 
@@ -61,17 +59,20 @@ body {
 }
 
 .log-close {
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 
 .log-close img {
-  width: 30px;
-  height: 30px;
+  width: 12px;
+  height: 12px;
   object-fit: contain;
 }
 
