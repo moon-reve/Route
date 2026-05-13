@@ -2,10 +2,32 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=splash.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Route</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="splash.css">
 </head>
 <body>
-  <script>window.location.href = 'splash.html';</script>
+  <div class="screen">
+    <img class="bg" src="images/splash_bg.svg" alt="">
+
+    <div class="title-box">
+      <div class="logo">
+        <img src="images/splash_logo.svg" alt="Route Logo">
+        <span class="logo-text">Route</span>
+      </div>
+
+      <img class="divider" src="images/splash_line.svg" alt="">
+
+      <p class="tagline">멈춰있는 커리어를 움직이는<br>실행의 궤적 : 루트</p>
+    </div>
+  </div>
+  <script>
+    setTimeout(function() {
+      window.location.href = 'login.html';
+    }, 800);
+  </script>
 </body>
 </html>
