@@ -1,0 +1,71 @@
+/* ════════ TOOL GRID ════════ */
+.tool-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.tool-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ── TOOL CARD ── */
+.tool-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 12px 15px;
+  height: 116px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 0.5px solid rgba(30, 30, 30, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: all 0.15s;
+}
+
+.tool-card--selected {
+  background: rgba(212, 168, 83, 0.1);
+  border: 1px solid rgba(212, 168, 83, 0.55);
+}
+
+/* ── TOOL ICON WRAP: 딱 44×44 ── */
+.tool-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-icon-wrap--dark {
+  background: rgba(26, 28, 30, 0.05);
+}
+
+.tool-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── TOOL NAME ── */
+.tool-name {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1E1E1E;
+  text-align: center;
+  line-height: 1.2;
+}
