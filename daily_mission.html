@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route — 데일리 미션</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="daily_mission.css">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+      <div class="daily-container">
+        <main class="main">
+
+          <!-- 헤더 -->
+          <header class="header">
+            <a href="home.html" class="btn-back">
+              <img src="images/detail_btn_back.svg" alt="뒤로가기">
+            </a>
+            <div class="header-title">5월 8일의 항로</div>
+            <button class="btn-menu">
+              <img src="images/daily_menu.svg" alt="메뉴">
+            </button>
+          </header>
+
+          <!-- 컨텐츠 -->
+          <div class="contents">
+
+            <h1 class="section-title">오늘의 미션</h1>
+
+            <!-- 카드: 동영상 강의 -->
+            <div class="card-video">
+              <div class="video-box">
+                <img src="images/daily_thumbnail.png" alt="썸네일" class="thumbnail">
+                <img src="images/daily_play_btn.svg" alt="재생" class="play-btn">
+              </div>
+              <div class="bottom-box">
+                <div class="card-text">
+                  <div class="card-title-row">
+                    <span class="badge badge--gold">[인강]</span>
+                    <span class="card-title">피그마 오토레이아웃 기초</span>
+                  </div>
+                  <span class="card-sub">23분 소요</span>
+                </div>
+                <button class="card-btn">강의 들으러 가기</button>
+              </div>
+            </div>
+
+            <!-- 카드: 도서 -->
+            <div class="card-book">
+              <div class="book-img-box">
+                <img src="images/daily_book_cover.png" alt="도서 커버">
+              </div>
+              <div class="book-right">
+                <div class="book-info">
+                  <span class="badge badge--sage">[도서]</span>
+                  <span class="card-title">린 스타트업 - 애시 모리아</span>
+                  <span class="card-sub">p.12 ~ p.34</span>
+                </div>
+                <div class="book-btn-box">
+                  <button class="card-btn card-btn--sm">이어보기</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 카드: 프로젝트 -->
+            <div class="card-project">
+              <div class="project-text">
+                <div class="project-title-box">
+                  <span class="badge badge--orange">[프로젝트]</span>
+                  <span class="card-title">포트폴리오 리뉴얼</span>
+                </div>
+                <div class="project-list">
+                  <div class="list-item">
+                    <img src="images/daily_check_done.svg" alt="완료" class="check-icon">
+                    <span class="list-text">앱 기획하기</span>
+                  </div>
+                  <div class="list-item">
+                    <img src="images/daily_check_done.svg" alt="완료" class="check-icon">
+                    <span class="list-text">와이어프레임 뼈대 구축</span>
+                  </div>
+                  <div class="list-item">
+                    <img src="images/daily_check_todo.svg" alt="미완료" class="check-icon">
+                    <span class="list-text list-text--todo">브랜딩 컬러 도출</span>
+                  </div>
+                </div>
+              </div>
+              <button class="card-btn">작업 시작하기</button>
+            </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 -->
+    <nav class="nav-bar">
+      <div class="nav-side">
+        <a href="home.html" class="nav-tab">
+          <img src="images/nav_home.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_route.svg" alt="Route">
+          <span>Route</span>
+        </a>
+      </div>
+      <div class="nav-side">
+        <a href="#" class="nav-tab">
+          <img src="images/nav_log.svg" alt="Log">
+          <span>Log</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_my.svg" alt="My">
+          <span>My</span>
+        </a>
+      </div>
+      <a href="log_write.html" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

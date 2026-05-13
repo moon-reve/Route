@@ -1,0 +1,207 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+}
+
+/* ── Phone frame ── */
+.screen {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  overflow: hidden;
+  background: #F8F7F3;
+}
+
+/* ── Background ── */
+.ob-bg {
+  position: absolute;
+  inset: 0;
+  width: 430px;
+  height: 932px;
+  object-fit: cover;
+}
+
+/* ── Contents wrapper ── */
+/* column, space-between, padding: 572px 0 50px */
+.contents {
+  position: relative;
+  z-index: 1;
+  width: 430px;
+  height: 932px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 572px 0 50px;
+}
+
+/* ── Text box ── */
+/* column, center, gap: 20px */
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 430px;
+}
+
+/* ── Title ── */
+/* column, center, gap: 8px, width: 189px */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 189px;
+}
+
+.title-sub {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #1A1C1E;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.title-main {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #E8941A;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* title 너비 변형 */
+.title--w200 { width: 200px; }
+.title--w236 { width: 236px; }
+
+/* ── Divider line ── */
+.ob-line {
+  width: 135px;
+  height: 4px;
+}
+
+/* ── Body text ── */
+/* column, stretch/fill, gap: 7px */
+.body-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.body-text p {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 13.5px;
+  color: #555555;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════
+   BOTTOM BAR
+══════════════════════════ */
+/* row, space-between, center, padding: 0 40px */
+.bottom-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  width: 430px;
+}
+
+/* ── SKIP ── */
+.skip-btn {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #1A1C1E;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.skip-btn:hover { opacity: 0.6; }
+
+/* ── Slide dots ── */
+.dots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 비활성 도트 — 6×6 원 */
+.dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(26, 28, 30, 0.18);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* 활성 도트 — 24×6 pill, Starline Gold */
+.dot--active {
+  width: 24px;
+  background: #E8941A;
+}
+
+/* ── Next button ── */
+.next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.next-btn img {
+  width: 52px;
+  height: 52px;
+  display: block;
+}
+
+.next-btn:hover { opacity: 0.85; }
+
+/* ══════════════════════════
+   CTA 버튼 (온보딩 3)
+══════════════════════════ */
+/* column, padding: 0 40px, width: 430 */
+.cta-box {
+  padding: 0 40px;
+  width: 430px;
+}
+
+/* row, center, padding: 16px 80px, radius: 55px, bg: #E8941A */
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 80px;
+  background: #E8941A;
+  border-radius: 55px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.15s;
+}
+
+.cta-btn:hover { opacity: 0.85; }

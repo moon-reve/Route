@@ -1,0 +1,574 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.screen {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  overflow: hidden;
+  background: url('images/roadmap_bg.svg') top center / cover no-repeat,
+              linear-gradient(180deg, #F9F9F9 0%, #F5F3EF 100%);
+}
+
+.scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+
+/* ── main: column, padding 40px 24px 125px, gap 32px ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 24px 125px;
+  width: 430px;
+}
+
+/* ════════ HEADER ════════ */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1A1C1C;
+}
+
+/* ════════ CONTENTS: column, gap 24px ════════ */
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ════════ NAV CHIPS: row, gap 8px, padding 10px 0 ════════ */
+.nav-chips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555555;
+  background: #F9F9F9;
+  border: 1px solid #D1D1D1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chip--active {
+  background: #1A1C1E;
+  border-color: #1A1C1E;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* ════════ STATUS BAR: column, padding 20px 0, gap 2px, h:78, bg rgba(255,255,255,0.4), radius 10px ════════ */
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px 0;
+  height: 78px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* row 1: pill + subtitle */
+.status-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+/* 상태 pill: bg #F2F2F2, border #E8941A, radius 50px */
+.status-pill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 12px;
+  background: #F2F2F2;
+  border: 1px solid #E8941A;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+.pill-dot {
+  width: 7px;
+  height: 7px;
+  object-fit: contain;
+}
+
+.pill-text {
+  font-weight: 700;
+  font-size: 10px;
+  color: #4C4546;
+  white-space: nowrap;
+}
+
+.status-subtitle {
+  font-weight: 400;
+  font-size: 10px;
+  color: #9A9090;
+}
+
+/* row 2: progress + percentage */
+.status-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px;
+}
+
+.status-progress-track {
+  flex: 1;
+  height: 8px;
+  background: #333333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.status-progress-fill {
+  width: 33%;
+  height: 100%;
+  background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%);
+  border-radius: 4px;
+}
+
+.status-pct {
+  font-weight: 700;
+  font-size: 12px;
+  color: #D4A853;
+  white-space: nowrap;
+}
+
+/* ════════ TIMELINE: column, gap 16px ════════ */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── SHARED CARD BASE ── */
+.card {
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* ── WEEK 01: DONE 확장 (Figma: rgba(212,168,83,0.1), stroke rgba(212,168,83,0.4) 1.2px) ── */
+.card--done-open {
+  background: rgba(212, 168, 83, 0.1);
+  border: 1.2px solid rgba(212, 168, 83, 0.4);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── WEEK 02/03: DONE 축소 (Figma: rgba(255,255,255,0.65), stroke rgba(212,168,83,0.3) 1px, h:48) ── */
+.card--done-closed {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  height: 48px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── WEEK 04: ACTIVE 확장 (Figma: rgba(255,255,255,0.78), stroke #E8941A 2px) ── */
+.card--active-open {
+  background: rgba(255, 255, 255, 0.78);
+  border: 2px solid #E8941A;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── WEEK 05: PLAN 축소 (Figma: rgba(255,255,255,0.5), stroke #D1D1D1 1px dashed, h:48) ── */
+.card--plan-closed {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px dashed #D1D1D1;
+  height: 48px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── WEEK 06: PLAN 축소 (Figma: rgba(255,255,255,0.4)) ── */
+.card--plan-dim {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ── CARD HEADER (확장 카드) ── */
+.card-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-head--divider {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(212, 168, 83, 0.3);
+}
+
+.card-head--orange-divider {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(232, 148, 26, 0.2);
+}
+
+/* ── CARD HEADER (축소 카드) ── */
+.card-head-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-head-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 138px;
+  gap: 8px;
+}
+
+/* ── WEEK LABELS ── */
+.week-lbl {
+  font-weight: 700;
+  font-size: 11px;
+}
+.week-lbl--dark    { color: #1A1C1E; }
+.week-lbl--gray    { color: #555555; }
+.week-lbl--orange  { color: #E8941A; }
+.week-lbl--light   { color: #AAAAAA; }
+.week-lbl--lighter { color: #BBBBBB; }
+
+/* ── BADGES ── */
+.badge-done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  background: rgba(212, 168, 83, 0.2);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 10px;
+  color: #D4A853;
+}
+
+.badge-active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 14px;
+  width: 64px;
+  height: 20px;
+  background: #1A1C1E;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 10px;
+  color: #FFFFFF;
+}
+
+.badge-plan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  width: 38px;
+  height: 18px;
+  background: rgba(209, 209, 209, 0.2);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 10px;
+  color: #AAAAAA;
+}
+
+.badge-plan--dim {
+  background: rgba(209, 209, 209, 0.15);
+  color: #BBBBBB;
+}
+
+/* ── ACTIVE CARD HEADER CONTENT ── */
+.active-week-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.active-week-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 90px;
+}
+
+/* YOU ARE HERE pill */
+.you-are-here {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 12px;
+  background: rgba(232, 148, 26, 0.12);
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 10px;
+  color: #E8941A;
+}
+
+/* ── EXPAND ICON ── */
+.expand-icon {
+  width: auto;
+  height: 14px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.expand-icon--faded { opacity: 0.5; }
+
+/* ── CARD ITEMS ── */
+.card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.item-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.item-icon--sm {
+  width: 16px;
+  height: 16px;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.item-title {
+  font-weight: 400;
+  font-size: 15px;
+  color: #1A1C1E;
+  line-height: 1.3;
+}
+
+.item-title--bold  { font-weight: 700; color: #1A1C1E; }
+.item-title--muted { color: #888888; }
+
+/* ── ITEM TAGS ROW ── */
+.item-tags {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 8px;
+}
+
+.tag--gold       { background: rgba(212,168,83,0.2);   color: #D4A853; }
+.tag--sage       { background: rgba(143,175,138,0.2);  color: #8FAF8A; }
+.tag--terracotta { background: rgba(196,135,106,0.2);  color: #C4876A; }
+.tag--in-progress{ background: rgba(232,148,26,0.2);   color: #E8941A; font-weight: 600; }
+.tag--plan       { background: rgba(209,209,209,0.25); color: #AAAAAA; }
+
+/* ── WEEKS REMAINING: column, gap 36px, center, opacity 0.35 ── */
+.weeks-remaining {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  opacity: 0.35;
+}
+
+/* 남은 주 카드 */
+.remaining-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 16px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0.8px solid #E0E0E0;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.remaining-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  width: 133px;
+}
+
+.remaining-until {
+  font-weight: 700;
+  font-size: 10px;
+  color: #CCCCCC;
+  text-align: center;
+  display: block;
+}
+
+.remaining-sub {
+  font-weight: 400;
+  font-size: 12px;
+  color: #CCCCCC;
+  text-align: center;
+  display: block;
+}
+
+/* 목표 섹션 */
+.remaining-goal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 72px;
+}
+
+.goal-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.goal-label {
+  font-weight: 700;
+  font-size: 11px;
+  color: #CCCCCC;
+  text-align: center;
+}
+
+/* ════════ NAV BAR ════════ */
+.nav-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 390px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 40px;
+  background: rgba(242, 242, 242, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #D1D1D1;
+  border-radius: 50px;
+  z-index: 100;
+}
+
+.nav-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.nav-tab img { width: 24px; height: 24px; object-fit: contain; }
+.nav-tab span { font-weight: 400; font-size: 9px; color: #D1D1D1; line-height: 1; }
+
+/* Route 탭 활성 */
+.nav-tab--active img  { filter: brightness(0); }
+.nav-tab--active span { color: #1A1C1E; font-weight: 700; }
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -21px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 50%;
+  text-decoration: none;
+}
+.nav-center img { display: block; width: auto; height: auto; }

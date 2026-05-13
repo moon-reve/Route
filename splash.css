@@ -1,0 +1,85 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* ── Phone frame ── */
+.screen {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  overflow: hidden;
+  background: #F8F7F3;
+}
+
+/* ── Full-screen background ── */
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 430px;
+  height: 932px;
+  object-fit: cover;
+}
+
+/* ── Center content box ── */
+/* Figma: Frame 65, padding 331px top/bottom, 137px left/right */
+.title-box {
+  position: absolute;
+  top: 331px;
+  left: 137px;
+  width: 156px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Logo: icon + wordmark stacked ── */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  width: 79px;
+  height: 79px;
+}
+
+.logo-text {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 34px;
+  color: #1A1C1E;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+/* ── Wavy divider line ── */
+.divider {
+  width: 115px;
+  height: 5px;
+}
+
+/* ── Tagline ── */
+.tagline {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 18px;
+  color: #5A5A5A;
+  text-align: center;
+  white-space: nowrap;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route — 로그 피드</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="log_feed.css">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+      <div class="feed-page">
+        <main class="main">
+
+          <!-- 헤더: btn-back + title, gap 132px, padding 10px 24px -->
+          <header class="header">
+            <a href="log_calendar.html" class="btn-back">
+              <img src="images/detail_btn_back.svg" alt="뒤로가기">
+            </a>
+            <div class="header-title">내가 쌓은 시간들</div>
+          </header>
+
+          <!-- 탭 (로그 피드 활성) -->
+          <nav class="tabs">
+            <a href="log_calendar.html" class="tab">캘린더</a>
+            <a href="log_feed.html" class="tab tab--active">로그 피드</a>
+            <a href="log_project.html" class="tab">프로젝트</a>
+          </nav>
+
+          <!-- 컨텐츠: column, gap 21px, padding 0 24px -->
+          <div class="contents">
+
+            <!-- 필터 영역 -->
+            <div class="filter-area">
+              <span class="filter-count">총 42개의 기록</span>
+              <div class="filter-sort">
+                <span class="filter-label">최신순</span>
+                <img src="images/log_filter_arrow.svg" alt="정렬" class="filter-arrow">
+              </div>
+            </div>
+
+            <!-- 아티클 목록: column, gap 24px -->
+            <div class="articles">
+
+              <!-- Article 1: 인강, 이미지 있음 -->
+              <div class="article">
+                <div class="article-meta" style="width:97px">
+                  <span class="article-date">2026. 05. 08</span>
+                  <span class="article-badge badge--gold">[인강] 피그마 기초</span>
+                </div>
+                <p class="article-text">오토레이아웃에서 Hug 속성 쓸 때 패딩 주의할 것.<br>여백 계산이 헷갈림.</p>
+                <div class="article-img-box">
+                  <img src="images/log_card_img.png" alt="참고 이미지">
+                </div>
+              </div>
+
+              <!-- Article 2: 도서 -->
+              <div class="article">
+                <div class="article-meta" style="width:92px">
+                  <span class="article-date">2026. 05. 06</span>
+                  <span class="article-badge badge--sage">[도서] UX 심리학</span>
+                </div>
+                <p class="article-text">사용자는 기다리지 않는다. 로딩 애니메이션의 중요성 파악.</p>
+              </div>
+
+              <!-- Article 3: 프로젝트 -->
+              <div class="article">
+                <div class="article-meta" style="width:115px">
+                  <span class="article-date">2026. 05. 02</span>
+                  <span class="article-badge badge--orange">[프로젝트] 포트폴리오</span>
+                </div>
+                <p class="article-text">내러티브 중심의 케이스 스터디 작성 중. 불필요한 시각적 장식보다는 문제 해결 과정에 집중하기로 함.</p>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 (Log 활성) -->
+    <nav class="nav-bar">
+      <div class="nav-side">
+        <a href="home.html" class="nav-tab">
+          <img src="images/nav_home.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_route.svg" alt="Route">
+          <span>Route</span>
+        </a>
+      </div>
+      <div class="nav-side">
+        <a href="log_calendar.html" class="nav-tab nav-tab--active">
+          <img src="images/nav_log.svg" alt="Log">
+          <span>Log</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_my.svg" alt="My">
+          <span>My</span>
+        </a>
+      </div>
+      <a href="log_write.html" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

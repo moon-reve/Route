@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route — 로드맵</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="roadmap.css">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+
+      <!-- 메인 콘텐츠 (backdrop-filter: blur(2px)) -->
+      <main class="main">
+
+        <!-- 헤더 -->
+        <header class="header">
+          <div class="header-title">마스터 플랜 아키텍처</div>
+        </header>
+
+        <!-- 콘텐츠 -->
+        <div class="contents">
+
+          <!-- 필터 칩 -->
+          <div class="nav-chips">
+            <div class="chip chip--active">전체 항로</div>
+            <div class="chip">인강</div>
+            <div class="chip">도서</div>
+            <div class="chip">매거진</div>
+          </div>
+
+          <!-- 상태 바 -->
+          <div class="status-bar">
+            <div class="status-top">
+              <div class="status-pill">
+                <img src="images/roadmap_dot.svg" alt="" class="pill-dot">
+                <span class="pill-text">WEEK 4 / 12 진행 중</span>
+              </div>
+              <span class="status-subtitle">김루트님의 커리어 전환 항로</span>
+            </div>
+            <div class="status-bottom">
+              <div class="status-progress-track">
+                <div class="status-progress-fill"></div>
+              </div>
+              <span class="status-pct">33%</span>
+            </div>
+          </div>
+
+          <!-- 타임라인 -->
+          <div class="timeline">
+
+            <!-- WEEK 01 — DONE (확장) -->
+            <div class="card card--done-open">
+              <div class="card-head card-head--divider">
+                <span class="week-lbl week-lbl--dark">WEEK 01</span>
+                <span class="badge-done">DONE</span>
+              </div>
+              <div class="card-items">
+                <div class="card-item">
+                  <img src="images/roadmap_icon_done.svg" alt="" class="item-icon">
+                  <div class="item-body">
+                    <span class="item-title">피그마 기초</span>
+                    <div class="item-tags">
+                      <span class="tag tag--gold">인강</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <img src="images/roadmap_icon_done.svg" alt="" class="item-icon">
+                  <div class="item-body">
+                    <span class="item-title">UX 심리학</span>
+                    <div class="item-tags">
+                      <span class="tag tag--sage">도서</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <img src="images/roadmap_icon_done.svg" alt="" class="item-icon">
+                  <div class="item-body">
+                    <span class="item-title">디자인 트렌드</span>
+                    <div class="item-tags">
+                      <span class="tag tag--terracotta">매거진</span>
+                      <span class="tag tag--sage">선취득</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- WEEK 02 — DONE (축소) -->
+            <div class="card card--done-closed">
+              <div class="card-head-row">
+                <div class="card-head-left">
+                  <span class="week-lbl week-lbl--gray">WEEK 02</span>
+                  <span class="badge-done">DONE</span>
+                </div>
+                <img src="images/roadmap_collapsed.svg" alt="" class="expand-icon">
+              </div>
+            </div>
+
+            <!-- WEEK 03 — DONE (축소) -->
+            <div class="card card--done-closed">
+              <div class="card-head-row">
+                <div class="card-head-left">
+                  <span class="week-lbl week-lbl--gray">WEEK 03</span>
+                  <span class="badge-done">DONE</span>
+                </div>
+                <img src="images/roadmap_collapsed.svg" alt="" class="expand-icon">
+              </div>
+            </div>
+
+            <!-- WEEK 04 — ACTIVE (확장) -->
+            <div class="card card--active-open">
+              <div class="card-head card-head--orange-divider">
+                <div class="active-week-group">
+                  <div class="active-week-col">
+                    <span class="week-lbl week-lbl--orange">WEEK 04</span>
+                    <span class="you-are-here">YOU ARE HERE</span>
+                  </div>
+                  <span class="badge-active">ACTIVE</span>
+                </div>
+              </div>
+              <div class="card-items">
+                <div class="card-item">
+                  <img src="images/roadmap_icon_active.svg" alt="" class="item-icon">
+                  <div class="item-body">
+                    <span class="item-title item-title--bold">HTML/CSS 구조</span>
+                    <div class="item-tags">
+                      <span class="tag tag--gold">인강</span>
+                      <span class="tag tag--in-progress">진행 중</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon">
+                  <div class="item-body">
+                    <span class="item-title item-title--muted">인터랙션 디자인</span>
+                    <div class="item-tags">
+                      <span class="tag tag--sage">도서</span>
+                      <span class="tag tag--plan">예정</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon item-icon--sm">
+                  <div class="item-body">
+                    <span class="item-title item-title--muted">시장 분석 리포트</span>
+                    <div class="item-tags">
+                      <span class="tag tag--terracotta">매거진</span>
+                      <span class="tag tag--plan">예정</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- WEEK 05 — PLAN (축소) -->
+            <div class="card card--plan-closed">
+              <div class="card-head-row">
+                <div class="card-head-left">
+                  <span class="week-lbl week-lbl--light">WEEK 05</span>
+                  <span class="badge-plan">PLAN</span>
+                </div>
+                <img src="images/roadmap_collapsed.svg" alt="" class="expand-icon expand-icon--faded">
+              </div>
+            </div>
+
+            <!-- WEEK 06 — PLAN (축소) -->
+            <div class="card card--plan-closed card--plan-dim">
+              <div class="card-head-row">
+                <div class="card-head-left">
+                  <span class="week-lbl week-lbl--lighter">WEEK 06</span>
+                  <span class="badge-plan badge-plan--dim">PLAN</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 남은 기간 -->
+            <div class="weeks-remaining">
+              <div class="remaining-card">
+                <div class="remaining-text-group">
+                  <span class="remaining-until">UNTIL WEEK 12</span>
+                  <span class="remaining-sub">8주 남음 · 미션 계획 대기 중</span>
+                </div>
+              </div>
+              <div class="remaining-goal">
+                <img src="images/roadmap_goal_icon.svg" alt="" class="goal-icon">
+                <span class="goal-label">커리어 전환 실현</span>
+              </div>
+            </div>
+
+          </div><!-- /timeline -->
+        </div><!-- /contents -->
+      </main>
+    </div><!-- /scroll-area -->
+
+    <!-- 네비게이션 바 (Route 활성) -->
+    <nav class="nav-bar">
+      <div class="nav-side">
+        <a href="home.html" class="nav-tab">
+          <img src="images/nav_home.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-tab nav-tab--active">
+          <img src="images/nav_route.svg" alt="Route">
+          <span>Route</span>
+        </a>
+      </div>
+      <div class="nav-side">
+        <a href="log_calendar.html" class="nav-tab">
+          <img src="images/nav_log.svg" alt="Log">
+          <span>Log</span>
+        </a>
+        <a href="my_page.html" class="nav-tab">
+          <img src="images/nav_my.svg" alt="My">
+          <span>My</span>
+        </a>
+      </div>
+      <a href="log_write.html" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

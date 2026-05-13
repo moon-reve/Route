@@ -1,0 +1,306 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.screen {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  overflow: hidden;
+  background: #F9F9F9;
+}
+
+.scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+/* ── 전체 컨테이너: column, gap 42px, padding 40px 20px ── */
+.log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding: 40px 24px;
+  width: 430px;
+}
+
+/* ════════ HEADER ════════ */
+/* row, flex-end, center, gap 116px, padding 10px 0 */
+.log-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 116px;
+  padding: 10px 0;
+}
+
+.log-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1A1C1E;
+  text-align: center;
+}
+
+.log-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.log-close img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* ════════ CONTENTS: column, gap 30px ════════ */
+.log-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ════════ HERO ════════ */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.hero-illustration {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(240,239,235,1) 0%, rgba(232,232,232,1) 100%);
+}
+
+.hero-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-caption {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #9A9090;
+  text-align: center;
+}
+
+/* ════════ RESOURCE TYPE ════════ */
+/* column, gap 8px */
+.section-resource {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-label {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1A1C1E;
+}
+
+/* 탭 컨테이너: row, gap 4px, padding 4px, bg #E8E8E8, radius 5px */
+.resource-tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: #E8E8E8;
+  border-radius: 5px;
+}
+
+/* 각 탭: 균등 분할, padding 14px 15px, radius 5px */
+.resource-tab {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 15px;
+  border-radius: 5px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #555555;
+  cursor: pointer;
+}
+
+.resource-tab--active {
+  background: #FFFFFF;
+  font-weight: 700;
+  color: #1A1C1E;
+}
+
+/* ════════ INPUTS ════════ */
+/* column, gap 16px */
+.section-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 각 input 그룹: column, gap 4px */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-label {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1A1C1E;
+}
+
+/* 인풋 박스: height 52px, bg white, border 1px #CFC4C5 */
+.input-box {
+  height: 52px;
+  background: #FFFFFF;
+  border: 1px solid #CFC4C5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.input-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1A1C1E;
+}
+
+.input-box input::placeholder {
+  color: #848484;
+}
+
+/* ════════ DURATION ════════ */
+/* column, gap 5px */
+.section-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* date row: row, space-between, center */
+.date-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* date box: row, space-between, center, padding 16px 10px, width 178px, bg white, border, radius 10px */
+.date-box {
+  width: 178px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 10px;
+  background: #FFFFFF;
+  border: 1px solid #D1D1D1;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.date-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1A1C1E;
+}
+
+.date-placeholder {
+  color: #555555;
+}
+
+.calendar-icon {
+  width: 14px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.date-sep {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5F5E5E;
+}
+
+/* ════════ REMINDER ════════ */
+/* row, space-between, center */
+.section-reminder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reminder-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1A1C1E;
+}
+
+.toggle-btn {
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* ════════ SUBMIT BUTTON ════════ */
+/* row center, padding 16px 0, bg #1A1C1E, radius 12px */
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
+  background: #1A1C1E;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.submit-btn:hover { opacity: 0.85; }

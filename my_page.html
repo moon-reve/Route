@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route — 마이페이지</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="my_page.css">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+      <div class="my-page">
+        <main class="main">
+
+          <!-- 헤더: 타이틀만 중앙 -->
+          <header class="header">
+            <div class="header-title">마이페이지</div>
+          </header>
+
+          <!-- 프로필 섹션 -->
+          <section class="section-profile">
+            <img src="images/my_profile_photo.svg" alt="프로필 사진" class="profile-photo">
+            <p class="profile-name">김루트</p>
+            <p class="profile-bio">3년차 UX 디자이너 | 피그마 마스터 항해 중</p>
+            <button class="edit-btn">프로필 수정</button>
+          </section>
+
+          <!-- 성취 섹션 -->
+          <section class="section-mastery">
+            <div class="mastery-box">
+              <!-- 배경 별자리 일러스트 -->
+              <img src="images/my_mastery_bg.svg" alt="" class="mastery-bg">
+
+              <div class="mastery-title-group">
+                <p class="mastery-sub">지금까지 밝힌 성좌</p>
+                <p class="mastery-main">총 14개의 미션 완료</p>
+              </div>
+
+              <!-- 프로그레스 바 -->
+              <div class="progress-wrapper">
+                <div class="progress-track">
+                  <div class="progress-fill"></div>
+                </div>
+                <div class="progress-dot"></div>
+              </div>
+
+              <p class="mastery-caption">전체 목표의 60%를 달성했어요</p>
+            </div>
+          </section>
+
+          <!-- 메뉴 섹션 -->
+          <section class="section-menu">
+            <div class="menu-item menu-item--first">
+              <span class="menu-text">관심 직무 및 목표 설정</span>
+              <img src="images/my_chevron_right.svg" alt="" class="menu-arrow">
+            </div>
+            <div class="menu-item">
+              <span class="menu-text">알림 설정</span>
+              <img src="images/my_chevron_right.svg" alt="" class="menu-arrow">
+            </div>
+            <div class="menu-item">
+              <span class="menu-text">계정 관리</span>
+              <img src="images/my_chevron_right.svg" alt="" class="menu-arrow">
+            </div>
+            <div class="menu-item">
+              <span class="menu-text">앱 정보 및 고객센터</span>
+              <img src="images/my_chevron_right.svg" alt="" class="menu-arrow">
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 (My 활성) -->
+    <nav class="nav-bar">
+      <div class="nav-side">
+        <a href="home.html" class="nav-tab">
+          <img src="images/nav_home.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_route.svg" alt="Route">
+          <span>Route</span>
+        </a>
+      </div>
+      <div class="nav-side">
+        <a href="log_calendar.html" class="nav-tab">
+          <img src="images/nav_log.svg" alt="Log">
+          <span>Log</span>
+        </a>
+        <a href="#" class="nav-tab nav-tab--active">
+          <img src="images/nav_my.svg" alt="My">
+          <span>My</span>
+        </a>
+      </div>
+      <a href="log_write.html" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

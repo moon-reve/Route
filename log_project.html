@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route — 프로젝트</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="log_project.css">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+      <div class="project-page">
+        <main class="main">
+
+          <!-- 헤더: btn-back + title, gap 132px, padding 10px 24px -->
+          <header class="header">
+            <a href="log_calendar.html" class="btn-back">
+              <img src="images/detail_btn_back.svg" alt="뒤로가기">
+            </a>
+            <div class="header-title">내가 쌓은 시간들</div>
+          </header>
+
+          <!-- 탭 (프로젝트 활성) -->
+          <nav class="tabs">
+            <a href="log_calendar.html" class="tab">캘린더</a>
+            <a href="log_feed.html" class="tab">로그 피드</a>
+            <a href="log_project.html" class="tab tab--active">프로젝트</a>
+          </nav>
+
+          <!-- 컨텐츠: column, gap 39px, padding 0 24px -->
+          <div class="contents">
+
+            <!-- 진행 중인 프로젝트 -->
+            <div class="section">
+              <h2 class="section-title section-title--dark">항해 중인 궤적 (2)</h2>
+
+              <!-- 카드 1: 피그마 강의 -->
+              <div class="card-ongoing">
+                <div class="card-img-box">
+                  <img src="images/project_figma_icon.png" alt="피그마 아이콘">
+                </div>
+                <div class="card-body">
+                  <p class="card-title">피그마 오토레이아웃 마스터 클래스</p>
+                  <div class="progress-track">
+                    <div class="progress-fill progress-fill--gold"></div>
+                  </div>
+                  <p class="card-meta">총 12개의 기록이 담겨있어요</p>
+                </div>
+              </div>
+
+              <!-- 카드 2: 도서 -->
+              <div class="card-ongoing">
+                <div class="card-img-box">
+                  <img src="images/daily_book_cover.png" alt="UX/UI 심리학">
+                </div>
+                <div class="card-body">
+                  <p class="card-title">UX/UI 심리학 완독하기</p>
+                  <div class="progress-track">
+                    <div class="progress-fill progress-fill--sage"></div>
+                  </div>
+                  <p class="card-meta">총 8개의 기록이 담겨있어요</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 완료된 프로젝트 -->
+            <div class="section">
+              <h2 class="section-title section-title--gray">빛을 발한 성좌들 (1)</h2>
+
+              <!-- 완료 카드 -->
+              <div class="card-completed">
+                <div class="card-completed-img">
+                  <img src="images/project_completed_icon.svg" alt="완료 아이콘">
+                </div>
+                <div class="card-completed-body">
+                  <p class="card-title">나만의 포트폴리오 1차 완성</p>
+                  <p class="card-meta">총 24개의 기록 • 2026.04.10 완료</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 (Log 활성) -->
+    <nav class="nav-bar">
+      <div class="nav-side">
+        <a href="home.html" class="nav-tab">
+          <img src="images/nav_home.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_route.svg" alt="Route">
+          <span>Route</span>
+        </a>
+      </div>
+      <div class="nav-side">
+        <a href="log_calendar.html" class="nav-tab nav-tab--active">
+          <img src="images/nav_log.svg" alt="Log">
+          <span>Log</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_my.svg" alt="My">
+          <span>My</span>
+        </a>
+      </div>
+      <a href="log_write.html" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

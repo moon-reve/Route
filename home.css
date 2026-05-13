@@ -1,0 +1,403 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* ── Phone frame ── */
+.screen {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  overflow: hidden;
+  background: #F9F9F9;
+}
+
+/* ── Scroll area ── */
+.scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-y; /* 세로 스크롤만 처리, 가로는 자식에게 위임 */
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+/* ── Main: padding 40px 24px 125px ── */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px 200px;
+}
+
+/* header SVG — 탑 헤더 (상단 고정) */
+.home-header {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* ── Sections container: column, gap 58px ── */
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  margin-top: 16px;
+}
+
+/* ════════════════════════════
+   ① HERO
+════════════════════════════ */
+/* section padding 0 0 30px */
+.section-hero {
+  padding-bottom: 30px;
+}
+
+/* hero card: height 280px, padding 200px 20px 44px */
+.hero-card {
+  position: relative;
+  height: 280px;
+  padding: 200px 20px 44px;
+  border-radius: 12px;
+  overflow: visible; /* 버튼이 카드 아래로 -11.5px 삐져나옴 */
+  background: linear-gradient(135deg, rgba(247,245,240,1) 0%, rgba(239,239,239,1) 100%);
+}
+
+/* 배경 일러스트: absolute, full cover — radius로 직접 클립 */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 텍스트 블록: column, gap 1px, width 262px */
+.hero-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 262px;
+}
+
+.hero-label {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #9C9090;
+  line-height: 1.4;
+}
+
+.hero-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1C1E;
+  line-height: 1.4;
+}
+
+/* 버튼: text 박스 기준 absolute, 피그마 수치 right:11px bottom:-11.5px */
+.hero-btn {
+  position: absolute;
+  right: 11px;
+  bottom: -11.5px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 25px;
+  background: #1A1C1E;
+  border-radius: 50px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.hero-btn:hover { opacity: 0.85; }
+
+/* ════════════════════════════
+   ② CHIPS
+════════════════════════════ */
+/* row, gap 8px, padding 0 20px — 스크롤 없음 */
+.section-chips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+/* chip: padding 10px 14px, radius 50px */
+.chip {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  border-radius: 50px;
+  border: 1px solid #D1D1D1;
+  background: #F2F2F2;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1A1C1E;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.chip--active {
+  background: #E8941A;
+  border-color: #E8941A;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ════════════════════════════
+   ③ CARDS
+════════════════════════════ */
+/* section: column, gap 16px — 좌우 padding 밖으로 확장해서 카드 스크롤 full-width 확보 */
+.section-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+/* section-title은 24px 패딩 복원 */
+.section-cards .section-title {
+  padding-left: 24px;
+}
+
+.section-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #4C4546;
+}
+
+/* card-list: row, horizontal scroll, gap 17px
+   section-cards 자체를 패딩 밖으로 빼서 full-width 스크롤 확보 */
+.card-list {
+  display: flex;
+  flex-direction: row;
+  gap: 17px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.card-list::-webkit-scrollbar { display: none; }
+.card-list {
+  touch-action: pan-x; /* 가로 스크롤만 처리 */
+  cursor: grab;
+}
+.card-list.is-dragging { cursor: grabbing; }
+
+/* card: 180px wide, column, radius 10px, border */
+.card {
+  text-decoration: none;
+  flex-shrink: 0;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid #E8E8E8;
+  overflow: hidden;
+}
+
+/* card img-box: height 120px, padding 18px 25px, bg #E6E3DE */
+.card-img-box {
+  height: 120px;
+  padding: 18px 25px;
+  background: #E6E3DE;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* card text-box: height 80px, padding 10px, bg #F2F2F2 */
+.card-text-box {
+  height: 80px;
+  padding: 10px;
+  background: #F2F2F2;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4C4546;
+  line-height: 1.4;
+}
+
+/* ════════════════════════════
+   ④ ARTICLES
+════════════════════════════ */
+/* section: column, gap 16px */
+.section-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* article-item: row, gap 16px, padding 0 0 20px, border-bottom */
+.article-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.article-item:last-child {
+  border-bottom: none;
+}
+
+/* img-box: 80x80, radius 10px */
+.article-img {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* text-box: column, gap 29px, width 294px */
+.article-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 294px;
+}
+
+.article-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #4C4546;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-meta {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #5F5E5E;
+  line-height: 1.4;
+}
+
+/* ════════════════════════════
+   NAV BAR
+════════════════════════════ */
+/* absolute, bottom 20px, left 20px, width 390px */
+.nav-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 390px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 40px;
+  background: rgba(242, 242, 242, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #D1D1D1;
+  border-radius: 50px;
+  z-index: 100;
+}
+
+/* nav sides: each 90px, row, space-between */
+.nav-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+/* nav tab: column, center, gap 4px */
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.nav-tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.nav-tab span {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: #D1D1D1;
+  line-height: 1;
+}
+
+.nav-tab--active img {
+  filter: brightness(0);
+}
+
+.nav-tab--active span {
+  color: #1A1C1E;
+  font-weight: 700;
+}
+
+/* 중앙 플로팅 로고: absolute, 센터, -21px 위로, blur */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -21px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.nav-center img {
+  display: block;
+  width: auto;
+  height: auto;
+}

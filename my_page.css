@@ -1,0 +1,289 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.screen {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  overflow: hidden;
+  background: #F9F9F9;
+}
+
+.scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+.my-page { width: 430px; }
+
+/* ── main: column, gap 34px, padding 40px 24px 125px ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding: 40px 24px 125px;
+  width: 430px;
+}
+
+/* ════════ HEADER: 타이틀 중앙 ════════ */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1A1C1E;
+}
+
+/* ════════ SECTION PROFILE: column, center, gap 8px ════════ */
+.section-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 프로필 사진: 80×80 */
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 이름: Bold 20px, #1A1C1C */
+.profile-name {
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1C1C;
+  text-align: center;
+}
+
+/* 한 줄 소개: Regular 14px, #4C4546 */
+.profile-bio {
+  font-weight: 400;
+  font-size: 14px;
+  color: #4C4546;
+  text-align: center;
+}
+
+/* 프로필 수정 버튼: padding 9px 12px, bg white, border 1px #999, radius 50px */
+.edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  background: #FFFFFF;
+  border: 1px solid #999999;
+  border-radius: 50px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4C4546;
+  cursor: pointer;
+}
+
+/* ════════ SECTION MASTERY: column, fill, gap 10px ════════ */
+.section-mastery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 성취 카드: column, fill, gap 17px, padding 20px, bg #1A1C1E, radius 12px */
+.mastery-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding: 20px;
+  background: #1A1C1E;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 배경 일러스트: 절대 위치 우측 상단 */
+.mastery-bg {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 66px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* 타이틀 그룹: column, width 189 */
+.mastery-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 189px;
+}
+
+/* 서브 타이틀: Regular 14px, white */
+.mastery-sub {
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+/* 메인 타이틀: Bold 24px, white */
+.mastery-main {
+  font-weight: 700;
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+/* 프로그레스 바 래퍼 */
+.progress-wrapper {
+  position: relative;
+  height: 10px;
+}
+
+/* 트랙: 8px 높이, bg #333333 */
+.progress-track {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: #333333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 채워진 부분: 60%, 골드 그라디언트 */
+.progress-fill {
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%);
+  border-radius: 4px;
+}
+
+/* 끝점 표시 도트: 10×10, 60% 위치 */
+.progress-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #E8941A;
+  border-radius: 50%;
+  left: calc(60% - 5px);
+  top: 0;
+}
+
+/* 캡션: Regular 12px, #DADADA */
+.mastery-caption {
+  font-weight: 400;
+  font-size: 12px;
+  color: #DADADA;
+}
+
+/* ════════ SECTION MENU: column, fill ════════ */
+.section-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 메뉴 아이템: row, space-between, center, padding 15px 0 */
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.menu-item--first {
+  border-top: 1px solid #D1D1D1;
+}
+
+/* 메뉴 텍스트: Regular 16px, #4C4546 */
+.menu-text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #4C4546;
+}
+
+/* 우측 화살표 아이콘 */
+.menu-arrow {
+  width: 7px;
+  height: 14px;
+  object-fit: contain;
+}
+
+/* ════════ NAV BAR ════════ */
+.nav-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 390px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 40px;
+  background: rgba(242, 242, 242, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #D1D1D1;
+  border-radius: 50px;
+  z-index: 100;
+}
+
+.nav-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.nav-tab img { width: 24px; height: 24px; object-fit: contain; }
+.nav-tab span { font-weight: 400; font-size: 9px; color: #D1D1D1; line-height: 1; }
+
+/* My 탭 활성 */
+.nav-tab--active img  { filter: brightness(0); }
+.nav-tab--active span { color: #1A1C1E; font-weight: 700; }
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -21px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 50%;
+  text-decoration: none;
+}
+.nav-center img { display: block; width: auto; height: auto; }

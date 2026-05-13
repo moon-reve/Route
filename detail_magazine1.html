@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route — 실무에서 바로 쓰는 피그마 오토레이아웃 활용 팁 10가지</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="detail_magazine.css">
+</head>
+<body>
+
+  <div class="screen">
+    <div class="scroll-area">
+      <main class="mag-main">
+
+        <!-- 헤더 -->
+        <header class="detail-header">
+          <a href="home.html" class="header-btn">
+            <img src="images/detail_btn_back.svg" alt="뒤로가기">
+          </a>
+          <div class="header-title">매거진</div>
+          <button class="header-btn">
+            <img src="images/mag_btn_bookmark.svg" alt="북마크">
+          </button>
+        </header>
+
+        <!-- 컨텐츠 래퍼 -->
+        <div class="contents">
+
+          <!-- 섹션 헤더 -->
+          <section class="section-header">
+            <div class="header-title-box">
+              <div class="section-tag">
+                <span class="tag">#Figma</span>
+                <span class="tag">#오토레이아웃</span>
+                <span class="tag">#실무팁</span>
+              </div>
+              <div class="text-box">
+                <h1 class="hero-title">실무에서 바로 쓰는 피그마<br>오토레이아웃 활용 팁 10가지</h1>
+                <p class="hero-subtitle">디자인 효율을 극대화하고 협업을 매끄럽게 만드는 오토레이아웃의 핵심 기능과 실무 활용 사례를 정리했습니다.</p>
+              </div>
+            </div>
+            <div class="header-img-box">
+              <img src="images/mag_header_img.svg" alt="커버 이미지" class="cover-img">
+            </div>
+          </section>
+
+          <!-- 본문 10개 섹션 -->
+          <section class="section-content">
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">01. 버튼 패딩 설정 최적화</h2>
+                <p class="content-body">버튼의 크기를 고정하지 않고 오토레이아웃의 패딩 값을 사용하여 텍스트 길이에 따라 유동적으로 변하는 컴포넌트를 구성하는 방법입니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content1_img.svg" alt="버튼 패딩 설정 최적화">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">02. 텍스트 길이에 대응하는 카드 레이아웃</h2>
+                <p class="content-body">콘텐츠의 양에 따라 높이가 자동으로 조절되는 카드 시스템을 구축하여 반응형 디자인의 효율성을 높이는 전략을 알아봅니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content2_img.svg" alt="카드 레이아웃">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">03. Packed vs Space between 활용</h2>
+                <p class="content-body">요소들 사이의 간격을 일정하게 유지할지, 혹은 가용한 전체 공간을 채울지에 따라 적절한 정렬 방식을 선택하는 기준을 제시합니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content3_img.svg" alt="Packed vs Space between">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">04. Absolute Position으로 자유로운 배치</h2>
+                <p class="content-body">오토레이아웃 내부에서도 특정 요소를 절대 좌표로 고정하여 뱃지나 알림 아이콘 등을 자연스럽게 배치하는 고급 기술입니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content4_img.svg" alt="Absolute Position">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">05. Wrap 기능을 활용한 그리드 구현</h2>
+                <p class="content-body">화면 너비에 따라 아이템이 자동으로 다음 줄로 넘어가는 Wrap 기능을 사용하여 복잡한 그리드 레이아웃을 손쉽게 관리하는 법을 배웁니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content5_img.svg" alt="Wrap 기능">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">06. Min/Max Width로 제약 조건 설정</h2>
+                <p class="content-body">디자인이 너무 커지거나 작아지지 않도록 최소/최대 너비와 높이를 설정하여 기기별 최적화된 시각적 균형을 유지하는 방법입니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content6_img.svg" alt="Min/Max Width">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">07. Z-index와 아바타 스택 정렬</h2>
+                <p class="content-body">여러 개의 요소가 겹치는 아바타 스택 등의 디자인에서 레이어 순서(Canvas Stacking)를 조정하여 원하는 순서로 겹치게 만드는 팁입니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content7_img.svg" alt="Z-index 아바타 스택">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">08. Baseline Alignment로 텍스트 정렬</h2>
+                <p class="content-body">크기가 다른 텍스트들이 섞여 있을 때, 폰트의 기준선(Baseline)을 맞춰 시각적으로 훨씬 깔끔하고 정돈된 느낌을 주는 정렬법입니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content8_img.svg" alt="Baseline Alignment">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">09. 중첩(Nesting) 구조 설계 원칙</h2>
+                <p class="content-body">복잡한 UI를 구성할 때 오토레이아웃을 효율적으로 중첩하여 유지보수가 쉽고 확장이 용이한 컴포넌트 구조를 설계하는 핵심 원칙입니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content9_img.svg" alt="중첩 구조">
+              </div>
+            </div>
+
+            <div class="content-box">
+              <div class="content-text-box">
+                <h2 class="content-title">10. Component Properties 연동</h2>
+                <p class="content-body">오토레이아웃과 컴포넌트 속성을 연동하여 디자인 시스템 내에서 하나의 원본으로 수십 개의 변형을 제어하는 워크플로우를 완성합니다.</p>
+              </div>
+              <div class="content-img-box">
+                <img src="images/mag_content10_img.svg" alt="Component Properties">
+              </div>
+            </div>
+
+          </section>
+
+
+        </div><!-- /contents -->
+      </main>
+    </div>
+
+    <!-- 네비게이션 바 (bottom 20px, 모든 아이콘 기본 색) -->
+    <nav class="nav-bar">
+      <div class="nav-side">
+        <a href="home.html" class="nav-tab">
+          <img src="images/nav_home.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_route.svg" alt="Route">
+          <span>Route</span>
+        </a>
+      </div>
+      <div class="nav-side">
+        <a href="#" class="nav-tab">
+          <img src="images/nav_log.svg" alt="Log">
+          <span>Log</span>
+        </a>
+        <a href="#" class="nav-tab">
+          <img src="images/nav_my.svg" alt="My">
+          <span>My</span>
+        </a>
+      </div>
+      <a href="log_write.html" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+    </nav>
+  </div>
+
+</body>
+</html>
