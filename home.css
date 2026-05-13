@@ -333,9 +333,9 @@ body {
   width: calc(100% - 40px);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 10px 8px;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 4px;
   background: rgba(242, 242, 242, 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -345,14 +345,6 @@ body {
 }
 
 /* nav sides: each 90px, row, space-between */
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex: 1;
-}
-
 /* nav tab: column, center, gap 4px */
 .nav-tab {
   display: flex;
@@ -387,10 +379,10 @@ body {
 
 /* 중앙 플로팅 로고: absolute, 센터, -21px 위로, blur */
 .nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-21px);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border-radius: 50%;

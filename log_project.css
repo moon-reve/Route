@@ -240,23 +240,15 @@ body {
   width: calc(100% - 40px);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 10px 8px;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 4px;
   background: rgba(242, 242, 242, 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #D1D1D1;
   border-radius: 50px;
   z-index: 100;
-}
-
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex: 1;
 }
 
 .nav-tab {
@@ -273,10 +265,10 @@ body {
 .nav-tab--active span { color: #1A1C1E; font-weight: 700; }
 
 .nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-21px);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border-radius: 50%;
