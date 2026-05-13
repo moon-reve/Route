@@ -71,7 +71,7 @@
                 <div class="cal-day"><span class="cal-num">5</span></div>
                 <div class="cal-day"><span class="cal-num">6</span></div>
                 <div class="cal-day"><span class="cal-num">7</span></div>
-                <div class="cal-day cal-day--selected">
+                <div class="cal-day cal-day--selected" data-day="8" onclick="selectDay(8)">
                   <span class="cal-num">8</span>
                   <span class="cal-dot cal-dot--gold"></span>
                 </div>
@@ -80,7 +80,7 @@
                 <!-- Row 3: 5월 10~16 -->
                 <div class="cal-day"><span class="cal-num">10</span></div>
                 <div class="cal-day"><span class="cal-num">11</span></div>
-                <div class="cal-day cal-day--has-dot">
+                <div class="cal-day cal-day--has-dot" data-day="12" onclick="selectDay(12)">
                   <span class="cal-num">12</span>
                   <span class="cal-dot cal-dot--sage"></span>
                 </div>
@@ -120,7 +120,7 @@
             <!-- 로그 카드 -->
             <div class="section-log">
 
-              <div class="log-card">
+              <div class="log-card" data-day="8">
                 <div class="log-top">
                   <span class="log-badge log-badge--gold">[인강] 피그마 기초</span>
                   <span class="log-time">오전 11:30</span>
@@ -131,15 +131,7 @@
                 </div>
               </div>
 
-              <div class="log-card">
-                <div class="log-top">
-                  <span class="log-badge log-badge--sage">[도서] UX 심리학</span>
-                  <span class="log-time">오후 04:20</span>
-                </div>
-                <div class="log-text">1장 요약. 시각적 위계가 인지 부하에 미치는 영향.</div>
-              </div>
-
-              <div class="log-card">
+              <div class="log-card" data-day="8">
                 <div class="log-top">
                   <span class="log-badge log-badge--terracotta">[매거진] 아티클</span>
                   <span class="log-time">오후 07:10</span>
@@ -147,7 +139,15 @@
                 <div class="log-text">2025 디자인 트렌드 아티클 읽음. 모션디자인 섹션 인상적.</div>
               </div>
 
-              <div class="log-card">
+              <div class="log-card" data-day="12">
+                <div class="log-top">
+                  <span class="log-badge log-badge--sage">[도서] Lean 스타트업</span>
+                  <span class="log-time">오후 04:20</span>
+                </div>
+                <div class="log-text">1장 요약. 시각적 위계가 인지 부하에 미치는 영향.</div>
+              </div>
+
+              <div class="log-card" data-day="12">
                 <div class="log-top">
                   <span class="log-badge log-badge--orange">[프로젝트]</span>
                   <span class="log-time">오후 09:00</span>
@@ -184,5 +184,37 @@
       </a>
     </nav>
   </div>
+
+  <script>
+    const dayLabels = { 8: '5월 8일', 12: '5월 12일' };
+
+    function selectDay(day) {
+      // 선택 상태 업데이트
+      document.querySelectorAll('.cal-day[data-day]').forEach(el => {
+        el.classList.remove('cal-day--selected');
+      });
+      const target = document.querySelector(`.cal-day[data-day="${day}"]`);
+      if (target) target.classList.add('cal-day--selected');
+
+      // 카드 필터링
+      const cards = document.querySelectorAll('.log-card');
+      let count = 0;
+      cards.forEach(card => {
+        if (parseInt(card.dataset.day) === day) {
+          card.style.display = '';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // 디바이더 타이틀 업데이트
+      const label = dayLabels[day] || `5월 ${day}일`;
+      document.querySelector('.divider-title').textContent = `${label}의 기록 (${count})`;
+    }
+
+    // 초기 상태: 8일 선택
+    selectDay(8);
+  </script>
 </body>
 </html>
