@@ -273,6 +273,30 @@ body {
   flex-shrink: 0;
 }
 
+/* ── 430px 미만: 버튼 wrap → 오른쪽 하단 정렬 ── */
+@media (max-width: 429px) {
+  .card-book {
+    gap: 8px;
+  }
+  .book-right {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .book-info {
+    justify-content: flex-start;
+  }
+  .book-btn-box {
+    width: auto;
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+  .card-btn--sm {
+    width: auto;
+    padding: 8px 20px;
+  }
+}
+
 /* ════════ CARD PROJECT ════════ */
 .card-project {
   display: flex;
