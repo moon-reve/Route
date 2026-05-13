@@ -18,6 +18,7 @@ body {
   height: 100vh;
   height: 100svh;
   overflow: hidden;
+  padding-top: env(safe-area-inset-top);
   background: #F9F9F9;
 }
 

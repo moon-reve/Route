@@ -17,6 +17,7 @@ body {
   height: 100vh; /* fallback */
   height: 100svh;
   overflow: hidden;
+  padding-top: env(safe-area-inset-top);
   background: url('images/roadmap_bg.svg') top center / cover no-repeat,
               linear-gradient(180deg, #F9F9F9 0%, #F5F3EF 100%);
 }
