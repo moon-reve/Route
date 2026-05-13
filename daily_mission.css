@@ -64,20 +64,20 @@ body {
   cursor: pointer;
   padding: 0;
   text-decoration: none;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 .btn-back img,
 .btn-menu img {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
 .header-title {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 20px;
   color: #1A1C1E;
 }
 
