@@ -22,15 +22,15 @@
     <!-- 페이지 래퍼 -->
     <div class="pre-wrap">
 
+      <!-- 헤더: 배경 없음, pre-main 밖 -->
+      <header class="pre-header">
+        <a href="#" onclick="history.back(); return false;" class="btn-back">
+          <img src="images/pre_header.svg" alt="뒤로가기" class="btn-back-img">
+        </a>
+      </header>
+
       <!-- 메인 (backdrop-filter) -->
       <div class="pre-main">
-
-        <!-- 헤더: 뒤로가기 -->
-        <header class="pre-header">
-          <a href="#" onclick="history.back(); return false;" class="btn-back">
-            <img src="images/pre_header.svg" alt="뒤로가기" class="btn-back-img">
-          </a>
-        </header>
 
         <!-- 콘텐츠 -->
         <div class="pre-contents">
@@ -81,6 +81,7 @@
 
         </div><!-- /pre-contents -->
       </div><!-- /pre-main -->
+
 
       <!-- 다음 버튼 -->
       <a href="pre_step2" class="btn-next">

@@ -64,6 +64,7 @@ body {
 .pre-header {
   display: flex;
   align-items: center;
+  background: transparent;
 }
 
 .btn-back {
