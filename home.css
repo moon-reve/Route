@@ -394,3 +394,11 @@ body {
   width: auto;
   height: auto;
 }
+
+/* ── 430px 미만: 카테고리 칩 축소 ── */
+@media (max-width: 429px) {
+  .chip {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
