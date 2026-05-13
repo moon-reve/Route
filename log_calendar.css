@@ -140,6 +140,8 @@ body {
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D1D1D1;
 }
 
 /* Day-of-week header cells */
@@ -200,16 +202,14 @@ body {
 
 /* ════════ SECTION DIVIDER ════════ */
 .section-divider {
-  margin-top: 4px;
 }
 
 .divider-title {
   display: flex;
   align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid #D1D1D1;
+  padding-top: 15px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   color: #5F5E5E;
 }
 
