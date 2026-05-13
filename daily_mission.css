@@ -218,8 +218,8 @@ body {
 .card-book {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: stretch;
+  gap: 10px;
   padding: 15px;
   background: #FFFFFF;
   border: 1px solid #D1D1D1;
@@ -243,12 +243,14 @@ body {
   display: block;
 }
 
-/* book-right: row, gap 9px */
+/* book-right: row, gap 9px, flex 1로 나머지 공간 채움 */
 .book-right {
   display: flex;
   flex-direction: row;
   gap: 9px;
   align-items: stretch;
+  flex: 1;
+  min-width: 0;
 }
 
 /* title info: column, justify flex-end, gap 4px */
@@ -257,15 +259,18 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   gap: 4px;
+  flex: 1;
+  min-width: 0;
 }
 
-/* btn-box: column, width 100, padding-top 68px */
+/* btn-box: column, width 100px, padding-top 68px (피그마 스펙) */
 .book-btn-box {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: stretch;
   width: 100px;
   flex-shrink: 0;
+  padding-top: 68px;
 }
 
 /* ════════ CARD PROJECT ════════ */
