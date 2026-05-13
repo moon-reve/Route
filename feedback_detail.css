@@ -244,15 +244,31 @@ body {
 
 /* 프로필 보기 모달 */
 .profile-modal {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   right: 0;
   top: calc(100% + 4px);
   z-index: 200;
+  pointer-events: none;
 }
 
 .profile-modal.is-open {
-  display: inline-flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  animation: modalSlideDown 0.2s ease-out forwards;
+}
+
+@keyframes modalSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile-modal-btn {
