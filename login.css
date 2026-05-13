@@ -287,3 +287,15 @@ body {
 }
 
 .guest-btn:hover { opacity: 0.7; }
+
+/* ── 430px 미만: 타이틀·설명 폰트 축소 ── */
+@media (max-width: 429px) {
+  .heading {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  .subtext {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
