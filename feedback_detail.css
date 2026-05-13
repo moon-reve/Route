@@ -460,6 +460,17 @@ body {
   white-space: nowrap;
 }
 
+/* ── 좁은 화면: 버튼 세로 쌓기 ── */
+@media (max-width: 360px) {
+  .footer-btns {
+    flex-direction: column;
+  }
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+  }
+}
+
 /* ════════ NAV BAR ════════ */
 .nav-bar {
   position: fixed;
