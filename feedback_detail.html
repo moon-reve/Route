@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Route — 피드백 상세</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="feedback_detail.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Route">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F9F9F9">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+      <div class="feedback-page">
+
+        <!-- 배경 이미지 -->
+        <img src="images/feedback_bg.svg" alt="" class="feedback-bg">
+
+        <!-- 메인 -->
+        <main class="main">
+
+          <!-- 헤더 -->
+          <header class="header">
+            <a href="#" onclick="history.back(); return false;" class="btn-back">
+              <img src="images/feedback_btn_back.svg" alt="뒤로가기">
+            </a>
+            <h1 class="header-title">피드백 상세 확인</h1>
+            <div class="header-placeholder"></div>
+          </header>
+
+          <!-- 콘텐츠 -->
+          <div class="content">
+
+            <!-- ① 프로젝트 정보 카드 -->
+            <div class="project-card">
+              <p class="project-title">포트폴리오 리뉴얼 - 앱 기획 (Week 03)</p>
+              <div class="project-meta">
+                <span class="meta-text">제출일: 2026. 05. 08</span>
+                <div class="meta-divider"></div>
+                <span class="meta-text">피드백 도착: 2시간 전</span>
+              </div>
+            </div>
+
+            <!-- ② 멘토 프로필 -->
+            <div class="mentor-section">
+              <div class="mentor-info">
+                <div class="mentor-avatar">
+                  <img src="images/feedback_mentor_img-54fef9.png" alt="멘토 J.young">
+                </div>
+                <div class="mentor-text">
+                  <div class="mentor-name-row">
+                    <span class="mentor-name">J.young</span>
+                    <span class="mentor-badge">EXPERT</span>
+                  </div>
+                  <span class="mentor-role">Senior Product Designer</span>
+                </div>
+              </div>
+              <button class="btn-chat">
+                <img src="images/feedback_btn_chat.svg" alt="질문하기">
+              </button>
+            </div>
+
+            <!-- ③ 피드백 상세 코멘트 -->
+            <div class="comment-section">
+              <div class="comment-heading">
+                <p class="comment-label">J.young 멘토가 남긴 피드백</p>
+                <p class="comment-title">앱 기획의 방향성이 명확하고<br>실현 가능성이 높습니다.</p>
+              </div>
+              <div class="comment-cards">
+                <!-- 좋은 점 -->
+                <div class="comment-card comment-card--good">
+                  <div class="comment-card-header">
+                    <img src="images/feedback_icon_good.svg" alt="" class="comment-icon">
+                    <span class="comment-card-title">좋은 점</span>
+                  </div>
+                  <p class="comment-body">앱의 핵심 기능을 명확히 정의하고 사용자 흐름을 논리적으로 구성하셨어요. 특히 온보딩 플로우의 단계별 설계가 탄탄합니다.</p>
+                </div>
+                <!-- 개선 제안 -->
+                <div class="comment-card comment-card--improve">
+                  <div class="comment-card-header">
+                    <img src="images/feedback_icon_improve.svg" alt="" class="comment-icon">
+                    <span class="comment-card-title">개선 제안</span>
+                  </div>
+                  <p class="comment-body">다만, 경쟁 앱 분석이 조금 더 구체적이면 좋겠어요.<br>유사 서비스와의 차별점을 명시하면 기획의 설득력이 더욱 높아질 것 같습니다.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ④ 추천 개선 과제 -->
+            <div class="checklist-section">
+              <p class="checklist-title">멘토의 추천 개선 과제</p>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <img src="images/feedback_icon_task.svg" alt="" class="task-icon">
+                  <span class="task-text">경쟁 앱 3개 이상 분석 추가</span>
+                </div>
+                <div class="checklist-item">
+                  <img src="images/feedback_icon_task.svg" alt="" class="task-icon">
+                  <span class="task-text">핵심 차별점 1문장으로 정리</span>
+                </div>
+                <div class="checklist-item">
+                  <img src="images/feedback_icon_task.svg" alt="" class="task-icon">
+                  <span class="task-text">와이어프레임에 사용자 시나리오 연결</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ⑤ 하단 버튼 -->
+            <div class="footer-btns">
+              <button class="btn-secondary">추가 질문하기</button>
+              <button class="btn-primary">피드백 반영 및 업데이트</button>
+            </div>
+
+          </div><!-- /content -->
+        </main>
+      </div><!-- /feedback-page -->
+    </div><!-- /scroll-area -->
+
+    <!-- 네비게이션 바 -->
+    <nav class="nav-bar">
+      <a href="home" class="nav-tab">
+        <img src="images/nav_home.svg" alt="Home">
+        <span>Home</span>
+      </a>
+      <a href="roadmap" class="nav-tab nav-tab--active">
+        <img src="images/nav_route.svg" alt="Route">
+        <span>Route</span>
+      </a>
+      <a href="log_write" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+      <a href="log_calendar" class="nav-tab">
+        <img src="images/nav_log.svg" alt="Log">
+        <span>Log</span>
+      </a>
+      <a href="my_page" class="nav-tab">
+        <img src="images/nav_my.svg" alt="My">
+        <span>My</span>
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>
