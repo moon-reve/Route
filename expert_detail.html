@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Route — 전문가 프로필</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="expert_detail.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Route">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F9F9F9">
+</head>
+<body>
+  <div class="screen">
+    <div class="scroll-area">
+      <div class="expert-page">
+
+        <!-- 배경 이미지 -->
+        <img src="images/expert_bg.svg" alt="" class="expert-bg">
+
+        <!-- 메인 -->
+        <main class="main">
+
+          <!-- 헤더 -->
+          <header class="header">
+            <a href="#" onclick="history.back(); return false;" class="btn-back">
+              <img src="images/expert_btn_back.svg" alt="뒤로가기">
+            </a>
+            <h1 class="header-title">전문가 상세 프로필</h1>
+            <div class="header-placeholder"></div>
+          </header>
+
+          <!-- ① 프로필 섹션 -->
+          <section class="profile-section">
+            <!-- 아바타 -->
+            <div class="avatar-wrap">
+              <div class="avatar-border">
+                <img src="images/expert_avatar-44f00a.png" alt="J.young" class="avatar-img">
+              </div>
+              <div class="expert-badge">
+                <img src="images/expert_badge.svg" alt="EXPERT">
+              </div>
+            </div>
+
+            <!-- 이름 -->
+            <p class="profile-name">J.young</p>
+
+            <!-- 직책 -->
+            <p class="profile-role">Senior Product Designer (10yr+)</p>
+
+            <!-- 통계 -->
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-value">128</span>
+                <span class="stat-label">Mentoring</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <div class="stat-value-row">
+                  <span class="stat-value">4.9</span>
+                  <img src="images/expert_star.svg" alt="" class="stat-star">
+                </div>
+                <span class="stat-label">Rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-value">15</span>
+                <span class="stat-label">Articles</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ② 전문 분야 -->
+          <section class="expertise-section">
+            <p class="section-heading">전문 분야</p>
+            <div class="tag-wrap">
+              <span class="tag tag--dark">디자인 시스템</span>
+              <span class="tag tag--gray">B2B 서비스</span>
+              <span class="tag tag--gray">사용성 테스트</span>
+              <span class="tag tag--gray">브랜딩</span>
+            </div>
+          </section>
+
+          <!-- ③ 주요 경력 -->
+          <section class="experience-section">
+            <p class="section-heading">주요 경력</p>
+            <div class="timeline">
+              <div class="timeline-line"></div>
+
+              <!-- Meta (현재) -->
+              <div class="timeline-item">
+                <div class="timeline-dot timeline-dot--active">
+                  <img src="images/expert_company_meta.svg" alt="Meta">
+                </div>
+                <div class="timeline-content">
+                  <p class="career-company">Meta (Seattle)</p>
+                  <p class="career-title">Lead Product Designer • 2020 - Present</p>
+                  <p class="career-desc">Design System Orchestration & AI Integration</p>
+                </div>
+              </div>
+
+              <!-- Coupang -->
+              <div class="timeline-item timeline-item--past">
+                <div class="timeline-dot timeline-dot--inactive">
+                  <img src="images/expert_company_coupang.svg" alt="Coupang">
+                </div>
+                <div class="timeline-content">
+                  <p class="career-company">Coupang</p>
+                  <p class="career-title">Senior UI/UX Designer • 2016 - 2020</p>
+                  <p class="career-desc">Directing Logistics & Checkout Experience</p>
+                </div>
+              </div>
+
+              <!-- Plus X -->
+              <div class="timeline-item timeline-item--past">
+                <div class="timeline-dot timeline-dot--inactive">
+                  <img src="images/expert_company_plusx.svg" alt="Plus X">
+                </div>
+                <div class="timeline-content">
+                  <p class="career-company">Plus X</p>
+                  <p class="career-title">BX & UI Designer • 2013 - 2016</p>
+                  <p class="career-desc">Brand Identity Design for Fin-tech Startups</p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ④ 멘토링 스타일 -->
+          <section class="style-section">
+            <p class="section-heading section-heading--gray">멘토링 스타일</p>
+            <p class="style-text">단순히 지식을 전달하는 것을 넘어, 실무에서 마주하는 복잡한 문제들을 구조적으로 해결하는 시야를 공유합니다.</p>
+            <p class="style-text">비즈니스 임팩트를 고려한 디자인 결정 로직과 커리어성장을 위한 포트폴리오 전략을 1:1 맞춤형으로 가이드해 드립니다.</p>
+          </section>
+
+          <!-- ⑤ CTA 버튼 -->
+          <button class="btn-cta">J.young 멘토에게 1:1 질문하기</button>
+
+        </main>
+      </div>
+    </div>
+
+    <!-- 네비게이션 바 -->
+    <nav class="nav-bar">
+      <a href="home" class="nav-tab">
+        <img src="images/nav_home.svg" alt="Home">
+        <span>Home</span>
+      </a>
+      <a href="roadmap" class="nav-tab nav-tab--active">
+        <img src="images/nav_route.svg" alt="Route">
+        <span>Route</span>
+      </a>
+      <a href="log_write" class="nav-center">
+        <img src="images/nav_center.svg" alt="">
+      </a>
+      <a href="log_calendar" class="nav-tab">
+        <img src="images/nav_log.svg" alt="Log">
+        <span>Log</span>
+      </a>
+      <a href="my_page" class="nav-tab">
+        <img src="images/nav_my.svg" alt="My">
+        <span>My</span>
+      </a>
+    </nav>
+  </div>
+</body>
+</html>
