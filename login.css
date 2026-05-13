@@ -44,13 +44,10 @@ body {
 }
 
 /* ── Header section ── */
-/* inner padding-top: 92px, content padding: 0 20px, gap: 28px */
 .header-section {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  padding-top: 92px;
-  padding: 92px 20px 0;
 }
 
 .logo-row {
