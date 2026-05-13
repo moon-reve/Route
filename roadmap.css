@@ -448,7 +448,7 @@ body {
 .tag--terracotta { background: rgba(196,135,106,0.2);  color: #C4876A; }
 .tag--in-progress{ background: rgba(232,148,26,0.2);   color: #E8941A; font-weight: 600; }
 .tag--plan       { background: rgba(209,209,209,0.25); color: #AAAAAA; }
-
+.tag--project    { background: rgba(232,148,26,0.15);  color: #E8941A; }
 /* ── WEEKS REMAINING: column, gap 36px, center, opacity 0.35 ── */
 .weeks-remaining {
   display: flex;
