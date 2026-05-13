@@ -243,58 +243,31 @@ body {
   display: block;
 }
 
-/* book-right: row, gap 9px, flex 1로 나머지 공간 채움 */
+/* book-right: column, 텍스트 위 + 버튼 오른쪽 하단 */
 .book-right {
   display: flex;
-  flex-direction: row;
-  gap: 9px;
-  align-items: stretch;
+  flex-direction: column;
+  gap: 8px;
   flex: 1;
   min-width: 0;
 }
 
-/* title info: column, justify flex-end, gap 4px */
+/* title info: column, gap 4px */
 .book-info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 4px;
-  flex: 1;
-  min-width: 0;
 }
 
-/* btn-box: column, width 100px, 버튼은 항상 하단 정렬 */
+/* btn-box: 버튼 오른쪽 정렬 */
 .book-btn-box {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  align-items: stretch;
-  width: 100px;
-  flex-shrink: 0;
 }
 
-/* ── 430px 미만: 버튼 wrap → 오른쪽 하단 정렬 ── */
-@media (max-width: 429px) {
-  .card-book {
-    gap: 8px;
-  }
-  .book-right {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-  }
-  .book-info {
-    justify-content: flex-start;
-  }
-  .book-btn-box {
-    width: auto;
-    align-self: flex-end;
-    justify-content: flex-end;
-  }
-  .card-btn--sm {
-    width: auto;
-    padding: 8px 20px;
-  }
+.card-btn--sm {
+  width: auto;
+  padding: 8px 20px;
 }
 
 /* ════════ CARD PROJECT ════════ */
