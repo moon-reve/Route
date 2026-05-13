@@ -1,0 +1,230 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 스크린 ── */
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  background: #F9F9F9;
+}
+
+/* ── 배경 이미지: 절대 위치, 40% 투명 ── */
+.pre-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 페이지 래퍼: 스크롤 ── */
+.pre-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 40px 24px 125px;
+}
+.pre-wrap::-webkit-scrollbar { display: none; }
+
+/* ── 메인: backdrop-filter blur(2px) ── */
+.pre-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* ════════ HEADER ════════ */
+.pre-header {
+  display: flex;
+  align-items: center;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.btn-back-img {
+  width: auto;
+  height: 41px;
+  display: block;
+}
+
+/* ════════ CONTENTS ════════ */
+.pre-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+
+/* ── TOP: 프로그레스 + 질문 ── */
+.pre-top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── PROGRESSBAR ── */
+.progressbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 16px 0;
+  height: 68px;
+  background: rgba(212, 168, 83, 0.08);
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.step-label {
+  font-weight: 700;
+  font-size: 10px;
+  color: #5A5A5A;
+  align-self: flex-start;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(30, 30, 30, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #D4A853;
+  border-radius: 2px;
+}
+
+/* ── QUESTION CARD ── */
+.question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #E8E8E8;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.question-title {
+  font-weight: 700;
+  font-size: 22px;
+  color: #1E1E1E;
+  line-height: 1.3;
+}
+
+.question-sub {
+  font-weight: 400;
+  font-size: 15px;
+  color: #5A5A5A;
+  line-height: 1.4;
+}
+
+/* ════════ OPTION LIST ════════ */
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ── OPTION ITEM ── */
+.option-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 14px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid #E8E8E8;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.15s;
+}
+
+.option-item--selected {
+  background: rgba(212, 168, 83, 0.1);
+  border-color: rgba(212, 168, 83, 0.55);
+}
+
+.option-text {
+  font-weight: 400;
+  font-size: 17px;
+  color: #1E1E1E;
+  line-height: 1.3;
+}
+
+.option-radio {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ════════ NEXT BUTTON ════════ */
+.btn-next {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 86px;
+  background: #1A1C1E;
+  border-radius: 10px;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: opacity 0.15s;
+}
+
+.btn-next:hover { opacity: 0.85; }
+
+.btn-next-text {
+  font-weight: 700;
+  font-size: 16px;
+  color: #F9F9F9;
+}
+
+.btn-next-icon {
+  width: 32px;
+  height: 30px;
+  object-fit: contain;
+}
