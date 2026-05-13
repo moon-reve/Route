@@ -219,7 +219,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 10px;
+  gap: 12px;
   padding: 15px;
   background: #FFFFFF;
   border: 1px solid #D1D1D1;
