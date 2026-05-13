@@ -56,8 +56,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ════════ HEADER ════════ */
