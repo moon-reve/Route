@@ -228,6 +228,8 @@ body {
   gap: 10px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* ── WEEK 05: PLAN 축소 (Figma: rgba(255,255,255,0.5), stroke #D1D1D1 1px dashed, h:48) ── */
