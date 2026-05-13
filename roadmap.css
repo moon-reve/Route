@@ -103,8 +103,8 @@ body {
   padding: 18px 0;
   height: 78px;
   background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -203,8 +203,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ── WEEK 02/03: DONE 축소 (Figma: rgba(255,255,255,0.65), stroke rgba(212,168,83,0.3) 1px, h:48) ── */
@@ -216,8 +216,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ── WEEK 04: ACTIVE 확장 (Figma: rgba(255,255,255,0.78), stroke #E8941A 2px) ── */
@@ -228,8 +228,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   text-decoration: none;
   cursor: pointer;
 }
@@ -243,8 +243,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ── WEEK 06: PLAN 축소 (Figma: rgba(255,255,255,0.4)) ── */
@@ -534,8 +534,8 @@ body {
   background: rgba(255, 255, 255, 0.3);
   border: 0.8px solid #E0E0E0;
   border-radius: 10px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .remaining-text-group {
@@ -597,8 +597,8 @@ body {
   align-items: center;
   padding: 10px 4px;
   background: rgba(242, 242, 242, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 1px solid #D1D1D1;
   border-radius: 50px;
   z-index: 100;
