@@ -13,22 +13,49 @@ body {
 .screen {
   position: relative;
   width: 100%;
-  height: 100vh; .header {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #F9F9F9;
+}
+
+.scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+.project-page { width: 100%; }
+
+/* ── main: column, gap 20px, padding 40px 0 125px ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0 125px;
+  width: 100%;
+}
+
+/* ════════ HEADER ════════ */
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 24px;
 }
 
-
 .header-title {
   font-weight: 700;
   font-size: 14px;
   color: #1A1C1E;
-  white-space: nowrap;
 }
 
-/* ════════ TABS: row, space-between, padding 0 30px, border-bottom ════════ */
+/* ════════ TABS ════════ */
 .tabs {
   display: flex;
   flex-direction: row;
@@ -51,7 +78,6 @@ body {
   cursor: pointer;
 }
 
-/* 프로젝트 탭 활성 */
 .tab--active {
   font-weight: 700;
   border-bottom: 2px solid #1A1C1E;
@@ -66,7 +92,7 @@ body {
   padding: 0 24px;
 }
 
-/* ════════ SECTION: column, gap 11px / 14px ════════ */
+/* ════════ SECTION ════════ */
 .section {
   display: flex;
   flex-direction: column;
@@ -75,14 +101,11 @@ body {
 
 .section:last-child { gap: 14px; }
 
-.section-title {
-  font-weight: 700;
-  font-size: 16px;
-}
-.section-title--dark  { color: #000000; }
-.section-title--gray  { color: #555555; }
+.section-title { font-weight: 700; font-size: 16px; }
+.section-title--dark { color: #000000; }
+.section-title--gray { color: #555555; }
 
-/* ════════ ONGOING CARD: row, center, gap 16px, padding 15px ════════ */
+/* ════════ ONGOING CARD ════════ */
 .card-ongoing {
   display: flex;
   flex-direction: row;
@@ -94,7 +117,6 @@ body {
   border-radius: 12px;
 }
 
-/* img-box: 64×64, border 1px #D1D1D1, radius 8px */
 .card-img-box {
   width: 64px;
   height: 64px;
@@ -103,14 +125,8 @@ body {
   overflow: hidden;
   flex-shrink: 0;
 }
-.card-img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.card-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* box-right: column, gap 7px, flex-1 */
 .card-body {
   display: flex;
   flex-direction: column;
@@ -126,7 +142,6 @@ body {
   line-height: 1.3;
 }
 
-/* ─ Progress bar ─ */
 .progress-track {
   width: 100%;
   height: 6px;
@@ -135,30 +150,13 @@ body {
   overflow: hidden;
 }
 
-.progress-fill {
-  height: 100%;
-  border-radius: 3px;
-}
+.progress-fill { height: 100%; border-radius: 3px; }
+.progress-fill--gold { width: 71.7%; background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%); }
+.progress-fill--sage { width: 50%; background: #8FAF8A; }
 
-/* 카드1: 198/276 ≈ 71.7%, gold gradient */
-.progress-fill--gold {
-  width: 71.7%;
-  background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%);
-}
+.card-meta { font-weight: 400; font-size: 13px; color: #5F5E5E; }
 
-/* 카드2: 138/276 = 50%, sage */
-.progress-fill--sage {
-  width: 50%;
-  background: #8FAF8A;
-}
-
-.card-meta {
-  font-weight: 400;
-  font-size: 13px;
-  color: #5F5E5E;
-}
-
-/* ════════ COMPLETED CARD: row, gap 16px, padding 15px, bg #F2F2F2 ════════ */
+/* ════════ COMPLETED CARD ════════ */
 .card-completed {
   display: flex;
   flex-direction: row;
@@ -176,13 +174,8 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
-.card-completed-img img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
+.card-completed-img img { width: 64px; height: 64px; object-fit: contain; }
 
-/* box-right: column, gap 4px */
 .card-completed-body {
   display: flex;
   flex-direction: column;
@@ -218,7 +211,7 @@ body {
   gap: 4px;
   text-decoration: none;
 }
-.nav-tab img { width: 24px; height: 24px; object-fit: contain; }
+.nav-tab img  { width: 24px; height: 24px; object-fit: contain; }
 .nav-tab span { font-weight: 400; font-size: 9px; color: #D1D1D1; line-height: 1; }
 
 .nav-tab--active img  { filter: brightness(0); }
@@ -228,8 +221,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;        /* nav-tab과 동일한 레이아웃 높이 유지 */
-  overflow: visible;   /* 이미지는 위로 삐져나오게 */
+  height: 40px;
+  overflow: visible;
   transform: translateY(-21px);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
