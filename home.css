@@ -142,7 +142,6 @@ body {
 
 /* chip: padding 10px 14px, radius 50px */
 .chip {
-  flex: 1;
   text-align: center;
   padding: 10px 14px;
   border-radius: 50px;
