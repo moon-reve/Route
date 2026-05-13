@@ -10,6 +10,72 @@ body {
   padding: 0;
 }
 
+/* ── Screen ── */
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #F9F9F9;
+}
+
+/* ══════════════════════════
+   SLIDE LAYER
+   배경 + 텍스트 콘텐츠 → 오른쪽에서 왼쪽으로 슬라이드 인
+══════════════════════════ */
+.slide-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 140px; /* 하단 컨트롤 위 여백 */
+  animation: slideInFromRight 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── Background image (slide-layer 안에서 절대 위치) ── */
+.ob-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Text content (bg 위에 표시) ── */
+.ob-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 0 24px;
+}
+
+/* ── Title ── */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.title-sub {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1C1E;
+  text-align: center;
+}
+
 .title-main {
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
@@ -19,9 +85,8 @@ body {
   line-height: 1.3;
 }
 
-/* title 너비 변형 */
-.title--w200 { width: 200px; }
-.title--w236 { width: 236px; }
+.title--w200 { max-width: 200px; }
+.title--w236 { max-width: 236px; }
 
 /* ── Divider line ── */
 .ob-line {
@@ -30,14 +95,12 @@ body {
 }
 
 /* ── Body text ── */
-/* column, stretch/fill, gap: 7px */
 .body-text {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 7px;
   width: 100%;
-  padding: 0 24px;
 }
 
 .body-text p {
@@ -50,16 +113,20 @@ body {
 }
 
 /* ══════════════════════════
-   BOTTOM BAR
+   BOTTOM CONTROLS
+   고정 — 슬라이드 애니메이션 없음
 ══════════════════════════ */
-/* row, space-between, center, padding: 0 40px */
-.bottom-bar {
+.bottom-controls {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  width: 100%;
+  z-index: 100;
 }
 
 /* ── SKIP ── */
@@ -70,8 +137,8 @@ body {
   color: #1A1C1E;
   text-decoration: none;
   letter-spacing: 0.02em;
+  min-width: 40px;
 }
-
 .skip-btn:hover { opacity: 0.6; }
 
 /* ── Slide dots ── */
@@ -82,17 +149,14 @@ body {
   gap: 6px;
 }
 
-/* 비활성 도트 — 6×6 원 */
 .dot {
   display: block;
   width: 6px;
   height: 6px;
   border-radius: 3px;
   background: rgba(26, 28, 30, 0.18);
-  transition: width 0.3s ease, background 0.3s ease;
 }
 
-/* 활성 도트 — 24×6 pill, Starline Gold */
 .dot--active {
   width: 24px;
   background: #E8941A;
@@ -111,25 +175,21 @@ body {
   height: 52px;
   display: block;
 }
-
 .next-btn:hover { opacity: 0.85; }
 
 /* ══════════════════════════
-   CTA 버튼 (온보딩 3)
+   온보딩 3: CTA 버튼 확장 애니메이션
+   오른쪽 기준으로 왼쪽으로 늘어남
 ══════════════════════════ */
-/* column, padding: 0 40px, width: 430 */
-.cta-box {
-  padding: 0 40px;
-  width: 100%;
+.bottom-controls--ob3 {
+  justify-content: flex-end;
 }
 
-/* row, center, padding: 16px 80px, radius: 55px, bg: #E8941A */
 .cta-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 16px 80px;
+  height: 52px;
   background: #E8941A;
   border-radius: 55px;
   font-family: 'Pretendard', sans-serif;
@@ -137,8 +197,30 @@ body {
   font-size: 16px;
   color: #FFFFFF;
   text-decoration: none;
-  text-align: center;
-  transition: opacity 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+
+  /* 오른쪽 원(52px)에서 왼쪽으로 확장 */
+  animation: ctaExpand 0.55s ease-out 0.3s both;
+}
+
+@keyframes ctaExpand {
+  0%   {
+    width: 52px;
+    padding: 0;
+    letter-spacing: -0.5em;
+    color: transparent;
+  }
+  60%  {
+    letter-spacing: -0.5em;
+    color: transparent;
+  }
+  100% {
+    width: calc(100vw - 80px);
+    padding: 0 24px;
+    letter-spacing: normal;
+    color: #FFFFFF;
+  }
 }
 
 .cta-btn:hover { opacity: 0.85; }
