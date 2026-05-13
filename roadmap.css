@@ -470,6 +470,13 @@ body {
   gap: 8px;
 }
 
+.item-title-row .item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
 /* 피드백 보기 버튼 */
 .feedback-btn {
   display: inline-flex;
