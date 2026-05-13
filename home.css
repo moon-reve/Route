@@ -55,7 +55,16 @@ body {
 }
 
 /* ════════════════════════════
-   ① HERO
+   ① TOP: 히어로 + 칩 묶음 (gap 8px)
+════════════════════════════ */
+.section-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ════════════════════════════
+   HERO
 ════════════════════════════ */
 /* section padding 0 0 30px */
 .section-hero {
