@@ -278,6 +278,27 @@ body {
   align-items: center;
 }
 
+/* 닫힌 카드 태그 점 */
+.week-dots {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+
+.week-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.week-dot--gold       { background: #D4A853; }
+.week-dot--sage       { background: #8FAF8A; }
+.week-dot--terracotta { background: #C4876A; }
+.week-dot--orange     { background: #E8941A; }
+
 .card-head-left {
   display: flex;
   flex-direction: row;
