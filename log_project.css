@@ -38,7 +38,7 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   padding: 40px 0 125px;
   width: 100%;
 }
@@ -49,6 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 24px;
+  margin-bottom: -8px;
 }
 
 .header-title {
