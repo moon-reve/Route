@@ -370,12 +370,11 @@ body {
   padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-}
-.card-list::-webkit-scrollbar { display: none; }
-.card-list {
-  touch-action: pan-x; /* 가로 스크롤만 처리 */
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 24px;
   cursor: grab;
 }
+.card-list::-webkit-scrollbar { display: none; }
 .card-list.is-dragging { cursor: grabbing; }
 
 /* card: 180px wide, column, radius 10px, border */
@@ -383,6 +382,7 @@ body {
   text-decoration: none;
   flex-shrink: 0;
   width: 180px;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
