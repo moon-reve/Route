@@ -215,6 +215,14 @@ body {
   color: #555555;
 }
 
+/* 채팅 버튼 + 모달 래퍼 */
+.chat-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .btn-chat {
   display: flex;
   align-items: center;
@@ -232,6 +240,39 @@ body {
   height: 32px;
   object-fit: contain;
   display: block;
+}
+
+/* 프로필 보기 모달 */
+.profile-modal {
+  display: none;
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+}
+
+.profile-modal.is-open {
+  display: inline-flex;
+}
+
+.profile-modal-btn {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #999999;
+  background: #F2F2F2;
+  border-radius: 6px;
+  color: #1A1C1E;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 /* ════════ ③ 피드백 코멘트 ════════ */

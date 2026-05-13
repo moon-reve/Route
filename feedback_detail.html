@@ -60,9 +60,14 @@
                   <span class="mentor-role">Senior Product Designer</span>
                 </div>
               </div>
-              <button class="btn-chat">
-                <img src="images/feedback_btn_chat.svg" alt="질문하기">
-              </button>
+              <div class="chat-wrap">
+                <div class="profile-modal" id="profileModal">
+                  <a href="expert_detail" class="profile-modal-btn">프로필 보기</a>
+                </div>
+                <button class="btn-chat" id="chatBtn" onclick="toggleModal(event)">
+                  <img src="images/feedback_btn_chat.svg" alt="질문하기">
+                </button>
+              </div>
             </div>
 
             <!-- ③ 피드백 상세 코멘트 -->
@@ -127,7 +132,7 @@
         <img src="images/nav_home.svg" alt="Home">
         <span>Home</span>
       </a>
-      <a href="roadmap" class="nav-tab nav-tab--active">
+      <a href="roadmap" class="nav-tab">
         <img src="images/nav_route.svg" alt="Route">
         <span>Route</span>
       </a>
@@ -145,5 +150,15 @@
     </nav>
 
   </div>
+  <script>
+    function toggleModal(e) {
+      e.stopPropagation();
+      const modal = document.getElementById('profileModal');
+      modal.classList.toggle('is-open');
+    }
+    document.addEventListener('click', () => {
+      document.getElementById('profileModal').classList.remove('is-open');
+    });
+  </script>
 </body>
 </html>
