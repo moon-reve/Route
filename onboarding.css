@@ -39,6 +39,11 @@ body {
   to   { transform: translateX(0); }
 }
 
+/* 온보딩1: 애니메이션 없이 바로 표시 */
+.slide-layer--static {
+  animation: none;
+}
+
 /* ── Background image (slide-layer 안에서 절대 위치) ── */
 .ob-bg {
   position: absolute;
