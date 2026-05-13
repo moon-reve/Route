@@ -227,12 +227,11 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px);
-  max-width: 390px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 10px 40px;
+  padding: 10px 8px;
   background: rgba(242, 242, 242, 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -244,9 +243,9 @@ body {
 .nav-side {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 90px;
+  flex: 1;
 }
 
 .nav-tab {
