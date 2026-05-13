@@ -263,14 +263,14 @@ body {
   min-width: 0;
 }
 
-/* btn-box: column, width 100px, padding-top 68px (피그마 스펙) */
+/* btn-box: column, width 100px, 버튼은 항상 하단 정렬 */
 .book-btn-box {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: stretch;
   width: 100px;
   flex-shrink: 0;
-  padding-top: 68px;
 }
 
 /* ════════ CARD PROJECT ════════ */
