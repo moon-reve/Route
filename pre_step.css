@@ -29,7 +29,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.4;
+  opacity: 0.6;
   pointer-events: none;
   z-index: 0;
 }
@@ -51,13 +51,13 @@ body {
 }
 .pre-wrap::-webkit-scrollbar { display: none; }
 
-/* ── 메인: backdrop-filter blur(2px) ── */
+/* ── 메인: backdrop-filter ── */
 .pre-main {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* ════════ HEADER ════════ */
@@ -104,8 +104,6 @@ body {
   background: rgba(212, 168, 83, 0.08);
   border: 1px solid rgba(212, 168, 83, 0.3);
   border-radius: 10px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .step-label {
@@ -138,8 +136,6 @@ body {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid #E8E8E8;
   border-radius: 10px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .question-title {
@@ -175,8 +171,6 @@ body {
   border: 1px solid #E8E8E8;
   border-radius: 10px;
   cursor: pointer;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   transition: all 0.15s;
 }
 
