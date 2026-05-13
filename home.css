@@ -291,6 +291,7 @@ body {
 .mtag--sage       { background: rgba(143,175,138,0.2);  color: #8FAF8A; }
 .mtag--terracotta { background: rgba(196,135,106,0.2);  color: #C4876A; }
 .mtag--progress   { background: rgba(232,148,26,0.2);   color: #E8941A; font-weight: 600; }
+.mtag--project    { background: rgba(232,148,26,0.15);  color: #E8941A; }
 .mtag--plan       { background: rgba(209,209,209,0.25); color: #AAAAAA; }
 
 /* ════════════════════════════
