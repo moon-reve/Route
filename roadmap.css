@@ -453,6 +453,38 @@ body {
 .tag--in-progress{ background: rgba(232,148,26,0.2);   color: #E8941A; font-weight: 600; }
 .tag--plan       { background: rgba(209,209,209,0.25); color: #AAAAAA; }
 .tag--project    { background: rgba(232,148,26,0.15);  color: #E8941A; }
+
+/* ── DONE 카드 토글 ── */
+.done-open-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 아이템 타이틀 + 피드백 버튼 행 */
+.item-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* 피드백 보기 버튼 */
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: rgba(232, 148, 26, 0.12);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #E8941A;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* ── WEEKS REMAINING: column, gap 36px, center, opacity 0.35 ── */
 .weeks-remaining {
   display: flex;
