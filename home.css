@@ -132,20 +132,18 @@ body {
 /* ════════════════════════════
    ② CHIPS
 ════════════════════════════ */
-/* row, gap 8px, padding 0 20px — 스크롤 없음 */
+/* row, space-evenly — 칩 균등 배분 */
 .section-chips {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
-  padding: 0 20px;
-  margin-left: -24px;
-  margin-right: -24px;
+  justify-content: space-evenly;
 }
 
 /* chip: padding 10px 14px, radius 50px */
 .chip {
-  flex-shrink: 0;
+  flex: 1;
+  text-align: center;
   padding: 10px 14px;
   border-radius: 50px;
   border: 1px solid #D1D1D1;
