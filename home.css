@@ -41,11 +41,48 @@ body {
   padding: 40px 24px 200px;
 }
 
-/* header SVG — 탑 헤더 (상단 고정) */
+/* 탑 헤더: row, space-between, center */
 .home-header {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin-bottom: 0;
+}
+
+/* 로고 영역: row, center, gap 8px */
+.home-header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 로고 아이콘: 30×30, radius 8px */
+.home-logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Route 텍스트: Georgia Bold 20px, #1A1C1E */
+.home-logo-text {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1A1C1E;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+/* 알림 아이콘 */
+.home-alert-icon {
+  width: 22px;
+  height: 23px;
+  object-fit: contain;
+  display: block;
 }
 
 /* ── Sections container: column, gap 58px ── */
