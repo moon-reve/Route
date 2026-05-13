@@ -5,18 +5,16 @@
 }
 
 body {
-  background: #E8E8E8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .screen {
   position: relative;
-  width: 430px;
-  height: 932px;
+  width: 100%;
+  height: 100vh; /* fallback */
+  height: 100svh;
   overflow: hidden;
   background: #F9F9F9;
 }
@@ -35,7 +33,7 @@ body {
 /* ── 전체 컨테이너 ── */
 .daily-container {
   padding: 40px 24px 125px;
-  width: 430px;
+  width: 100%;
 }
 
 /* ── main: column, gap 16px ── */
@@ -324,10 +322,11 @@ body {
 
 /* ════════ NAV BAR ════════ */
 .nav-bar {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
-  left: 20px;
-  width: 390px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
