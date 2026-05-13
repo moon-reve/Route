@@ -36,11 +36,11 @@ body {
   width: 100%;
 }
 
-/* ── main: column, gap 25px, padding 40px 0 125px ── */
+/* ── main: column, gap 16px, padding 40px 0 125px ── */
 .main {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 16px;
   padding: 40px 0 125px;
   width: 100%;
 }
