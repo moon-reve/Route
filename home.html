@@ -187,6 +187,16 @@
       const walk = (x - startX) * 1.5;
       cardList.scrollLeft = scrollLeft - walk;
     });
+
+    // card-text-box 랜덤 배경색
+    const textBoxColors = [
+      'rgba(232,148,26,0.2)',
+      'rgba(143,175,138,0.2)',
+      'rgba(196,135,106,0.2)'
+    ];
+    document.querySelectorAll('.card-text-box').forEach((box, i) => {
+      box.style.background = textBoxColors[i % textBoxColors.length];
+    });
   </script>
 </body>
 </html>
