@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Route — 사전질문 5/5</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="pre_step.css">
+  <link rel="stylesheet" href="pre_step5.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Route">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F9F9F9">
+</head>
+<body>
+  <div class="screen">
+
+    <!-- 배경 이미지 -->
+    <img src="images/pre_bg.svg" alt="" class="pre-bg">
+
+    <!-- 페이지 래퍼 -->
+    <div class="pre-wrap">
+
+      <!-- 메인 -->
+      <div class="pre-main">
+
+        <!-- 헤더 -->
+        <header class="pre-header">
+          <a href="#" onclick="history.back(); return false;" class="btn-back">
+            <img src="images/pre_header.svg" alt="뒤로가기" class="btn-back-img">
+          </a>
+        </header>
+
+        <!-- 콘텐츠 -->
+        <div class="pre-contents">
+
+          <!-- 상단: 프로그레스 + 질문 -->
+          <div class="pre-top">
+
+            <!-- 프로그레스바 -->
+            <div class="progressbar">
+              <span class="step-label">STEP 05 / 05</span>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- 질문 카드 -->
+            <div class="question-card">
+              <p class="question-title">어떤 분야의 앱을 기획하고 싶으신가요?</p>
+              <p class="question-sub">선택하신 도메인은 기획 초안 생성의 핵심 테마로 활용됩니다.</p>
+            </div>
+
+          </div>
+
+          <!-- 도메인 그리드 -->
+          <div class="domain-grid">
+
+            <div class="domain-row">
+              <div class="domain-card" onclick="selectDomain(this)">
+                <img src="images/domain_ecommerce.svg" alt="이커머스" class="domain-icon">
+                <span class="domain-name">이커머스/쇼핑</span>
+              </div>
+              <div class="domain-card" onclick="selectDomain(this)">
+                <img src="images/domain_fintech.svg" alt="핀테크" class="domain-icon">
+                <span class="domain-name">핀테크 (금융)</span>
+              </div>
+            </div>
+
+            <div class="domain-row">
+              <div class="domain-card" onclick="selectDomain(this)">
+                <img src="images/domain_health.svg" alt="헬스케어" class="domain-icon">
+                <span class="domain-name">헬스케어/운동</span>
+              </div>
+              <div class="domain-card" onclick="selectDomain(this)">
+                <img src="images/domain_edu.svg" alt="에듀테크" class="domain-icon">
+                <span class="domain-name">에듀테크 (교육)</span>
+              </div>
+            </div>
+
+            <div class="domain-row">
+              <div class="domain-card" onclick="selectDomain(this)">
+                <img src="images/domain_mobility.svg" alt="모빌리티" class="domain-icon">
+                <span class="domain-name">모빌리티 (이동)</span>
+              </div>
+              <div class="domain-card" onclick="selectDomain(this)">
+                <img src="images/domain_sns.svg" alt="SNS" class="domain-icon">
+                <span class="domain-name">SNS/커뮤니티</span>
+              </div>
+            </div>
+
+          </div><!-- /domain-grid -->
+
+        </div><!-- /pre-contents -->
+      </div><!-- /pre-main -->
+
+      <!-- 마치기 버튼 -->
+      <a href="home" class="btn-next">
+        <span class="btn-next-text">마치기</span>
+      </a>
+
+    </div><!-- /pre-wrap -->
+  </div>
+
+  <script>
+    function selectDomain(card) {
+      const isSelected = card.classList.contains('domain-card--selected');
+      document.querySelectorAll('.domain-card').forEach(c => {
+        c.classList.remove('domain-card--selected');
+      });
+      if (!isSelected) {
+        card.classList.add('domain-card--selected');
+      }
+    }
+  </script>
+</body>
+</html>
