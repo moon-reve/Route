@@ -14,7 +14,7 @@ body {
 /* ── 스크린 ── */
 .screen {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   height: 100svh;
   overflow: hidden;
