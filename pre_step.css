@@ -46,8 +46,7 @@ body {
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  padding: 40px 24px 125px;
+  padding: 40px 24px 100px;
 }
 .pre-wrap::-webkit-scrollbar { display: none; }
 
@@ -215,12 +214,17 @@ body {
 
 /* ════════ NEXT BUTTON ════════ */
 .btn-next {
+  position: fixed;
+  bottom: 20px;
+  left: 24px;
+  right: 24px;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 32px;
-  padding: 12px 86px;
+  padding: 14px 0;
   background: #1A1C1E;
   border-radius: 10px;
   text-decoration: none;
