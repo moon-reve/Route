@@ -132,6 +132,10 @@
 
       const sectionReminder = document.getElementById('section-reminder');
 
+      // 날짜 초기화
+      resetDates();
+      closeCal();
+
       if (type === 'log') {
         linkGroup.style.display     = 'none';
         sectionDur.style.display    = 'none';
@@ -163,6 +167,19 @@
     let startDate = null;
     let endDate   = null;
     const today   = new Date();
+
+    function resetDates() {
+      startDate = null;
+      endDate   = null;
+      calYear   = today.getFullYear();
+      calMonth  = today.getMonth();
+      const startEl = document.getElementById('start-date-text');
+      const endEl   = document.getElementById('end-date-text');
+      startEl.textContent = '시작일 선택';
+      startEl.classList.add('date-placeholder');
+      endEl.textContent   = '종료일 선택';
+      endEl.classList.add('date-placeholder');
+    }
 
     function openCal(target, anchor) {
       calTarget = target;
