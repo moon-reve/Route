@@ -188,14 +188,17 @@
       cardList.scrollLeft = scrollLeft - walk;
     });
 
-    // card-text-box 랜덤 배경색
-    const textBoxColors = [
-      'rgba(232,148,26,0.2)',
-      'rgba(143,175,138,0.2)',
-      'rgba(196,135,106,0.2)'
+    // card-text-box 배경색 + card 테두리색 적용
+    const cardColors = [
+      { bg: 'rgba(232,148,26,0.2)',  border: 'rgba(232,148,26,0.7)'  },
+      { bg: 'rgba(143,175,138,0.2)', border: 'rgba(143,175,138,0.7)' },
+      { bg: 'rgba(196,135,106,0.2)', border: 'rgba(196,135,106,0.7)' }
     ];
-    document.querySelectorAll('.card-text-box').forEach((box, i) => {
-      box.style.background = textBoxColors[i % textBoxColors.length];
+    document.querySelectorAll('.card').forEach((card, i) => {
+      const c = cardColors[i % cardColors.length];
+      card.style.border = `1px solid ${c.border}`;
+      const textBox = card.querySelector('.card-text-box');
+      if (textBox) textBox.style.background = c.bg;
     });
   </script>
 </body>
