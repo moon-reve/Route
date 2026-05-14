@@ -48,7 +48,7 @@
 }
 
 .domain-card--selected .domain-icon {
-  filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(600%) hue-rotate(2deg) brightness(105%);
+  filter: brightness(0) saturate(100%) invert(72%) sepia(55%) saturate(500%) hue-rotate(10deg) brightness(104%);
 }
 
 /* ── DOMAIN NAME ── */
