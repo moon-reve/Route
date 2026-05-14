@@ -76,16 +76,16 @@
           </div>
 
           <!-- 기간 설정 -->
-          <div class="section-duration">
+          <div class="section-duration" id="section-duration">
             <div class="section-label">목표 기간을 설정해 주세요</div>
             <div class="date-row">
-              <div class="date-box">
-                <span class="date-text">2026. 05. 08</span>
+              <div class="date-box" onclick="openCal('start', this)">
+                <span class="date-text" id="start-date-text">시작일 선택</span>
                 <img src="images/log_calendar.svg" alt="" class="calendar-icon">
               </div>
               <span class="date-sep">~</span>
-              <div class="date-box">
-                <span class="date-text date-placeholder">종료일 선택</span>
+              <div class="date-box" onclick="openCal('end', this)">
+                <span class="date-text date-placeholder" id="end-date-text">종료일 선택</span>
                 <img src="images/log_calendar.svg" alt="" class="calendar-icon">
               </div>
             </div>
@@ -105,31 +105,140 @@
     </div>
   </div>
 
+  <!-- 캘린더 팝업 -->
+  <div id="cal-popup">
+    <div class="cal-header">
+      <button class="cal-nav" onclick="moveCal(-1)">&#8249;</button>
+      <span class="cal-title" id="cal-title"></span>
+      <button class="cal-nav" onclick="moveCal(1)">&#8250;</button>
+    </div>
+    <div class="cal-days">
+      <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+  </div>
+
   <script>
+    // ── 탭 전환 ──
     function selectTab(el, type) {
       document.querySelectorAll('.resource-tab').forEach(t => t.classList.remove('resource-tab--active'));
       el.classList.add('resource-tab--active');
 
-      const linkGroup   = document.getElementById('link-group');
-      const linkLabel   = document.getElementById('link-label');
-      const titleLabel  = document.getElementById('title-label');
-      const heroCaption = document.getElementById('hero-caption');
+      const linkGroup    = document.getElementById('link-group');
+      const linkLabel    = document.getElementById('link-label');
+      const titleLabel   = document.getElementById('title-label');
+      const heroCaption  = document.getElementById('hero-caption');
+      const sectionDur   = document.getElementById('section-duration');
 
       if (type === 'log') {
-        linkGroup.style.display = 'none';
-        titleLabel.textContent  = '제목 (필수)';
-        heroCaption.textContent = '탭하여 오늘의 항해 순간을 담아보세요';
+        linkGroup.style.display  = 'none';
+        sectionDur.style.display = 'none';
+        titleLabel.textContent   = '제목 (필수)';
+        heroCaption.textContent  = '탭하여 오늘의 항해 순간을 담아보세요';
       } else if (type === 'book') {
-        linkGroup.style.display = 'none';
-        titleLabel.textContent  = '항로 이름 (필수)';
-        heroCaption.textContent = '링크를 입력하면 썸네일이 자동으로 채워져요';
+        linkGroup.style.display  = 'none';
+        sectionDur.style.display = '';
+        titleLabel.textContent   = '항로 이름 (필수)';
+        heroCaption.textContent  = '링크를 입력하면 썸네일이 자동으로 채워져요';
       } else {
-        linkGroup.style.display = '';
-        titleLabel.textContent  = '항로 이름 (필수)';
-        heroCaption.textContent = '링크를 입력하면 썸네일이 자동으로 채워져요';
-        linkLabel.textContent   = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
+        linkGroup.style.display  = '';
+        sectionDur.style.display = '';
+        titleLabel.textContent   = '항로 이름 (필수)';
+        heroCaption.textContent  = '링크를 입력하면 썸네일이 자동으로 채워져요';
+        linkLabel.textContent    = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
+      }
+      closeCal();
+    }
+
+    // ── 캘린더 ──
+    const MONTHS = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+    let calTarget = null;
+    let calYear   = new Date().getFullYear();
+    let calMonth  = new Date().getMonth();
+    let startDate = null;
+    let endDate   = null;
+    const today   = new Date();
+
+    function openCal(target, anchor) {
+      calTarget = target;
+      const popup = document.getElementById('cal-popup');
+      popup.style.display = 'block';
+
+      const rect = anchor.getBoundingClientRect();
+      let top  = rect.bottom + 8;
+      let left = rect.left;
+      if (left + 276 > window.innerWidth) left = window.innerWidth - 284;
+      if (top + 260 > window.innerHeight) top = rect.top - 268;
+      popup.style.top  = top + 'px';
+      popup.style.left = left + 'px';
+
+      renderCal();
+    }
+
+    function closeCal() {
+      document.getElementById('cal-popup').style.display = 'none';
+    }
+
+    function moveCal(dir) {
+      calMonth += dir;
+      if (calMonth > 11) { calMonth = 0;  calYear++; }
+      if (calMonth < 0)  { calMonth = 11; calYear--; }
+      renderCal();
+    }
+
+    function renderCal() {
+      document.getElementById('cal-title').textContent = `${calYear}년 ${MONTHS[calMonth]}`;
+      const grid      = document.getElementById('cal-grid');
+      grid.innerHTML  = '';
+      const firstDay  = new Date(calYear, calMonth, 1).getDay();
+      const lastDay   = new Date(calYear, calMonth + 1, 0).getDate();
+      const selDate   = calTarget === 'start' ? startDate : endDate;
+
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement('span');
+        blank.className = 'cal-empty';
+        grid.appendChild(blank);
+      }
+      for (let d = 1; d <= lastDay; d++) {
+        const btn = document.createElement('button');
+        btn.className   = 'cal-day';
+        btn.textContent = d;
+        const key = `${calYear}-${calMonth}-${d}`;
+        if (selDate === key) btn.classList.add('cal-day--selected');
+        if (today.getFullYear() === calYear && today.getMonth() === calMonth && today.getDate() === d)
+          btn.classList.add('cal-day--today');
+        btn.onclick = () => pickDate(d);
+        grid.appendChild(btn);
       }
     }
+
+    function pickDate(d) {
+      const key     = `${calYear}-${calMonth}-${d}`;
+      const display = `${calYear}. ${String(calMonth + 1).padStart(2,'0')}. ${String(d).padStart(2,'0')}`;
+      if (calTarget === 'start') {
+        startDate = key;
+        const el = document.getElementById('start-date-text');
+        el.textContent = display;
+        el.classList.remove('date-placeholder');
+      } else {
+        endDate = key;
+        const el = document.getElementById('end-date-text');
+        el.textContent = display;
+        el.classList.remove('date-placeholder');
+      }
+      closeCal();
+    }
+
+    // 팝업 외부 클릭 시 닫기
+    document.addEventListener('click', (e) => {
+      const popup = document.getElementById('cal-popup');
+      if (!popup.contains(e.target) && !e.target.closest('.date-box')) {
+        closeCal();
+      }
+    });
+
+    // 초기 상태: 로그 탭이므로 기간 숨김
+    document.getElementById('section-duration').style.display = 'none';
   </script>
 </body>
 </html>
