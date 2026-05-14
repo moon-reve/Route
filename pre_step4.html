@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Route — 사전질문 4/5</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="pre_step.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Route">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F9F9F9">
+</head>
+<body>
+  <div class="screen">
+
+    <!-- 배경 이미지 -->
+    <img src="images/pre_bg.svg" alt="" class="pre-bg">
+
+    <!-- 페이지 래퍼 (gap 51px) -->
+    <div class="pre-wrap" style="gap: 51px;">
+
+      <!-- 메인 -->
+      <div class="pre-main">
+
+        <!-- 헤더 -->
+        <header class="pre-header">
+          <a href="#" onclick="history.back(); return false;" class="btn-back">
+            <img src="images/pre_header.svg" alt="뒤로가기" class="btn-back-img">
+          </a>
+        </header>
+
+        <!-- 콘텐츠 -->
+        <div class="pre-contents">
+
+          <!-- 상단: 프로그레스 + 질문 -->
+          <div class="pre-top">
+
+            <!-- 프로그레스바 -->
+            <div class="progressbar">
+              <span class="step-label">STEP 04 / 05</span>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <!-- 질문 카드 -->
+            <div class="question-card">
+              <p class="question-title">주간 커리어 투자 가능 시간은?</p>
+              <p class="question-sub">선택하신 시간대에 맞춰 최적의 로드맵과 미션 리스트를 구성해 드립니다.</p>
+            </div>
+
+          </div>
+
+          <!-- 선택지 리스트 -->
+          <div class="option-list">
+
+            <div class="option-item" onclick="selectOption(this)">
+              <div class="option-text-group">
+                <span class="option-text">몰입형 (주 20h+)</span>
+                <span class="option-sub">빠른 성장을 위해 하루 3시간 이상 투자</span>
+              </div>
+              <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
+            </div>
+
+            <div class="option-item" onclick="selectOption(this)">
+              <div class="option-text-group">
+                <span class="option-text">병행형 (주 10-15h)</span>
+                <span class="option-sub">현재 직무와 커리어 성장을 동시에</span>
+              </div>
+              <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
+            </div>
+
+            <div class="option-item" onclick="selectOption(this)">
+              <div class="option-text-group">
+                <span class="option-text">거북이형 (주 5-10h)</span>
+                <span class="option-sub">퇴근 후 한 시간씩 꾸준하게</span>
+              </div>
+              <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
+            </div>
+
+            <div class="option-item" onclick="selectOption(this)">
+              <div class="option-text-group">
+                <span class="option-text">슬로우형</span>
+                <span class="option-sub">부담 없이 원할 때마다 조금씩</span>
+              </div>
+              <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
+            </div>
+
+          </div>
+
+        </div><!-- /pre-contents -->
+      </div><!-- /pre-main -->
+
+      <!-- 다음 버튼 -->
+      <a href="pre_step5" class="btn-next">
+        <span class="btn-next-text">다음으로</span>
+        <img src="images/pre_btn_next.svg" alt="" class="btn-next-icon">
+      </a>
+
+    </div><!-- /pre-wrap -->
+  </div>
+
+  <script>
+    function selectOption(el) {
+      const isSelected = el.classList.contains('option-item--selected');
+      document.querySelectorAll('.option-item').forEach(item => {
+        item.classList.remove('option-item--selected');
+        item.querySelector('.option-radio').src = 'images/pre_radio_empty.svg';
+      });
+      if (!isSelected) {
+        el.classList.add('option-item--selected');
+        el.querySelector('.option-radio').src = 'images/pre_radio_selected.svg';
+      }
+    }
+  </script>
+</body>
+</html>
