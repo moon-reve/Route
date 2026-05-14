@@ -41,16 +41,16 @@
           <div class="section-resource">
             <div class="section-label">어떤 형태의 항로인가요?</div>
             <div class="resource-tabs">
-              <div class="resource-tab resource-tab--active">인강/강의</div>
-              <div class="resource-tab">도서/아티클</div>
-              <div class="resource-tab">프로젝트</div>
+              <div class="resource-tab resource-tab--active" onclick="selectTab(this, 'lecture')">인강/강의</div>
+              <div class="resource-tab" onclick="selectTab(this, 'book')">도서/아티클</div>
+              <div class="resource-tab" onclick="selectTab(this, 'project')">프로젝트</div>
             </div>
           </div>
 
           <!-- 기본 정보 입력 -->
           <div class="section-inputs">
-            <div class="input-group">
-              <label class="input-label">학습할 링크 (선택)</label>
+            <div class="input-group" id="link-group">
+              <label class="input-label" id="link-label">학습할 링크 (선택)</label>
               <div class="input-box">
                 <input type="url" placeholder="URL을 붙여넣으면 제목이 자동 입력돼요">
               </div>
@@ -93,5 +93,21 @@
     </div>
   </div>
 
+  <script>
+    function selectTab(el, type) {
+      document.querySelectorAll('.resource-tab').forEach(t => t.classList.remove('resource-tab--active'));
+      el.classList.add('resource-tab--active');
+
+      const linkGroup = document.getElementById('link-group');
+      const linkLabel = document.getElementById('link-label');
+
+      if (type === 'book') {
+        linkGroup.style.display = 'none';
+      } else {
+        linkGroup.style.display = '';
+        linkLabel.textContent = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
+      }
+    }
+  </script>
 </body>
 </html>
