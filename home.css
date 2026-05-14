@@ -185,13 +185,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 8px;
 }
 
-/* chip: padding 10px 14px, radius 50px */
 .chip {
+  flex: 1;
   text-align: center;
-  padding: 10px 14px;
+  padding: 10px 0;
   border-radius: 50px;
   border: 1px solid #D1D1D1;
   background: #F2F2F2;
@@ -201,6 +201,7 @@ body {
   color: #1A1C1E;
   cursor: pointer;
   transition: all 0.15s;
+  white-space: nowrap;
 }
 
 .chip--active {
