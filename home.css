@@ -1,39 +1,3 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  font-family: 'Pretendard', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* ── Phone frame ── */
-.screen {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  height: 100svh;
-  overflow: hidden;
-  padding-top: env(safe-area-inset-top);
-  background: #F9F9F9;
-}
-
-/* ── Scroll area ── */
-.scroll-area {
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  touch-action: pan-y; /* 세로 스크롤만 처리, 가로는 자식에게 위임 */
-}
-.scroll-area::-webkit-scrollbar { display: none; }
-
 /* ── Main: padding 40px 24px 125px ── */
 .home-main {
   display: flex;
@@ -375,7 +339,7 @@ body {
   scroll-padding-left: 24px;
   cursor: grab;
 }
-.card-list::-webkit-scrollbar { display: none; }
+
 .card-list.is-dragging { cursor: grabbing; }
 
 /* card: 180px wide, column, radius 10px, border */
@@ -490,82 +454,6 @@ body {
   line-height: 1.4;
 }
 
-/* ════════════════════════════
-   NAV BAR
-════════════════════════════ */
-/* absolute, bottom 20px, left 20px, width 390px */
-.nav-bar {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px 4px;
-  background: rgba(242, 242, 242, 0.6);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid #D1D1D1;
-  border-radius: 50px;
-  z-index: 100;
-}
-
-/* nav sides: each 90px, row, space-between */
-/* nav tab: column, center, gap 4px */
-.nav-tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  text-decoration: none;
-}
-
-.nav-tab img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
-.nav-tab span {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 400;
-  font-size: 9px;
-  color: #D1D1D1;
-  line-height: 1;
-}
-
-.nav-tab--active img {
-  filter: brightness(0);
-}
-
-.nav-tab--active span {
-  color: #1A1C1E;
-  font-weight: 700;
-}
-
-/* 중앙 플로팅 로고: absolute, 센터, -21px 위로, blur */
-.nav-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;        /* nav-tab과 동일한 레이아웃 높이 유지 */
-  overflow: visible;   /* 이미지는 위로 삐져나오게 */
-  transform: translateY(-21px);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-radius: 50%;
-  text-decoration: none;
-}
-
-.nav-center img {
-  display: block;
-  width: auto;
-  height: auto;
-}
-
 /* ── 430px 미만: 카테고리 칩 축소 ── */
 @media (max-width: 429px) {
   .chip {
@@ -573,4 +461,3 @@ body {
     padding: 10px 12px;
   }
 }
-

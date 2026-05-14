@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, 'Apple SD Gothic Neo', Arial, sans-serif">
+<defs>
+  <marker id="ad" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1A1C1E" opacity="0.35"/></marker>
+  <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#E8941A"/></marker>
+</defs>
+
+<!-- BG -->
+<rect width="1920" height="1080" fill="#F9F9F9"/>
+
+<!-- Title -->
+<text x="960" y="44" text-anchor="middle" font-size="18" font-weight="700" fill="#1A1C1E">FLOW CHART ｜ 플로우 차트</text>
+
+<!-- ═══ TOP: Onboarding flow ═══ -->
+<!-- Onboarding group bg -->
+<rect x="444" y="62" width="296" height="52" rx="8" fill="#F2F2F2" stroke="#D1D1D1" stroke-width="1"/>
+<text x="592" y="58" text-anchor="middle" font-size="9" fill="#999999">Onboarding ｜ 온보딩</text>
+
+<!-- Start pill -->
+<g transform="translate(128,74)">
+  <rect width="116" height="36" rx="18" fill="#1A1C1E"/>
+  <text x="58" y="23" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Start ｜ 시작</text>
+</g>
+<!-- Splash -->
+<g transform="translate(280,74)">
+  <rect width="144" height="36" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="72" y="13" text-anchor="middle" font-size="8" fill="#999999">SCREEN</text>
+  <text x="72" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Splash ｜ 스플래시</text>
+</g>
+<!-- OB1 -->
+<g transform="translate(452,74)">
+  <rect width="84" height="36" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="42" y="13" text-anchor="middle" font-size="8" fill="#999999">SCREEN</text>
+  <text x="42" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">Onboarding 1</text>
+</g>
+<!-- OB2 -->
+<g transform="translate(548,74)">
+  <rect width="84" height="36" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="42" y="13" text-anchor="middle" font-size="8" fill="#999999">SCREEN</text>
+  <text x="42" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">Onboarding 2</text>
+</g>
+<!-- OB3 -->
+<g transform="translate(644,74)">
+  <rect width="84" height="36" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="42" y="13" text-anchor="middle" font-size="8" fill="#999999">SCREEN</text>
+  <text x="42" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">Onboarding 3</text>
+</g>
+<!-- Login -->
+<g transform="translate(764,74)">
+  <rect width="130" height="36" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="65" y="13" text-anchor="middle" font-size="8" fill="#999999">ACTION</text>
+  <text x="65" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Login ｜ 로그인</text>
+</g>
+
+<!-- Top arrows -->
+<line x1="244" y1="92" x2="278" y2="92" stroke="#1A1C1E" stroke-width="1.5" opacity="0.35" marker-end="url(#ad)"/>
+<line x1="424" y1="92" x2="450" y2="92" stroke="#1A1C1E" stroke-width="1.5" opacity="0.35" marker-end="url(#ad)"/>
+<line x1="536" y1="92" x2="546" y2="92" stroke="#1A1C1E" stroke-width="1.5" opacity="0.35" marker-end="url(#ad)"/>
+<line x1="628" y1="92" x2="642" y2="92" stroke="#1A1C1E" stroke-width="1.5" opacity="0.35" marker-end="url(#ad)"/>
+<line x1="728" y1="92" x2="762" y2="92" stroke="#1A1C1E" stroke-width="1.5" opacity="0.35" marker-end="url(#ad)"/>
+
+<!-- Login → 4 tabs tree: Login bottom-center=(829,110), bar at y=155 -->
+<line x1="829" y1="110" x2="829" y2="153" stroke="#1A1C1E" stroke-width="1.5" opacity="0.2"/>
+<line x1="360" y1="153" x2="1560" y2="153" stroke="#1A1C1E" stroke-width="1.5" opacity="0.2"/>
+<line x1="360"  y1="153" x2="360"  y2="171" stroke="#1A1C1E" stroke-width="1.5" opacity="0.2" marker-end="url(#ad)"/>
+<line x1="760"  y1="153" x2="760"  y2="171" stroke="#1A1C1E" stroke-width="1.5" opacity="0.2" marker-end="url(#ad)"/>
+<line x1="1160" y1="153" x2="1160" y2="171" stroke="#1A1C1E" stroke-width="1.5" opacity="0.2" marker-end="url(#ad)"/>
+<line x1="1560" y1="153" x2="1560" y2="171" stroke="#1A1C1E" stroke-width="1.5" opacity="0.2" marker-end="url(#ad)"/>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HOME TAB  x=170                                     -->
+<!-- ═══════════════════════════════════════════════════ -->
+<g transform="translate(170,173)">
+  <rect width="380" height="52" rx="10" fill="#1A1C1E"/>
+  <text x="190" y="19" text-anchor="middle" font-size="9" fill="#999999">MAIN TAB</text>
+  <text x="190" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Home ｜ 홈</text>
+</g>
+<!-- L1 Home Dashboard -->
+<g transform="translate(178,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">SCREEN</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Home Dashboard</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">홈 대시보드</text>
+</g>
+<!-- L2 Card Feed -->
+<g transform="translate(178,305)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">CONTENT</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Card / Article Feed</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">카드 · 아티클 피드</text>
+</g>
+<!-- L3 Detail (dashed) -->
+<g transform="translate(178,373)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">DETAIL VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Content Detail</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">카드 · 아티클 상세</text>
+</g>
+<!-- R1 Route Start (gold border = ACTION) -->
+<g transform="translate(370,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" font-weight="600" fill="#E8941A">ACTION</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Route Start</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#E8941A">항로 시작하기 →</text>
+</g>
+<!-- Home left-col connectors -->
+<line x1="264" y1="293" x2="264" y2="303" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+<line x1="264" y1="361" x2="264" y2="371" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- MY ROUTE TAB  x=570                                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<g transform="translate(570,173)">
+  <rect width="380" height="52" rx="10" fill="#1A1C1E"/>
+  <text x="190" y="19" text-anchor="middle" font-size="9" fill="#999999">MAIN TAB</text>
+  <text x="190" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">My Route ｜ 내 루트</text>
+</g>
+<g transform="translate(578,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Route Timeline</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">12주 전체 타임라인</text>
+</g>
+<g transform="translate(578,305)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Weekly Detail</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">주차별 상세 뷰</text>
+</g>
+<g transform="translate(578,373)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">DETAIL VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Weekly Milestone</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">주간 달성 목표</text>
+</g>
+<g transform="translate(770,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" font-weight="600" fill="#E8941A">ACTION</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Route Manage</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#E8941A">루트 관리</text>
+</g>
+<g transform="translate(770,305)">
+  <rect width="172" height="56" rx="8" fill="#E8941A"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.65)">FUNCTION</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Re-generate</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.75)">루트 재생성</text>
+</g>
+<line x1="664" y1="293" x2="664" y2="303" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+<line x1="664" y1="361" x2="664" y2="371" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+<line x1="856" y1="293" x2="856" y2="303" stroke="#E8941A" stroke-width="1.5" opacity="0.6" marker-end="url(#ag)"/>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- LOG TAB  x=970                                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<g transform="translate(970,173)">
+  <rect width="380" height="52" rx="10" fill="#1A1C1E"/>
+  <text x="190" y="19" text-anchor="middle" font-size="9" fill="#999999">MAIN TAB</text>
+  <text x="190" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Log ｜ 기록</text>
+</g>
+<g transform="translate(978,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Log Calendar</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">캘린더 뷰</text>
+</g>
+<g transform="translate(978,305)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Log Feed</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">피드 뷰</text>
+</g>
+<g transform="translate(978,373)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">DETAIL VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Log Project</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">프로젝트 로그</text>
+</g>
+<g transform="translate(1170,237)">
+  <rect width="172" height="56" rx="8" fill="#E8941A"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.65)">ACTION</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">Log Write</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.75)">항로 등록 (+)</text>
+</g>
+<line x1="1064" y1="293" x2="1064" y2="303" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+<line x1="1064" y1="361" x2="1064" y2="371" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- MY TAB  x=1370                                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<g transform="translate(1370,173)">
+  <rect width="380" height="52" rx="10" fill="#1A1C1E"/>
+  <text x="190" y="19" text-anchor="middle" font-size="9" fill="#999999">MAIN TAB</text>
+  <text x="190" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">My ｜ 마이페이지</text>
+</g>
+<g transform="translate(1378,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">SETTINGS</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">My Profile</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">내 프로필</text>
+</g>
+<g transform="translate(1378,305)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">TO-DO</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Daily Mission</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">일일 미션</text>
+</g>
+<g transform="translate(1378,373)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">INBOX</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Feedback Inbox</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">피드백 상세</text>
+</g>
+<g transform="translate(1570,237)">
+  <rect width="172" height="56" rx="8" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="#999999">DETAIL VIEW</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#1A1C1E">Expert Profile</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="#999999">전문가 프로필</text>
+</g>
+<g transform="translate(1570,305)">
+  <rect width="172" height="56" rx="8" fill="#E8941A"/>
+  <text x="86" y="15" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.65)">PAYMENT</text>
+  <text x="86" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">1:1 Feedback</text>
+  <text x="86" y="47" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.75)">1:1 피드백 결제</text>
+</g>
+<line x1="1464" y1="293" x2="1464" y2="303" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+<line x1="1464" y1="361" x2="1464" y2="371" stroke="#1A1C1E" stroke-width="1.5" opacity="0.25" marker-end="url(#ad)"/>
+<line x1="1656" y1="293" x2="1656" y2="303" stroke="#E8941A" stroke-width="1.5" opacity="0.6" marker-end="url(#ag)"/>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- ROUTE CREATION SECTION (branches from Home)         -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- Gold arrow: Route Start → pre_step1 -->
+<!-- Route Start: x=370,y=237,h=56 → bottom-cx=(456,293) -->
+<path d="M 456 293 L 456 488 L 558 488 L 558 508" stroke="#E8941A" stroke-width="1.5" fill="none" opacity="0.7" marker-end="url(#ag)"/>
+
+<!-- Section label -->
+<text x="960" y="502" text-anchor="middle" font-size="10" font-weight="700" fill="#E8941A" letter-spacing="0.1em">ROUTE CREATION ｜ 루트 생성 플로우</text>
+
+<!-- 7 step nodes (w=120,h=44,gap=14) centered in 1920, start_x=498 -->
+<g transform="translate(498,510)">
+  <rect width="120" height="44" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" font-weight="600" fill="#E8941A">STEP 1</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">pre_step 1</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="#999999">현재 상황</text>
+</g>
+<g transform="translate(632,510)">
+  <rect width="120" height="44" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" font-weight="600" fill="#E8941A">STEP 2</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">pre_step 2</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="#999999">목표 직무</text>
+</g>
+<g transform="translate(766,510)">
+  <rect width="120" height="44" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" font-weight="600" fill="#E8941A">STEP 3</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">pre_step 3</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="#999999">보유 스킬</text>
+</g>
+<g transform="translate(900,510)">
+  <rect width="120" height="44" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" font-weight="600" fill="#E8941A">STEP 4</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">pre_step 4</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="#999999">투자 가능 시간</text>
+</g>
+<g transform="translate(1034,510)">
+  <rect width="120" height="44" rx="8" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" font-weight="600" fill="#E8941A">STEP 5</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1C1E">pre_step 5</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="#999999">도메인 선택</text>
+</g>
+<g transform="translate(1168,510)">
+  <rect width="120" height="44" rx="8" fill="#1A1C1E"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.5)">PROCESS</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">pre_loading</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.6)">AI 루트 생성 중</text>
+</g>
+<g transform="translate(1302,510)">
+  <rect width="120" height="44" rx="8" fill="#E8941A"/>
+  <text x="60" y="14" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.65)">COMPLETE</text>
+  <text x="60" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">pre_complete</text>
+  <text x="60" y="40" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.75)">루트 생성 완료</text>
+</g>
+
+<!-- Step arrows -->
+<line x1="618" y1="532" x2="630" y2="532" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+<line x1="752" y1="532" x2="764" y2="532" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+<line x1="886" y1="532" x2="898" y2="532" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+<line x1="1020" y1="532" x2="1032" y2="532" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+<line x1="1154" y1="532" x2="1166" y2="532" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+<line x1="1288" y1="532" x2="1300" y2="532" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+
+<!-- pre_complete → back to Home (dashed related flow) -->
+<path d="M 1362 532 L 1800 532 L 1800 140 L 360 140 L 360 171" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3" fill="none" opacity="0.2" marker-end="url(#ad)"/>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- LEGEND                                              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<g transform="translate(170,640)">
+  <rect width="820" height="186" rx="20" fill="#FFFFFF" stroke="#D1D1D1" stroke-width="1.5"/>
+  <text x="28" y="34" font-size="11" font-weight="700" fill="#1A1C1E">LEGEND</text>
+
+  <text x="28" y="56" font-size="9" font-weight="700" fill="#999999" letter-spacing="0.08em">NODE TYPES</text>
+
+  <!-- Main Tab -->
+  <rect x="28" y="64" width="56" height="26" rx="6" fill="#1A1C1E"/>
+  <text x="56" y="81" text-anchor="middle" font-size="8" font-weight="700" fill="#FFFFFF">Main Tab</text>
+  <text x="94" y="75" font-size="9" font-weight="700" fill="#1A1C1E">Main Tab</text>
+  <text x="94" y="88" font-size="9" fill="#999999">메인 탭 화면</text>
+
+  <!-- Sub Feature -->
+  <rect x="200" y="64" width="56" height="26" rx="6" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5"/>
+  <text x="228" y="81" text-anchor="middle" font-size="8" fill="#1A1C1E">Sub</text>
+  <text x="266" y="75" font-size="9" font-weight="700" fill="#1A1C1E">Sub Feature</text>
+  <text x="266" y="88" font-size="9" fill="#999999">서브 기능 화면</text>
+
+  <!-- Action Node -->
+  <rect x="370" y="64" width="56" height="26" rx="6" fill="#FFFFFF" stroke="#E8941A" stroke-width="1.5"/>
+  <text x="398" y="81" text-anchor="middle" font-size="8" fill="#E8941A">Action</text>
+  <text x="436" y="75" font-size="9" font-weight="700" fill="#E8941A">Action Node</text>
+  <text x="436" y="88" font-size="9" fill="#999999">사용자 액션 필요</text>
+
+  <!-- Key Action -->
+  <rect x="548" y="64" width="56" height="26" rx="6" fill="#E8941A"/>
+  <text x="576" y="81" text-anchor="middle" font-size="8" font-weight="700" fill="#FFFFFF">Key</text>
+  <text x="614" y="75" font-size="9" font-weight="700" fill="#E8941A">Key Action</text>
+  <text x="614" y="88" font-size="9" fill="#999999">핵심 액션 · 결제</text>
+
+  <!-- Detail View -->
+  <rect x="716" y="64" width="56" height="26" rx="6" fill="#FFFFFF" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="744" y="81" text-anchor="middle" font-size="8" fill="#1A1C1E">Detail</text>
+  <text x="782" y="75" font-size="9" font-weight="700" fill="#1A1C1E">Detail View</text>
+  <text x="782" y="88" font-size="9" fill="#999999">드릴다운 · 상세</text>
+
+  <text x="28" y="118" font-size="9" font-weight="700" fill="#999999" letter-spacing="0.08em">CONNECTOR TYPES</text>
+
+  <line x1="28" y1="138" x2="88" y2="138" stroke="#1A1C1E" stroke-width="1.5" opacity="0.35" marker-end="url(#ad)"/>
+  <text x="98" y="142" font-size="9" font-weight="700" fill="#1A1C1E">Direct Flow</text>
+  <text x="182" y="142" font-size="9" fill="#999999">직접 흐름</text>
+
+  <line x1="280" y1="138" x2="340" y2="138" stroke="#E8941A" stroke-width="1.5" opacity="0.7" marker-end="url(#ag)"/>
+  <text x="350" y="142" font-size="9" font-weight="700" fill="#E8941A">Action Flow</text>
+  <text x="436" y="142" font-size="9" fill="#999999">액션 흐름</text>
+
+  <line x1="530" y1="138" x2="590" y2="138" stroke="#1A1C1E" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#ad)"/>
+  <text x="600" y="142" font-size="9" font-weight="700" fill="#1A1C1E">Related Flow</text>
+  <text x="690" y="142" font-size="9" fill="#999999">관련 흐름</text>
+
+  <!-- Version note -->
+  <text x="28" y="170" font-size="9" fill="#D1D1D1">Route App Flowchart v2 — Colors: #1A1C1E · #E8941A · #D1D1D1 · #999999</text>
+</g>
+
+</svg>

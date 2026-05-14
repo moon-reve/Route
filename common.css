@@ -1,0 +1,136 @@
+/* ════════════════════════════════════════════
+   ROUTE — common.css
+   공통 변수, 리셋, 레이아웃, 네비게이션
+════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* primary */
+  --midnight-charcoal: #1A1C1E;
+  --gray-700: #555555;
+
+  /* accent */
+  --champagne-gold: #D4A853;
+  --starline-gold: #E8941A;
+  --dusty-sage: #8FAF8A;
+  --muted-terracotta: #C4876A;
+
+  /* background */
+  --bg-gray-50: #F9F9F9;
+  --pure-white: #FFFFFF;
+  --gray-100: #F2F2F2;
+
+  /* system */
+  --border-gray-300: #D1D1D1;
+  --inactive-gray-200: #E8E8E8;
+  --active-border-gray-500: #999999;
+  --active-text-gray-700: #555555;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Screen ── */
+.screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  background: var(--bg-gray-50);
+}
+
+/* ── Scroll Area ── */
+.scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+/* ════════════════════════════
+   NAV BAR
+════════════════════════════ */
+.nav-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 4px;
+  background: rgba(242, 242, 242, 0.6);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid var(--border-gray-300);
+  border-radius: 50px;
+  z-index: 100;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.nav-tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.nav-tab span {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: var(--border-gray-300);
+  line-height: 1;
+}
+
+.nav-tab--active img {
+  filter: brightness(0);
+}
+
+.nav-tab--active span {
+  color: var(--midnight-charcoal);
+  font-weight: 700;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  overflow: visible;
+  transform: translateY(-21px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.nav-center img {
+  display: block;
+  width: auto;
+  height: auto;
+}

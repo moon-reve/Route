@@ -4,8 +4,8 @@
   <!-- Background -->
   <rect width="1200" height="630" fill="#F9F9F9"/>
 
-  <!-- Subtle grid lines (app style) -->
-  <g opacity="0.03" stroke="#1A1C1E" stroke-width="0.8">
+  <!-- Subtle grid -->
+  <g opacity="0.028" stroke="#1A1C1E" stroke-width="0.6">
     <line x1="0" y1="40"  x2="1200" y2="40"/>
     <line x1="0" y1="80"  x2="1200" y2="80"/>
     <line x1="0" y1="120" x2="1200" y2="120"/>
@@ -23,80 +23,85 @@
     <line x1="0" y1="600" x2="1200" y2="600"/>
   </g>
 
-  <!-- Gold left accent bar -->
-  <rect x="0" y="0" width="6" height="630" fill="#E8941A"/>
+  <!-- Thin gold left accent -->
+  <rect x="0" y="0" width="3" height="630" fill="#E8941A" opacity="0.7"/>
 
-  <!-- ── Right: Constellation decoration ── -->
+  <!-- ── Right: constellation ── -->
+  <!-- Faint circles -->
+  <circle cx="900" cy="315" r="230" fill="none" stroke="#E8941A" stroke-width="0.6" opacity="0.1"/>
+  <circle cx="900" cy="315" r="150" fill="none" stroke="#E8941A" stroke-width="0.4" opacity="0.07"/>
 
-  <!-- Large faint circle -->
-  <circle cx="920" cy="315" r="256" fill="none" stroke="#E8941A" stroke-width="0.8" opacity="0.12"/>
-  <circle cx="920" cy="315" r="180" fill="none" stroke="#E8941A" stroke-width="0.5" opacity="0.08"/>
-
-  <!-- Constellation lines -->
-  <g stroke="#1A1C1E" stroke-width="0.8" opacity="0.18" fill="none">
-    <line x1="770" y1="188" x2="888" y2="134"/>
-    <line x1="888" y1="134" x2="978" y2="214"/>
-    <line x1="978" y1="214" x2="1062" y2="164"/>
-    <line x1="978" y1="214" x2="930" y2="298"/>
-    <line x1="930" y1="298" x2="808" y2="318"/>
-    <line x1="808" y1="318" x2="730" y2="390"/>
-    <line x1="930" y1="298" x2="1008" y2="358"/>
-    <line x1="1008" y1="358" x2="988" y2="454"/>
-    <line x1="808" y1="318" x2="858" y2="428"/>
+  <!-- Constellation lines (thin, elegant) -->
+  <g stroke="#1A1C1E" stroke-width="0.6" opacity="0.14" fill="none">
+    <line x1="788" y1="178" x2="896" y2="128"/>
+    <line x1="896" y1="128" x2="990" y2="204"/>
+    <line x1="990" y1="204" x2="1068" y2="158"/>
+    <line x1="990" y1="204" x2="940" y2="292"/>
+    <line x1="940" y1="292" x2="816" y2="310"/>
+    <line x1="816" y1="310" x2="748" y2="380"/>
+    <line x1="940" y1="292" x2="1014" y2="348"/>
+    <line x1="1014" y1="348" x2="996" y2="440"/>
+    <line x1="816" y1="310" x2="864" y2="416"/>
   </g>
 
-  <!-- Constellation dots -->
-  <g fill="#1A1C1E">
-    <circle cx="770"  cy="188" r="3" opacity="0.35"/>
-    <circle cx="978"  cy="214" r="3" opacity="0.35"/>
-    <circle cx="808"  cy="318" r="3" opacity="0.35"/>
-    <circle cx="1008" cy="358" r="3" opacity="0.35"/>
-    <circle cx="988"  cy="454" r="3" opacity="0.35"/>
-    <circle cx="730"  cy="390" r="3" opacity="0.35"/>
-    <circle cx="858"  cy="428" r="3" opacity="0.35"/>
-  </g>
-  <!-- Gold highlight stars -->
-  <g fill="#E8941A">
-    <circle cx="888" cy="134" r="4.5" opacity="0.7"/>
-    <circle cx="930" cy="298" r="5"   opacity="0.8"/>
-    <circle cx="1062" cy="164" r="3.5" opacity="0.6"/>
+  <!-- Small dots -->
+  <g fill="#1A1C1E" opacity="0.28">
+    <circle cx="788" cy="178" r="2.5"/>
+    <circle cx="990" cy="204" r="2.5"/>
+    <circle cx="816" cy="310" r="2.5"/>
+    <circle cx="1014" cy="348" r="2.5"/>
+    <circle cx="996" cy="440" r="2.5"/>
+    <circle cx="748" cy="380" r="2.5"/>
+    <circle cx="864" cy="416" r="2.5"/>
+    <circle cx="1068" cy="158" r="2"/>
   </g>
 
-  <!-- Sparkle shapes -->
-  <!-- Sparkle at (888,134) size=18 -->
-  <path d="M 888,116 L 890.5,131.5 L 906,134 L 890.5,136.5 L 888,152 L 885.5,136.5 L 870,134 L 885.5,131.5 Z" fill="#E8941A" opacity="0.55"/>
-  <!-- Sparkle at (930,298) size=22 -->
-  <path d="M 930,276 L 932.8,295.2 L 952,298 L 932.8,300.8 L 930,320 L 927.2,300.8 L 908,298 L 927.2,295.2 Z" fill="#E8941A" opacity="0.65"/>
-  <!-- Sparkle at (1062,164) size=14 -->
-  <path d="M 1062,150 L 1063.8,160.2 L 1076,164 L 1063.8,167.8 L 1062,178 L 1060.2,167.8 L 1048,164 L 1060.2,160.2 Z" fill="#E8941A" opacity="0.45"/>
-  <!-- Small sparkle at (1090,420) size=10 -->
-  <path d="M 1090,410 L 1091.2,418.8 L 1100,420 L 1091.2,421.2 L 1090,430 L 1088.8,421.2 L 1080,420 L 1088.8,418.8 Z" fill="#D4A853" opacity="0.35"/>
-  <!-- Tiny sparkle at (720,200) -->
-  <path d="M 720,192 L 721,198 L 728,200 L 721,202 L 720,208 L 719,202 L 712,200 L 719,198 Z" fill="#D4A853" opacity="0.3"/>
+  <!-- Gold highlight stars (main nodes) -->
+  <circle cx="896" cy="128" r="3.5" fill="#E8941A" opacity="0.65"/>
+  <circle cx="940" cy="292" r="4.5" fill="#E8941A" opacity="0.75"/>
 
-  <!-- ── Left: Text content ── -->
+  <!-- Sparkle at (896,128) -->
+  <path d="M896,113 L897.8,124.2 L910,128 L897.8,131.8 L896,143 L894.2,131.8 L882,128 L894.2,124.2 Z"
+        fill="#E8941A" opacity="0.5"/>
+  <!-- Sparkle at (940,292) — slightly bigger -->
+  <path d="M940,274 L942.4,289.6 L958,292 L942.4,294.4 L940,310 L937.6,294.4 L922,292 L937.6,289.6 Z"
+        fill="#E8941A" opacity="0.6"/>
+  <!-- Tiny sparkle top right -->
+  <path d="M1068,148 L1069.4,155.6 L1078,158 L1069.4,160.4 L1068,168 L1066.6,160.4 L1058,158 L1066.6,155.6 Z"
+        fill="#D4A853" opacity="0.38"/>
+  <!-- Tiny sparkle bottom -->
+  <path d="M1090,430 L1091.2,437 L1099,430 L1091.2,437 L1090,444 L1088.8,437 L1081,430 L1088.8,437 Z"
+        fill="#D4A853" opacity="0.25"/>
 
-  <!-- Badge -->
-  <rect x="80" y="150" width="218" height="32" rx="16" fill="none" stroke="#E8941A" stroke-width="1.2" opacity="0.7"/>
-  <text x="189" y="171" text-anchor="middle" font-size="13" font-weight="400" fill="#E8941A" letter-spacing="0.02em">AI 커리어 루트 플랫폼</text>
+  <!-- ── Left: Content ── -->
 
-  <!-- Main headline -->
-  <text x="80" y="240" font-size="58" font-weight="800" fill="#1A1C1E" letter-spacing="-0.02em">당신의 커리어,</text>
-  <text x="80" y="312" font-size="58" font-weight="800" fill="#1A1C1E" letter-spacing="-0.02em">아직 그려지지 않은</text>
-  <text x="80" y="384" font-size="58" font-weight="800" fill="#E8941A" letter-spacing="-0.02em">별자리입니다.</text>
+  <!-- ① Logo row (TOP) -->
+  <rect x="80" y="56" width="38" height="38" rx="9" fill="#1A1C1E"/>
+  <text x="99" y="82" text-anchor="middle" font-size="17" font-weight="800" fill="#E8941A">R</text>
+  <text x="130" y="82" font-size="20" font-weight="700" fill="#1A1C1E" letter-spacing="-0.02em">Route</text>
+  <text x="175" y="82" font-size="14" fill="#D1D1D1">·</text>
+  <text x="186" y="82" font-size="13" font-weight="400" fill="#E8941A" letter-spacing="0.01em">AI 커리어 루트 플랫폼</text>
 
-  <!-- Sub description -->
-  <text x="80" y="438" font-size="18" font-weight="400" fill="#555555" letter-spacing="-0.01em">목표·스킬·시간에 맞춘 맞춤형 12주 AI 커리어 루트</text>
+  <!-- ② Headline -->
+  <text x="80" y="210" font-size="42" font-weight="800" fill="#1A1C1E" letter-spacing="-0.025em">당신의 커리어,</text>
+  <text x="80" y="268" font-size="42" font-weight="800" fill="#1A1C1E" letter-spacing="-0.025em">아직 그려지지 않은</text>
+  <text x="80" y="326" font-size="42" font-weight="800" fill="#E8941A" letter-spacing="-0.025em">별자리입니다.</text>
 
-  <!-- Divider -->
-  <line x1="80" y1="480" x2="540" y2="480" stroke="#D1D1D1" stroke-width="1"/>
+  <!-- ③ Sub description -->
+  <text x="80" y="386" font-size="16" font-weight="400" fill="#888888" letter-spacing="-0.01em">목표·스킬·시간에 맞춘 맞춤형 12주 AI 커리어 루트</text>
 
-  <!-- Route logo + name -->
-  <!-- Logo icon (rounded square) -->
-  <rect x="80" y="504" width="40" height="40" rx="10" fill="#1A1C1E"/>
-  <text x="100" y="531" text-anchor="middle" font-size="18" font-weight="800" fill="#E8941A">R</text>
+  <!-- ④ Tag pills -->
+  <rect x="80" y="420" width="94" height="26" rx="13" fill="#1A1C1E" fill-opacity="0.06"/>
+  <text x="127" y="437" text-anchor="middle" font-size="11" fill="#555555">#커리어설계</text>
 
-  <text x="132" y="531" font-size="22" font-weight="700" fill="#1A1C1E" letter-spacing="-0.02em">Route</text>
-  <text x="132" y="552" font-size="13" font-weight="400" fill="#999999">route.vercel.app</text>
+  <rect x="184" y="420" width="78" height="26" rx="13" fill="#1A1C1E" fill-opacity="0.06"/>
+  <text x="223" y="437" text-anchor="middle" font-size="11" fill="#555555">#AI루트</text>
+
+  <rect x="272" y="420" width="86" height="26" rx="13" fill="#1A1C1E" fill-opacity="0.06"/>
+  <text x="315" y="437" text-anchor="middle" font-size="11" fill="#555555">#12주챌린지</text>
+
+  <!-- ⑤ Bottom divider + URL -->
+  <line x1="80" y1="498" x2="560" y2="498" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="80" y="540" font-size="13" font-weight="400" fill="#BBBBBB" letter-spacing="0.01em">route.vercel.app</text>
 
 </svg>
