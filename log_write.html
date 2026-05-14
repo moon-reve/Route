@@ -92,7 +92,7 @@
           </div>
 
           <!-- 리마인더 -->
-          <div class="section-reminder">
+          <div class="section-reminder" id="section-reminder">
             <span class="reminder-text">매일 지정된 시간에 리마인드 받기</span>
             <img src="images/log_toggle.svg" alt="토글" class="toggle-btn">
           </div>
@@ -130,22 +130,27 @@
       const heroCaption  = document.getElementById('hero-caption');
       const sectionDur   = document.getElementById('section-duration');
 
+      const sectionReminder = document.getElementById('section-reminder');
+
       if (type === 'log') {
-        linkGroup.style.display  = 'none';
-        sectionDur.style.display = 'none';
-        titleLabel.textContent   = '제목 (필수)';
-        heroCaption.textContent  = '탭하여 오늘의 항해 순간을 담아보세요';
+        linkGroup.style.display     = 'none';
+        sectionDur.style.display    = 'none';
+        sectionReminder.style.display = 'none';
+        titleLabel.textContent      = '제목 (필수)';
+        heroCaption.textContent     = '탭하여 오늘의 항해 순간을 담아보세요';
       } else if (type === 'book') {
-        linkGroup.style.display  = 'none';
-        sectionDur.style.display = '';
-        titleLabel.textContent   = '항로 이름 (필수)';
-        heroCaption.textContent  = '링크를 입력하면 썸네일이 자동으로 채워져요';
+        linkGroup.style.display     = 'none';
+        sectionDur.style.display    = '';
+        sectionReminder.style.display = '';
+        titleLabel.textContent      = '항로 이름 (필수)';
+        heroCaption.textContent     = '링크를 입력하면 썸네일이 자동으로 채워져요';
       } else {
-        linkGroup.style.display  = '';
-        sectionDur.style.display = '';
-        titleLabel.textContent   = '항로 이름 (필수)';
-        heroCaption.textContent  = '링크를 입력하면 썸네일이 자동으로 채워져요';
-        linkLabel.textContent    = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
+        linkGroup.style.display     = '';
+        sectionDur.style.display    = '';
+        sectionReminder.style.display = '';
+        titleLabel.textContent      = '항로 이름 (필수)';
+        heroCaption.textContent     = '링크를 입력하면 썸네일이 자동으로 채워져요';
+        linkLabel.textContent       = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
       }
       closeCal();
     }
@@ -188,11 +193,18 @@
 
     function renderCal() {
       document.getElementById('cal-title').textContent = `${calYear}년 ${MONTHS[calMonth]}`;
-      const grid      = document.getElementById('cal-grid');
-      grid.innerHTML  = '';
-      const firstDay  = new Date(calYear, calMonth, 1).getDay();
-      const lastDay   = new Date(calYear, calMonth + 1, 0).getDate();
-      const selDate   = calTarget === 'start' ? startDate : endDate;
+      const grid     = document.getElementById('cal-grid');
+      grid.innerHTML = '';
+      const firstDay = new Date(calYear, calMonth, 1).getDay();
+      const lastDay  = new Date(calYear, calMonth + 1, 0).getDate();
+      const selKey   = calTarget === 'start' ? startDate : endDate;
+
+      // 종료일 모드: 시작일 이전 날짜 비활성화
+      let minDate = null;
+      if (calTarget === 'end' && startDate) {
+        const [sy, sm, sd] = startDate.split('-').map(Number);
+        minDate = new Date(sy, sm, sd);
+      }
 
       for (let i = 0; i < firstDay; i++) {
         const blank = document.createElement('span');
@@ -204,10 +216,15 @@
         btn.className   = 'cal-day';
         btn.textContent = d;
         const key = `${calYear}-${calMonth}-${d}`;
-        if (selDate === key) btn.classList.add('cal-day--selected');
-        if (today.getFullYear() === calYear && today.getMonth() === calMonth && today.getDate() === d)
-          btn.classList.add('cal-day--today');
-        btn.onclick = () => pickDate(d);
+
+        if (selKey === key) btn.classList.add('cal-day--selected');
+
+        const thisDate = new Date(calYear, calMonth, d);
+        if (minDate && thisDate < minDate) {
+          btn.classList.add('cal-day--disabled');
+        } else {
+          btn.onclick = () => pickDate(d);
+        }
         grid.appendChild(btn);
       }
     }
@@ -237,8 +254,9 @@
       }
     });
 
-    // 초기 상태: 로그 탭이므로 기간 숨김
+    // 초기 상태: 로그 탭이므로 기간 + 리마인더 숨김
     document.getElementById('section-duration').style.display = 'none';
+    document.getElementById('section-reminder').style.display = 'none';
   </script>
 </body>
 </html>

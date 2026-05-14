@@ -411,27 +411,33 @@ body {
 }
 
 .cal-day {
+  width: 100%;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  font-family: 'Pretendard', sans-serif;
   color: #1A1C1E;
   border: none;
   background: none;
-  border-radius: 6px;
+  border-radius: 50%;
   cursor: pointer;
-  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  padding: 0;
+  box-sizing: border-box;
 }
-.cal-day:active { background: #F2F2F2; }
+.cal-day:active { background: rgba(0,0,0,0.05); }
 .cal-day--selected {
-  background: #1A1C1E !important;
-  color: #FFFFFF;
-  font-weight: 700;
+  background: #E8941A !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  border-radius: 50% !important;
 }
-.cal-day--today {
-  color: #E8941A;
-  font-weight: 700;
+.cal-day--disabled {
+  color: #D1D1D1;
+  cursor: default;
+  pointer-events: none;
 }
 .cal-empty {
   aspect-ratio: 1;
