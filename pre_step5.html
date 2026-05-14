@@ -106,13 +106,7 @@
 
   <script>
     function selectDomain(card) {
-      const isSelected = card.classList.contains('domain-card--selected');
-      document.querySelectorAll('.domain-card').forEach(c => {
-        c.classList.remove('domain-card--selected');
-      });
-      if (!isSelected) {
-        card.classList.add('domain-card--selected');
-      }
+      card.classList.toggle('domain-card--selected');
     }
   </script>
 </body>
