@@ -50,14 +50,14 @@ body {
   z-index: 0;
 }
 
-/* ── 메인: padding 60px 24px 110px ── */
+/* ── 메인: padding 40px 24px 110px ── */
 .main {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 60px 24px 110px;
+  padding: 40px 24px 110px;
   width: 100%;
 }
 

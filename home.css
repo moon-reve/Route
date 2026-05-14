@@ -38,7 +38,7 @@ body {
 .home-main {
   display: flex;
   flex-direction: column;
-  padding: 60px 24px 110px;
+  padding: 40px 24px 110px;
 }
 
 /* 탑 헤더: row, space-between, center */

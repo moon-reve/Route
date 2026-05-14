@@ -50,7 +50,7 @@ body {
   z-index: 0;
 }
 
-/* ── 메인: padding 60px 24px 110px, gap 48px ── */
+/* ── 메인: padding 40px 24px 110px, gap 48px ── */
 .main {
   position: relative;
   z-index: 1;
@@ -58,7 +58,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   gap: 48px;
-  padding: 60px 24px 110px;
+  padding: 40px 24px 110px;
   width: 100%;
 }
 
