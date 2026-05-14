@@ -1,0 +1,235 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  background: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 배경 */
+.loading-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 전체 래퍼 */
+.loading-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 40px 24px 0;
+  overflow: hidden;
+}
+
+/* 콘텐츠 영역 */
+.loading-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1;
+}
+
+/* ════════ HERO ════════ */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+.hero-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: -0.025em;
+  color: #1A1C1E;
+}
+
+.hero-bar {
+  width: 48px;
+  height: 6px;
+  background: #1A1C1E;
+  border-radius: 9999px;
+}
+
+/* ════════ CHECKLIST ════════ */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 아이템 기본 */
+.check-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 32px;
+  transition: background 0.4s, border-color 0.4s;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* 상태별 카드 스타일 */
+.check-item--pending {
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.5px solid #E8E8E8;
+}
+
+.check-item--loading {
+  background: rgba(232, 148, 26, 0.1);
+  border: 0.5px solid rgba(232, 148, 26, 0.55);
+}
+
+.check-item--done {
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.5px solid #E8E8E8;
+}
+
+/* 아이콘 래퍼 */
+.check-icon-wrap {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+
+.check-icon {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+/* 빈 원 (pending) */
+.check-icon--empty {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 0.5px solid #D1D1D1;
+}
+
+/* 스피닝 애니메이션 */
+.check-icon--spin {
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 텍스트 */
+.check-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1A1C1E;
+  transition: color 0.3s;
+}
+
+.check-item--pending .check-text {
+  color: #999999;
+  font-weight: 700;
+}
+
+/* ════════ PROGRESS FOOTER ════════ */
+.progress-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0 32px;
+  background: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.04);
+}
+
+.progress-desc {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22.75px;
+  color: #555555;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.progress-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.progress-label {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+.progress-pct {
+  font-weight: 900;
+  font-size: 14px;
+  color: #1A1C1E;
+}
+
+/* 프로그레스 바 */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #E8E8E8;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%);
+  border-radius: 9999px;
+  transition: width 1.5s ease-out;
+}
+
+.progress-sub {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #999999;
+  text-align: center;
+  padding-top: 4px;
+}

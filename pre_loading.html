@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Route — 루트 생성 중</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="pre_loading.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Route">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F9F9F9">
+</head>
+<body>
+  <div class="screen">
+
+    <!-- 배경 -->
+    <img src="images/pre_bg.svg" alt="" class="loading-bg">
+
+    <!-- 메인 -->
+    <div class="loading-wrap">
+
+      <!-- 콘텐츠 영역 -->
+      <div class="loading-contents">
+
+        <!-- 히어로 타이틀 -->
+        <div class="hero-section">
+          <h1 class="hero-title">맞춤 커리어 루트를<br>만들고 있습니다.</h1>
+          <div class="hero-bar"></div>
+        </div>
+
+        <!-- 체크리스트 -->
+        <div class="checklist">
+
+          <div class="check-item check-item--pending" id="item1">
+            <div class="check-icon-wrap">
+              <img src="images/loading_icon_done.svg" alt="" class="check-icon check-icon--done" style="display:none">
+              <img src="images/loading_icon_spinning.svg" alt="" class="check-icon check-icon--spin">
+              <div class="check-icon check-icon--empty"></div>
+            </div>
+            <span class="check-text">사용자 정보를 분석하고 있어요.</span>
+          </div>
+
+          <div class="check-item check-item--pending" id="item2">
+            <div class="check-icon-wrap">
+              <img src="images/loading_icon_done.svg" alt="" class="check-icon check-icon--done" style="display:none">
+              <img src="images/loading_icon_spinning.svg" alt="" class="check-icon check-icon--spin" style="display:none">
+              <div class="check-icon check-icon--empty"></div>
+            </div>
+            <span class="check-text">희망 직무 정보를 분석하고 있어요.</span>
+          </div>
+
+          <div class="check-item check-item--pending" id="item3">
+            <div class="check-icon-wrap">
+              <img src="images/loading_icon_done.svg" alt="" class="check-icon check-icon--done" style="display:none">
+              <img src="images/loading_icon_spinning.svg" alt="" class="check-icon check-icon--spin" style="display:none">
+              <div class="check-icon check-icon--empty"></div>
+            </div>
+            <span class="check-text">보유 스킬 데이터를 분석하고 있어요.</span>
+          </div>
+
+          <div class="check-item check-item--pending" id="item4">
+            <div class="check-icon-wrap">
+              <img src="images/loading_icon_done.svg" alt="" class="check-icon check-icon--done" style="display:none">
+              <img src="images/loading_icon_spinning.svg" alt="" class="check-icon check-icon--spin" style="display:none">
+              <div class="check-icon check-icon--empty"></div>
+            </div>
+            <span class="check-text">맞춤 로드맵을 구성하고 있어요.</span>
+          </div>
+
+        </div><!-- /checklist -->
+      </div>
+
+      <!-- 하단 프로그레스 푸터 -->
+      <div class="progress-footer">
+        <p class="progress-desc">완성도 높은 루트를 만들기 위해 꼼꼼하게 분석 중이에요</p>
+        <div class="progress-status">
+          <span class="progress-label">Processing</span>
+          <span class="progress-pct" id="progressPct">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-sub">조금만 기다려주세요...</p>
+      </div>
+
+    </div><!-- /loading-wrap -->
+  </div>
+
+  <script>
+    const items = [1, 2, 3, 4];
+    const pctEl = document.getElementById('progressPct');
+    const fillEl = document.getElementById('progressFill');
+
+    function setProgress(pct) {
+      pctEl.textContent = pct + '%';
+      fillEl.style.width = pct + '%';
+    }
+
+    function setItemState(idx, state) {
+      const item = document.getElementById('item' + idx);
+      const done = item.querySelector('.check-icon--done');
+      const spin = item.querySelector('.check-icon--spin');
+      const empty = item.querySelector('.check-icon--empty');
+
+      // 카드 상태
+      item.classList.remove('check-item--pending', 'check-item--loading', 'check-item--done');
+      item.classList.add('check-item--' + state);
+
+      // 아이콘 상태
+      done.style.display  = state === 'done'    ? 'block' : 'none';
+      spin.style.display  = state === 'loading' ? 'block' : 'none';
+      empty.style.display = state === 'pending' ? 'block' : 'none';
+    }
+
+    // 초기: 전부 pending
+    items.forEach(i => setItemState(i, 'pending'));
+    setProgress(0);
+
+    // 애니메이션 시퀀스
+    setTimeout(() => {
+      setItemState(1, 'loading');
+      // 프로그레스 0 → 25 서서히
+      let p = 0;
+      const t1 = setInterval(() => {
+        p = Math.min(p + 1, 25);
+        setProgress(p);
+        if (p >= 25) clearInterval(t1);
+      }, 60);
+    }, 300);
+
+    setTimeout(() => {
+      setItemState(1, 'done');
+      setItemState(2, 'loading');
+      let p = 25;
+      const t2 = setInterval(() => {
+        p = Math.min(p + 1, 50);
+        setProgress(p);
+        if (p >= 50) clearInterval(t2);
+      }, 60);
+    }, 2000);
+
+    setTimeout(() => {
+      setItemState(2, 'done');
+      setItemState(3, 'loading');
+      let p = 50;
+      const t3 = setInterval(() => {
+        p = Math.min(p + 1, 75);
+        setProgress(p);
+        if (p >= 75) clearInterval(t3);
+      }, 60);
+    }, 3700);
+
+    setTimeout(() => {
+      setItemState(3, 'done');
+      setItemState(4, 'loading');
+      let p = 75;
+      const t4 = setInterval(() => {
+        p = Math.min(p + 1, 100);
+        setProgress(p);
+        if (p >= 100) clearInterval(t4);
+      }, 60);
+    }, 5400);
+
+    setTimeout(() => {
+      setItemState(4, 'done');
+      setTimeout(() => {
+        window.location.href = 'home';
+      }, 600);
+    }, 7100);
+  </script>
+</body>
+</html>
