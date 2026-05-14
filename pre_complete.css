@@ -1,0 +1,307 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+  background: #F9F9F9;
+}
+
+/* 배경 */
+.complete-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 스크롤 */
+.scroll-area {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-area::-webkit-scrollbar { display: none; }
+
+/* 메인 */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 24px 125px;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* ════════ ① HERO ════════ */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 24px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.hero-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 루트 완성 뱃지 */
+.route-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 25px;
+  background: rgba(232, 148, 26, 0.05);
+  border: 1px solid rgba(232, 148, 26, 0.5);
+  border-radius: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  color: #E8941A;
+  align-self: flex-start;
+}
+
+/* 타이틀 */
+.hero-title {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 39px;
+  letter-spacing: -0.02em;
+  color: #1A1C1E;
+}
+
+.hero-title--gold {
+  color: #E8941A;
+}
+
+/* 태그 */
+.tag-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 72px;
+  align-content: flex-start;
+}
+
+.custom-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border: 0.5px solid #D1D1D1;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #555555;
+}
+
+/* ════════ ② 커리큘럼 카드 ════════ */
+.curriculum-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #E8E8E8;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.section-heading {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+/* 타임라인 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 7px;
+  width: 1px;
+}
+
+.timeline-line--gold {
+  top: 8.5px;
+  height: 87px;
+  background: #E8941A;
+}
+
+.timeline-line--gray {
+  top: 94.5px;
+  height: 129px;
+  background: #E8E8E8;
+}
+
+.phase-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.phase-dot {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.phase-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.phase-label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  color: #1A1C1E;
+}
+
+.phase-desc {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: #555555;
+}
+
+/* ════════ ③ 미션 카드 ════════ */
+.mission-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.mission-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.mission-icon {
+  width: 13px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.mission-label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #555555;
+}
+
+.day-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  background: #1A1C1E;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.mission-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mission-title {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  color: #1A1C1E;
+  line-height: 1.4;
+}
+
+.mission-desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+}
+
+/* ════════ ④ CTA 버튼 ════════ */
+.btn-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  background: #1A1C1E;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-start:hover { opacity: 0.85; }
