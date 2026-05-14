@@ -40,12 +40,14 @@ body {
 
 /* ── 배경 이미지 ── */
 .expert-bg {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+  z-index: 0;
 }
 
 /* ── 메인: padding 60px 24px 110px, gap 48px ── */
