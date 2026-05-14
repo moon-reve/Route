@@ -21,7 +21,7 @@
 .header-title {
   font-weight: 700;
   font-size: 20px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 /* ════════ TABS ════════ */
@@ -31,7 +31,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  border-bottom: 1px solid #D1D1D1;
+  border-bottom: 1px solid var(--border-gray-300);
 }
 
 .tab {
@@ -49,7 +49,7 @@
 
 .tab--active {
   font-weight: 700;
-  border-bottom: 2px solid #1A1C1E;
+  border-bottom: 2px solid var(--midnight-charcoal);
   margin-bottom: -1px;
 }
 
@@ -72,7 +72,7 @@
 
 .section-title { font-weight: 700; font-size: 16px; }
 .section-title--dark { color: #000000; }
-.section-title--gray { color: #555555; }
+.section-title--gray { color: var(--gray-700); }
 
 /* ════════ ONGOING CARD ════════ */
 .card-ongoing {
@@ -81,15 +81,15 @@
   align-items: center;
   gap: 16px;
   padding: 15px;
-  background: #FFFFFF;
-  border: 1px solid #D1D1D1;
+  background: var(--pure-white);
+  border: 1px solid var(--border-gray-300);
   border-radius: 12px;
 }
 
 .card-img-box {
   width: 64px;
   height: 64px;
-  border: 1px solid #D1D1D1;
+  border: 1px solid var(--border-gray-300);
   border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
@@ -120,8 +120,8 @@
 }
 
 .progress-fill { height: 100%; border-radius: 3px; }
-.progress-fill--gold { width: 71.7%; background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%); }
-.progress-fill--sage { width: 50%; background: #8FAF8A; }
+.progress-fill--gold { width: 71.7%; background: linear-gradient(90deg, var(--champagne-gold) 0%, var(--starline-gold) 100%); }
+.progress-fill--sage { width: 50%; background: var(--dusty-sage); }
 
 .card-meta { font-weight: 400; font-size: 13px; color: #5F5E5E; }
 
@@ -132,8 +132,8 @@
   align-items: center;
   gap: 16px;
   padding: 15px;
-  background: #F2F2F2;
-  border: 1px solid #D1D1D1;
+  background: var(--gray-100);
+  border: 1px solid var(--border-gray-300);
   border-radius: 12px;
 }
 

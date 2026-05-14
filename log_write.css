@@ -20,7 +20,7 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   text-align: center;
 }
 
@@ -110,17 +110,17 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
-/* 탭 컨테이너: row, gap 4px, padding 4px, bg #E8E8E8, radius 5px */
+/* 탭 컨테이너: row, gap 4px, padding 4px, bg var(--inactive-gray-200), radius 5px */
 .resource-tabs {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 4px;
   padding: 4px;
-  background: #E8E8E8;
+  background: var(--inactive-gray-200);
   border-radius: 5px;
 }
 
@@ -136,14 +136,14 @@
   font-weight: 500;
   font-size: 13px;
   white-space: nowrap;
-  color: #555555;
+  color: var(--gray-700);
   cursor: pointer;
 }
 
 .resource-tab--active {
-  background: #FFFFFF;
+  background: var(--pure-white);
   font-weight: 700;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 /* ════════ INPUTS ════════ */
@@ -165,13 +165,13 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 /* 인풋 박스: height 52px, bg white, border 1px #CFC4C5 */
 .input-box {
   height: 52px;
-  background: #FFFFFF;
+  background: var(--pure-white);
   border: 1px solid #CFC4C5;
   border-radius: 8px;
   display: flex;
@@ -187,7 +187,7 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .input-box input::placeholder {
@@ -208,7 +208,7 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   resize: none;
   line-height: 1.6;
 }
@@ -241,8 +241,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px 10px;
-  background: #FFFFFF;
-  border: 1px solid #D1D1D1;
+  background: var(--pure-white);
+  border: 1px solid var(--border-gray-300);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -251,11 +251,11 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .date-placeholder {
-  color: #555555;
+  color: var(--gray-700);
 }
 
 .calendar-icon {
@@ -284,7 +284,7 @@
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .toggle-btn {
@@ -294,20 +294,20 @@
 }
 
 /* ════════ SUBMIT BUTTON ════════ */
-/* row center, padding 16px 0, bg #1A1C1E, radius 12px */
+/* row center, padding 16px 0, bg var(--midnight-charcoal), radius 12px */
 .submit-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 16px 0;
-  background: #1A1C1E;
+  background: var(--midnight-charcoal);
   border: none;
   border-radius: 12px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #FFFFFF;
+  color: var(--pure-white);
   cursor: pointer;
   transition: opacity 0.15s;
 }
@@ -338,7 +338,7 @@
 .cal-title {
   font-size: 14px;
   font-weight: 700;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .cal-nav {
@@ -347,7 +347,7 @@
   border: none;
   background: none;
   cursor: pointer;
-  color: #999999;
+  color: var(--active-border-gray-500);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,7 +355,7 @@
   font-size: 16px;
   line-height: 1;
 }
-.cal-nav:active { background: #F2F2F2; }
+.cal-nav:active { background: var(--gray-100); }
 
 .cal-days {
   display: grid;
@@ -366,7 +366,7 @@
   text-align: center;
   font-size: 10px;
   font-weight: 600;
-  color: #999999;
+  color: var(--active-border-gray-500);
   padding: 3px 0;
 }
 
@@ -384,7 +384,7 @@
   justify-content: center;
   font-size: 12px;
   font-family: 'Pretendard', sans-serif;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   border: none;
   background: none;
   border-radius: 50%;
@@ -395,13 +395,13 @@
 }
 .cal-day:active { background: rgba(0,0,0,0.05); }
 .cal-day--selected {
-  background: #E8941A !important;
-  color: #FFFFFF !important;
+  background: var(--starline-gold) !important;
+  color: var(--pure-white) !important;
   font-weight: 700 !important;
   border-radius: 50% !important;
 }
 .cal-day--disabled {
-  color: #D1D1D1;
+  color: var(--border-gray-300);
   cursor: default;
   pointer-events: none;
 }

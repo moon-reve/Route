@@ -55,7 +55,7 @@
 .header-title {
   font-weight: 700;
   font-size: 20px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   text-align: center;
 }
 
@@ -83,7 +83,7 @@
   width: 128px;
   height: 128px;
   border-radius: 9999px;
-  border: 2.5px solid #D4A853;
+  border: 2.5px solid var(--champagne-gold);
   overflow: hidden;
 }
 
@@ -116,7 +116,7 @@
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.025em;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   text-align: center;
   margin-bottom: 4px;
 }
@@ -126,7 +126,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #555555;
+  color: var(--gray-700);
   text-align: center;
   margin-bottom: 16px;
 }
@@ -159,7 +159,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   text-align: center;
 }
 
@@ -176,13 +176,13 @@
   line-height: 20px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #555555;
+  color: var(--gray-700);
   text-align: center;
 }
 
 .stat-divider {
   width: 1px;
-  background: #E8E8E8;
+  background: var(--inactive-gray-200);
   align-self: stretch;
 }
 
@@ -199,12 +199,12 @@
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   padding: 0 4px;
 }
 
 .section-heading--gray {
-  color: #555555;
+  color: var(--gray-700);
 }
 
 .tag-wrap {
@@ -227,13 +227,13 @@
 }
 
 .tag--dark {
-  background: #1A1C1E;
-  color: #FFFFFF;
+  background: var(--midnight-charcoal);
+  color: var(--pure-white);
 }
 
 .tag--gray {
-  background: #E8E8E8;
-  color: #555555;
+  background: var(--inactive-gray-200);
+  color: var(--gray-700);
 }
 
 /* ════════ ③ 주요 경력 ════════ */
@@ -258,7 +258,7 @@
   top: 8px;
   width: 1px;
   height: calc(100% - 32px);
-  background: #D1D1D1;
+  background: var(--border-gray-300);
 }
 
 /* 타임라인 아이템 */
@@ -280,7 +280,7 @@
   width: 24px;
   height: 24px;
   border-radius: 9999px;
-  background: #FFFFFF;
+  background: var(--pure-white);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -290,11 +290,11 @@
 }
 
 .timeline-dot--active {
-  border: 1px solid #E8941A;
+  border: 1px solid var(--starline-gold);
 }
 
 .timeline-dot--inactive {
-  border: 1px solid #E8E8E8;
+  border: 1px solid var(--inactive-gray-200);
 }
 
 .timeline-dot img {
@@ -316,21 +316,21 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .career-title {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #555555;
+  color: var(--gray-700);
 }
 
 .career-desc {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color: #999999;
+  color: var(--active-border-gray-500);
   padding-top: 4px;
 }
 
@@ -340,8 +340,8 @@
   flex-direction: column;
   gap: 12px;
   padding: 24px;
-  background: #FFFFFF;
-  border: 0.5px solid #D1D1D1;
+  background: var(--pure-white);
+  border: 0.5px solid var(--border-gray-300);
   border-radius: 24px;
 }
 
@@ -349,7 +349,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 22.75px;
-  color: #555555;
+  color: var(--gray-700);
 }
 
 /* ════════ ⑤ CTA 버튼 ════════ */
@@ -359,13 +359,13 @@
   align-items: center;
   width: 100%;
   padding: 16px;
-  background: #1A1C1E;
+  background: var(--midnight-charcoal);
   border: none;
   border-radius: 12px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: var(--pure-white);
   cursor: pointer;
 }

@@ -44,7 +44,7 @@
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.05em;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   line-height: 1;
 }
 
@@ -53,7 +53,7 @@
   font-weight: 700;
   font-size: 44px;
   line-height: 48.4px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .subtext {
@@ -61,7 +61,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #555555;
+  color: var(--gray-700);
 }
 
 /* ── Action section ── */
@@ -103,14 +103,14 @@
 /* Kakao */
 .btn-kakao {
   background: #FFE812;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 /* Google */
 .btn-google {
-  background: #FFFFFF;
-  color: #1A1C1E;
-  border: 0.5px solid #D1D1D1;
+  background: var(--pure-white);
+  color: var(--midnight-charcoal);
+  border: 0.5px solid var(--border-gray-300);
   font-weight: 500;
 }
 
@@ -130,7 +130,7 @@
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #555555;
+  color: var(--gray-700);
   padding: 4px 0;
 }
 
@@ -186,7 +186,7 @@
 .modal-handle {
   width: 48px;
   height: 6px;
-  background: #E8E8E8;
+  background: var(--inactive-gray-200);
   border-radius: 12px;
 }
 
@@ -196,7 +196,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 28px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   text-align: center;
   align-self: stretch;
 }
@@ -218,26 +218,26 @@
 /* LINE */
 .btn-line {
   background: #06C755;
-  color: #FFFFFF;
+  color: var(--pure-white);
 }
 
 /* LinkedIn */
 .btn-linkedin {
   background: #0A66C2;
-  color: #FFFFFF;
+  color: var(--pure-white);
 }
 
 /* GitHub */
 .btn-github {
   background: #24292F;
-  color: #FFFFFF;
+  color: var(--pure-white);
 }
 
 /* 휴대폰/이메일 */
 .btn-phone {
-  background: #FFFFFF;
-  color: #1A1C1E;
-  border: 1px solid #999999;
+  background: var(--pure-white);
+  color: var(--midnight-charcoal);
+  border: 1px solid var(--active-border-gray-500);
   font-weight: 500;
   font-size: 14px;
 }
@@ -257,7 +257,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #555555;
+  color: var(--gray-700);
   padding: 12px 24px;
 }
 

@@ -101,7 +101,7 @@
 
 .progress-fill {
   height: 100%;
-  background: #D4A853;
+  background: var(--champagne-gold);
   border-radius: 2px;
 }
 
@@ -112,7 +112,7 @@
   gap: 16px;
   padding: 18px 12px;
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #E8E8E8;
+  border: 1px solid var(--inactive-gray-200);
   border-radius: 10px;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -148,7 +148,7 @@
   justify-content: space-between;
   padding: 20px 14px;
   background: rgba(255, 255, 255, 0.45);
-  border: 1px solid #E8E8E8;
+  border: 1px solid var(--inactive-gray-200);
   border-radius: 10px;
   cursor: pointer;
   backdrop-filter: blur(2px);
@@ -203,7 +203,7 @@
   align-items: center;
   gap: 32px;
   padding: 14px 0;
-  background: #1A1C1E;
+  background: var(--midnight-charcoal);
   border-radius: 10px;
   text-decoration: none;
   backdrop-filter: blur(2px);
@@ -216,7 +216,7 @@
 .btn-next-text {
   font-weight: 700;
   font-size: 16px;
-  color: #F9F9F9;
+  color: var(--bg-gray-50);
 }
 
 .btn-next-icon {

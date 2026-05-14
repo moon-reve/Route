@@ -50,7 +50,7 @@
   font-family: Georgia, serif;
   font-weight: 400;
   font-size: 34px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
   letter-spacing: 0;
   line-height: 1;
 }

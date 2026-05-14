@@ -21,7 +21,7 @@
 .header-title {
   font-weight: 700;
   font-size: 20px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 /* ════════ TABS ════════ */
@@ -31,7 +31,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  border-bottom: 1px solid #D1D1D1;
+  border-bottom: 1px solid var(--border-gray-300);
 }
 
 .tab {
@@ -49,7 +49,7 @@
 
 .tab--active {
   font-weight: 700;
-  border-bottom: 2px solid #1A1C1E;
+  border-bottom: 2px solid var(--midnight-charcoal);
   margin-bottom: -1px;
 }
 
@@ -72,7 +72,7 @@
 .filter-count {
   font-weight: 400;
   font-size: 16px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 .filter-sort {
@@ -107,7 +107,7 @@
   flex-direction: column;
   gap: 16px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #D1D1D1;
+  border-bottom: 1px solid var(--border-gray-300);
 }
 
 .article-meta {
@@ -134,9 +134,9 @@
   text-align: center;
 }
 
-.badge--gold      { background: rgba(212, 168, 83, 0.15);  color: #D4A853; }
-.badge--sage      { background: rgba(143, 175, 138, 0.15); color: #8FAF8A; }
-.badge--orange    { background: rgba(232, 148, 26, 0.15);  color: #E8941A; }
+.badge--gold      { background: rgba(212, 168, 83, 0.15);  color: var(--champagne-gold); }
+.badge--sage      { background: rgba(143, 175, 138, 0.15); color: var(--dusty-sage); }
+.badge--orange    { background: rgba(232, 148, 26, 0.15);  color: var(--starline-gold); }
 
 .article-text {
   font-weight: 400;

@@ -20,7 +20,7 @@
 .header-title {
   font-weight: 700;
   font-size: 20px;
-  color: #1A1C1E;
+  color: var(--midnight-charcoal);
 }
 
 /* ════════ SECTION PROFILE: column, center, gap 8px ════════ */
@@ -61,8 +61,8 @@
   align-items: center;
   justify-content: center;
   padding: 9px 12px;
-  background: #FFFFFF;
-  border: 1px solid #999999;
+  background: var(--pure-white);
+  border: 1px solid var(--active-border-gray-500);
   border-radius: 50px;
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
@@ -78,14 +78,14 @@
   gap: 10px;
 }
 
-/* 성취 카드: column, fill, gap 17px, padding 20px, bg #1A1C1E, radius 12px */
+/* 성취 카드: column, fill, gap 17px, padding 20px, bg var(--midnight-charcoal), radius 12px */
 .mastery-box {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 17px;
   padding: 20px;
-  background: #1A1C1E;
+  background: var(--midnight-charcoal);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -112,14 +112,14 @@
 .mastery-sub {
   font-weight: 400;
   font-size: 14px;
-  color: #FFFFFF;
+  color: var(--pure-white);
 }
 
 /* 메인 타이틀: Bold 24px, white */
 .mastery-main {
   font-weight: 700;
   font-size: 24px;
-  color: #FFFFFF;
+  color: var(--pure-white);
   line-height: 1.3;
 }
 
@@ -145,7 +145,7 @@
 .progress-fill {
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, #D4A853 0%, #E8941A 100%);
+  background: linear-gradient(90deg, var(--champagne-gold) 0%, var(--starline-gold) 100%);
   border-radius: 4px;
 }
 
@@ -154,7 +154,7 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  background: #E8941A;
+  background: var(--starline-gold);
   border-radius: 50%;
   left: calc(60% - 5px);
   top: 0;
@@ -180,11 +180,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  border-bottom: 1px solid #D1D1D1;
+  border-bottom: 1px solid var(--border-gray-300);
 }
 
 .menu-item--first {
-  border-top: 1px solid #D1D1D1;
+  border-top: 1px solid var(--border-gray-300);
 }
 
 /* 메뉴 텍스트: Regular 16px, #4C4546 */
