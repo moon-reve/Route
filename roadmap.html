@@ -18,8 +18,6 @@
 <body data-page="route">
   <div class="screen">
     <div class="scroll-area">
-
-      <!-- 메인 콘텐츠 (backdrop-filter: blur(2px)) -->
       <main class="main">
 
         <!-- 헤더 -->
@@ -27,7 +25,6 @@
           <div class="header-title">마스터 플랜 아키텍처</div>
         </header>
 
-        <!-- 콘텐츠 -->
         <div class="contents">
 
           <!-- 필터 칩 -->
@@ -58,25 +55,31 @@
           <!-- 타임라인 -->
           <div class="timeline">
 
-            <!-- WEEK 01 — DONE (기본 확장, 토글 가능) -->
-            <div class="card card--done-open" onclick="toggleDone(this)" style="cursor:pointer">
+            <!-- WEEK 01 — DONE (기본 확장) -->
+            <div class="card card--done-open" onclick="toggleCard(this)" style="cursor:pointer">
               <!-- 닫힌 헤더 -->
               <div class="card-head-row done-closed-header" style="display:none">
                 <div class="card-head-left">
                   <span class="week-lbl week-lbl--gray">WEEK 01</span>
-                  <span class="badge-done">DONE</span>
+                  <div class="week-dots">
+                    <span class="week-dot week-dot--gold"></span>
+                    <span class="week-dot week-dot--mint"></span>
+                    <span class="week-dot week-dot--blue"></span>
+                  </div>
                 </div>
-                <div class="week-dots">
-                  <span class="week-dot week-dot--gold"></span>
-                  <span class="week-dot week-dot--sage"></span>
-                  <span class="week-dot week-dot--terracotta"></span>
+                <div class="card-head-right">
+                  <span class="badge-done">DONE</span>
+                  <span class="chevron chevron--down"></span>
                 </div>
               </div>
               <!-- 열린 내용 -->
               <div class="done-open-content">
                 <div class="card-head card-head--divider">
                   <span class="week-lbl week-lbl--dark">WEEK 01</span>
-                  <span class="badge-done">DONE</span>
+                  <div class="card-head-right">
+                    <span class="badge-done">DONE</span>
+                    <span class="chevron chevron--up"></span>
+                  </div>
                 </div>
                 <div class="card-items">
                   <div class="card-item">
@@ -93,7 +96,7 @@
                     <div class="item-body">
                       <span class="item-title">UX 심리학</span>
                       <div class="item-tags">
-                        <span class="tag tag--sage">도서</span>
+                        <span class="tag tag--mint">도서</span>
                       </div>
                     </div>
                   </div>
@@ -102,7 +105,7 @@
                     <div class="item-body">
                       <span class="item-title">디자인 트렌드</span>
                       <div class="item-tags">
-                        <span class="tag tag--terracotta">매거진</span>
+                        <span class="tag tag--blue">매거진</span>
                         <span class="tag tag--sage">선취득</span>
                       </div>
                     </div>
@@ -111,41 +114,79 @@
               </div>
             </div>
 
-            <!-- WEEK 02 — DONE (기본 축소, 토글 가능) -->
-            <div class="card card--done-closed" onclick="toggleDone(this)" style="cursor:pointer">
+            <!-- WEEK 02 — DONE (기본 축소) -->
+            <div class="card card--done-closed" onclick="toggleCard(this)" style="cursor:pointer">
               <!-- 닫힌 헤더 -->
               <div class="card-head-row done-closed-header">
                 <div class="card-head-left">
                   <span class="week-lbl week-lbl--gray">WEEK 02</span>
+                  <div class="week-dots">
+                    <span class="week-dot week-dot--gold"></span>
+                    <span class="week-dot week-dot--mint"></span>
+                  </div>
+                </div>
+                <div class="card-head-right">
                   <span class="badge-done">DONE</span>
+                  <span class="chevron chevron--down"></span>
                 </div>
               </div>
               <!-- 열린 내용 -->
               <div class="done-open-content" style="display:none">
                 <div class="card-head card-head--divider">
                   <span class="week-lbl week-lbl--dark">WEEK 02</span>
-                  <span class="badge-done">DONE</span>
+                  <div class="card-head-right">
+                    <span class="badge-done">DONE</span>
+                    <span class="chevron chevron--up"></span>
+                  </div>
+                </div>
+                <div class="card-items">
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_done.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title">리액트 기초</span>
+                      <div class="item-tags">
+                        <span class="tag tag--gold">인강</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_done.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title">린 UX</span>
+                      <div class="item-tags">
+                        <span class="tag tag--mint">도서</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- WEEK 03 — DONE (기본 축소, 토글 가능) -->
-            <div class="card card--done-closed" onclick="toggleDone(this)" style="cursor:pointer">
+            <!-- WEEK 03 — DONE (기본 축소) -->
+            <div class="card card--done-closed" onclick="toggleCard(this)" style="cursor:pointer">
               <!-- 닫힌 헤더 -->
               <div class="card-head-row done-closed-header">
                 <div class="card-head-left">
                   <span class="week-lbl week-lbl--gray">WEEK 03</span>
-                  <span class="badge-done">DONE</span>
+                  <div class="week-dots">
+                    <span class="week-dot week-dot--lavender"></span>
+                    <span class="week-dot week-dot--gold"></span>
+                    <span class="week-dot week-dot--mint"></span>
+                  </div>
                 </div>
-                <div class="week-dots">
-                  <span class="week-dot week-dot--orange"></span>
+                <div class="card-head-right">
+                  <span class="badge-done">DONE</span>
+                  <span class="chevron chevron--down"></span>
                 </div>
               </div>
               <!-- 열린 내용 -->
               <div class="done-open-content" style="display:none">
                 <div class="card-head card-head--divider">
                   <span class="week-lbl week-lbl--dark">WEEK 03</span>
-                  <span class="badge-done">DONE</span>
+                  <div class="card-head-right">
+                    <span class="badge-done">DONE</span>
+                    <span class="chevron chevron--up"></span>
+                  </div>
                 </div>
                 <div class="card-items">
                   <div class="card-item">
@@ -156,7 +197,26 @@
                         <a href="feedback_detail" class="feedback-btn" onclick="event.stopPropagation()">피드백 보기</a>
                       </div>
                       <div class="item-tags">
-                        <span class="tag tag--project">프로젝트</span>
+                        <span class="tag tag--lavender">프로젝트</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_done.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title">CSS 고급</span>
+                      <div class="item-tags">
+                        <span class="tag tag--gold">인강</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-item">
+                    <div class="item-icon--unfinished"></div>
+                    <div class="item-body">
+                      <span class="item-title">린 스타트업</span>
+                      <div class="item-tags">
+                        <span class="tag tag--mint">도서</span>
+                        <span class="tag tag--unfinished">미완료</span>
                       </div>
                     </div>
                   </div>
@@ -164,70 +224,155 @@
               </div>
             </div>
 
-            <!-- WEEK 04 — ACTIVE (확장) -->
-            <a href="daily_mission" class="card card--active-open">
-              <div class="card-head card-head--orange-divider">
-                <div class="active-week-group">
-                  <div class="active-week-col">
-                    <span class="week-lbl week-lbl--orange">WEEK 04</span>
-                    <span class="you-are-here">YOU ARE HERE</span>
-                  </div>
-                  <span class="badge-active">ACTIVE</span>
-                </div>
-              </div>
-              <div class="card-items">
-                <div class="card-item">
-                  <img src="images/roadmap_icon_active.svg" alt="" class="item-icon">
-                  <div class="item-body">
-                    <span class="item-title item-title--bold">HTML/CSS 구조</span>
-                    <div class="item-tags">
-                      <span class="tag tag--gold">인강</span>
-                      <span class="tag tag--in-progress">진행 중</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-item">
-                  <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon">
-                  <div class="item-body">
-                    <span class="item-title item-title--muted">인터랙션 디자인</span>
-                    <div class="item-tags">
-                      <span class="tag tag--sage">도서</span>
-                      <span class="tag tag--plan">예정</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-item">
-                  <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon item-icon--sm">
-                  <div class="item-body">
-                    <span class="item-title item-title--muted">포트폴리오 리뉴얼</span>
-                    <div class="item-tags">
-                      <span class="tag tag--project">프로젝트</span>
-                      <span class="tag tag--plan">예정</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- WEEK 05 — PLAN (축소) -->
-            <div class="card card--plan-closed">
-              <div class="card-head-row">
+            <!-- WEEK 04 — ACTIVE (토글 가능, 기본 확장) -->
+            <div class="card card--active-open" onclick="toggleCard(this)" style="cursor:pointer">
+              <!-- 닫힌 헤더 -->
+              <div class="card-head-row done-closed-header" style="display:none">
                 <div class="card-head-left">
-                  <span class="week-lbl week-lbl--light">WEEK 05</span>
-                  <span class="badge-plan">PLAN</span>
+                  <span class="week-lbl week-lbl--orange">WEEK 04</span>
                 </div>
-                <div class="week-dots" style="opacity:0.5">
-                  <span class="week-dot week-dot--sage"></span>
+                <div class="card-head-right">
+                  <span class="badge-active">ACTIVE</span>
+                  <span class="chevron chevron--down"></span>
+                </div>
+              </div>
+              <!-- 열린 내용 -->
+              <div class="done-open-content">
+                <div class="card-head card-head--orange-divider">
+                  <div class="active-week-group">
+                    <div class="active-week-col">
+                      <span class="week-lbl week-lbl--orange">WEEK 04</span>
+                      <span class="you-are-here">YOU ARE HERE</span>
+                    </div>
+                    <div class="card-head-right">
+                      <span class="badge-active">ACTIVE</span>
+                      <span class="chevron chevron--up"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-items">
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_active.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <div class="item-title-row">
+                        <span class="item-title item-title--bold">HTML/CSS 구조</span>
+                        <a href="daily_mission" class="feedback-btn" onclick="event.stopPropagation()">데일리 미션</a>
+                      </div>
+                      <div class="item-tags">
+                        <span class="tag tag--gold">인강</span>
+                        <span class="tag tag--in-progress">진행 중</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title item-title--muted">인터랙션 디자인</span>
+                      <div class="item-tags">
+                        <span class="tag tag--mint">도서</span>
+                        <span class="tag tag--plan">예정</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title item-title--muted">시장 분석 리포트</span>
+                      <div class="item-tags">
+                        <span class="tag tag--lavender">프로젝트</span>
+                        <span class="tag tag--plan">예정</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- WEEK 06 — PLAN (축소) -->
-            <div class="card card--plan-closed card--plan-dim">
-              <div class="card-head-row">
+            <!-- WEEK 05 — PLAN (토글 가능, 기본 축소) -->
+            <div class="card card--plan-closed" onclick="toggleCard(this)" style="cursor:pointer">
+              <!-- 닫힌 헤더 -->
+              <div class="card-head-row done-closed-header">
+                <div class="card-head-left">
+                  <span class="week-lbl week-lbl--light">WEEK 05</span>
+                  <div class="week-dots" style="opacity:0.5">
+                    <span class="week-dot week-dot--gold"></span>
+                    <span class="week-dot week-dot--blue"></span>
+                  </div>
+                </div>
+                <div class="card-head-right">
+                  <span class="badge-plan">PLAN</span>
+                  <span class="chevron chevron--down"></span>
+                </div>
+              </div>
+              <!-- 열린 내용 -->
+              <div class="done-open-content" style="display:none">
+                <div class="card-head" style="padding-bottom:6px; border-bottom:1px solid rgba(209,209,209,0.4)">
+                  <span class="week-lbl week-lbl--light">WEEK 05</span>
+                  <div class="card-head-right">
+                    <span class="badge-plan">PLAN</span>
+                    <span class="chevron chevron--up"></span>
+                  </div>
+                </div>
+                <div class="card-items">
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title item-title--muted">리액트 컴포넌트</span>
+                      <div class="item-tags">
+                        <span class="tag tag--gold">인강</span>
+                        <span class="tag tag--plan">예정</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_done_sage.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title item-title--muted">UX 케이스 스터디</span>
+                      <div class="item-tags">
+                        <span class="tag tag--blue">매거진</span>
+                        <span class="tag tag--sage">선취득</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- WEEK 06 — PLAN (토글 가능, 기본 축소) -->
+            <div class="card card--plan-closed card--plan-dim" onclick="toggleCard(this)" style="cursor:pointer">
+              <!-- 닫힌 헤더 -->
+              <div class="card-head-row done-closed-header">
                 <div class="card-head-left">
                   <span class="week-lbl week-lbl--lighter">WEEK 06</span>
+                  <div class="week-dots" style="opacity:0.4">
+                    <span class="week-dot week-dot--mint"></span>
+                  </div>
+                </div>
+                <div class="card-head-right">
                   <span class="badge-plan badge-plan--dim">PLAN</span>
+                  <span class="chevron chevron--down"></span>
+                </div>
+              </div>
+              <!-- 열린 내용 -->
+              <div class="done-open-content" style="display:none">
+                <div class="card-head" style="padding-bottom:6px; border-bottom:1px solid rgba(209,209,209,0.3)">
+                  <span class="week-lbl week-lbl--lighter">WEEK 06</span>
+                  <div class="card-head-right">
+                    <span class="badge-plan badge-plan--dim">PLAN</span>
+                    <span class="chevron chevron--up"></span>
+                  </div>
+                </div>
+                <div class="card-items">
+                  <div class="card-item">
+                    <img src="images/roadmap_icon_inactive.svg" alt="" class="item-icon">
+                    <div class="item-body">
+                      <span class="item-title item-title--muted">포트폴리오 전략</span>
+                      <div class="item-tags">
+                        <span class="tag tag--mint">도서</span>
+                        <span class="tag tag--plan">예정</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,25 +396,27 @@
       </main>
     </div><!-- /scroll-area -->
 
-
     <div id="nav-root"></div>
   </div>
+
   <script>
-    function toggleDone(card) {
-      const isOpen = card.classList.contains('card--done-open');
+    function toggleCard(card) {
       const closedHeader = card.querySelector('.done-closed-header');
-      const openContent = card.querySelector('.done-open-content');
+      const openContent  = card.querySelector('.done-open-content');
+      const isOpen = openContent.style.display !== 'none';
 
       if (isOpen) {
-        card.classList.remove('card--done-open');
-        card.classList.add('card--done-closed');
-        closedHeader.style.display = '';
+        if (closedHeader) closedHeader.style.display = '';
         openContent.style.display = 'none';
+        if (card.classList.contains('card--done-open'))   card.classList.replace('card--done-open',   'card--done-closed');
+        if (card.classList.contains('card--active-open')) card.classList.replace('card--active-open', 'card--active-closed');
+        if (card.classList.contains('card--plan-open'))   card.classList.replace('card--plan-open',   'card--plan-closed');
       } else {
-        card.classList.remove('card--done-closed');
-        card.classList.add('card--done-open');
-        closedHeader.style.display = 'none';
+        if (closedHeader) closedHeader.style.display = 'none';
         openContent.style.display = '';
+        if (card.classList.contains('card--done-closed'))   card.classList.replace('card--done-closed',   'card--done-open');
+        if (card.classList.contains('card--active-closed')) card.classList.replace('card--active-closed', 'card--active-open');
+        if (card.classList.contains('card--plan-closed'))   card.classList.replace('card--plan-closed',   'card--plan-open');
       }
     }
   </script>
