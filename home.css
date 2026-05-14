@@ -222,8 +222,8 @@ body {
   border: 2px solid #E8941A;
   border-radius: 10px;
   text-decoration: none;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* 헤더: WEEK 04 + YOU ARE HERE + ACTIVE */
@@ -505,8 +505,8 @@ body {
   align-items: center;
   padding: 10px 4px;
   background: rgba(242, 242, 242, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 1px solid #D1D1D1;
   border-radius: 50px;
   z-index: 100;
