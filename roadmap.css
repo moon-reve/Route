@@ -519,6 +519,13 @@
 .tag--in-progress{ background: rgba(232,148,26,0.2);   color: var(--starline-gold); font-weight: 600; }
 .tag--plan       { background: rgba(209,209,209,0.25); color: #AAAAAA; }
 
+/* ── ACTIVE 카드 아이템 링크 ── */
+.card-items-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ── DONE 카드 토글 ── */
 .done-open-content {
   display: flex;
