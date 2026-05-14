@@ -1,7 +1,7 @@
 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="44" height="44" rx="10" fill="#1E1E1E" fill-opacity="0.05"/>
-<path d="M23 13L13 18L23 23L33 18L23 13Z" stroke="#1E1E1E" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect width="44" height="44" rx="10" fill="#D4A853" fill-opacity="0.2"/>
+<path d="M23 13L13 18L23 23L33 18L23 13Z" stroke="#D4A853" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M13 18V23V18Z" fill="black"/>
-<path d="M13 18V23" stroke="#1E1E1E" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round"/>
-<path d="M17 20.5V24C17 25.5913 17.6321 27.1174 18.7574 28.2426C19.8826 29.3679 21.4087 30 23 30C24.5913 30 26.1174 29.3679 27.2426 28.2426C28.3679 27.1174 29 25.5913 29 24V20.5" stroke="#1E1E1E" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 18V23" stroke="#D4A853" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M17 20.5V24C17 25.5913 17.6321 27.1174 18.7574 28.2426C19.8826 29.3679 21.4087 30 23 30C24.5913 30 26.1174 29.3679 27.2426 28.2426C28.3679 27.1174 29 25.5913 29 24V20.5" stroke="#D4A853" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
