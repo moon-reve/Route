@@ -402,6 +402,44 @@
   letter-spacing: -0.22px;
 }
 
+/* ── 더보기 카드 ── */
+.card--more {
+  border: 1px solid var(--border-gray-300) !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.more-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--inactive-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-arrow {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--gray-700);
+  border-top: 2px solid var(--gray-700);
+  transform: rotate(45deg) translateX(-1px);
+}
+
+.card--more .card-text-box {
+  background: var(--gray-100) !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-more-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--midnight-charcoal);
+}
+
 /* ════════════════════════════
    ④ ARTICLES
 ════════════════════════════ */
