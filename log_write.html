@@ -51,6 +51,15 @@
             </div>
           </div>
 
+          <!-- 날짜 선택 (로그 탭) -->
+          <div class="section-log-date" id="section-log-date">
+            <div class="section-label">날짜</div>
+            <div class="date-box date-box--full" onclick="openCal('log', this)">
+              <span class="date-text" id="log-date-text"></span>
+              <img src="images/log_calendar.svg" alt="" class="calendar-icon">
+            </div>
+          </div>
+
           <!-- 기본 정보 입력 -->
           <div class="section-inputs">
             <div class="input-group" id="link-group" style="display:none">
@@ -126,37 +135,39 @@
       document.querySelectorAll('.resource-tab').forEach(t => t.classList.remove('resource-tab--active'));
       el.classList.add('resource-tab--active');
 
-      const linkGroup    = document.getElementById('link-group');
-      const linkLabel    = document.getElementById('link-label');
-      const titleLabel   = document.getElementById('title-label');
-      const heroCaption  = document.getElementById('hero-caption');
-      const sectionDur   = document.getElementById('section-duration');
-
+      const linkGroup       = document.getElementById('link-group');
+      const linkLabel       = document.getElementById('link-label');
+      const titleLabel      = document.getElementById('title-label');
+      const heroCaption     = document.getElementById('hero-caption');
+      const sectionDur      = document.getElementById('section-duration');
       const sectionReminder = document.getElementById('section-reminder');
+      const sectionLogDate  = document.getElementById('section-log-date');
 
-      // 날짜 초기화
       resetDates();
       closeCal();
 
       if (type === 'log') {
-        linkGroup.style.display     = 'none';
-        sectionDur.style.display    = 'none';
+        linkGroup.style.display       = 'none';
+        sectionDur.style.display      = 'none';
         sectionReminder.style.display = 'none';
-        titleLabel.textContent      = '제목 (필수)';
-        heroCaption.textContent     = '탭하여 오늘의 항해 순간을 담아보세요';
+        sectionLogDate.style.display  = '';
+        titleLabel.textContent        = '제목 (필수)';
+        heroCaption.textContent       = '탭하여 오늘의 항해 순간을 담아보세요';
       } else if (type === 'book') {
-        linkGroup.style.display     = 'none';
-        sectionDur.style.display    = '';
+        linkGroup.style.display       = 'none';
+        sectionDur.style.display      = '';
         sectionReminder.style.display = '';
-        titleLabel.textContent      = '항로 이름 (필수)';
-        heroCaption.textContent     = '링크를 입력하면 썸네일이 자동으로 채워져요';
+        sectionLogDate.style.display  = 'none';
+        titleLabel.textContent        = '항로 이름 (필수)';
+        heroCaption.textContent       = '링크를 입력하면 썸네일이 자동으로 채워져요';
       } else {
-        linkGroup.style.display     = '';
-        sectionDur.style.display    = '';
+        linkGroup.style.display       = '';
+        sectionDur.style.display      = '';
         sectionReminder.style.display = '';
-        titleLabel.textContent      = '항로 이름 (필수)';
-        heroCaption.textContent     = '링크를 입력하면 썸네일이 자동으로 채워져요';
-        linkLabel.textContent       = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
+        sectionLogDate.style.display  = 'none';
+        titleLabel.textContent        = '항로 이름 (필수)';
+        heroCaption.textContent       = '링크를 입력하면 썸네일이 자동으로 채워져요';
+        linkLabel.textContent         = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
       }
       closeCal();
     }
@@ -168,7 +179,12 @@
     let calMonth  = new Date().getMonth();
     let startDate = null;
     let endDate   = null;
+    let logDate   = null;
     const today   = new Date();
+
+    function formatDisplay(y, m, d) {
+      return `${y}. ${String(m+1).padStart(2,'0')}. ${String(d).padStart(2,'0')}`;
+    }
 
     function resetDates() {
       startDate = null;
@@ -181,6 +197,16 @@
       startEl.classList.add('date-placeholder');
       endEl.textContent   = '종료일 선택';
       endEl.classList.add('date-placeholder');
+      // 로그 날짜는 오늘로 초기화
+      setLogDateToday();
+    }
+
+    function setLogDateToday() {
+      const y = today.getFullYear(), m = today.getMonth(), d = today.getDate();
+      logDate = `${y}-${m}-${d}`;
+      const el = document.getElementById('log-date-text');
+      el.textContent = formatDisplay(y, m, d);
+      el.classList.remove('date-placeholder');
     }
 
     function openCal(target, anchor) {
@@ -216,9 +242,10 @@
       grid.innerHTML = '';
       const firstDay = new Date(calYear, calMonth, 1).getDay();
       const lastDay  = new Date(calYear, calMonth + 1, 0).getDate();
-      const selKey   = calTarget === 'start' ? startDate : endDate;
+      const selKey   = calTarget === 'start' ? startDate :
+                       calTarget === 'end'   ? endDate   : logDate;
 
-      // 종료일 모드: 시작일 이전 날짜 비활성화
+      // 종료일 모드: 시작일 이전 날짜 비활성화 (로그 탭은 제한 없음)
       let minDate = null;
       if (calTarget === 'end' && startDate) {
         const [sy, sm, sd] = startDate.split('-').map(Number);
@@ -250,15 +277,20 @@
 
     function pickDate(d) {
       const key     = `${calYear}-${calMonth}-${d}`;
-      const display = `${calYear}. ${String(calMonth + 1).padStart(2,'0')}. ${String(d).padStart(2,'0')}`;
+      const display = formatDisplay(calYear, calMonth, d);
       if (calTarget === 'start') {
         startDate = key;
         const el = document.getElementById('start-date-text');
         el.textContent = display;
         el.classList.remove('date-placeholder');
-      } else {
+      } else if (calTarget === 'end') {
         endDate = key;
         const el = document.getElementById('end-date-text');
+        el.textContent = display;
+        el.classList.remove('date-placeholder');
+      } else {
+        logDate = key;
+        const el = document.getElementById('log-date-text');
         el.textContent = display;
         el.classList.remove('date-placeholder');
       }
@@ -273,9 +305,10 @@
       }
     });
 
-    // 초기 상태: 로그 탭이므로 기간 + 리마인더 숨김
+    // 초기 상태: 로그 탭이므로 기간 + 리마인더 숨김, 날짜는 오늘
     document.getElementById('section-duration').style.display = 'none';
     document.getElementById('section-reminder').style.display = 'none';
+    setLogDateToday();
   </script>
 </body>
 </html>

@@ -217,6 +217,17 @@
   color: #848484;
 }
 
+/* ════════ LOG DATE (단일 날짜) ════════ */
+.section-log-date {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date-box--full {
+  width: 100%;
+}
+
 /* ════════ DURATION ════════ */
 /* column, gap 5px */
 .section-duration {
