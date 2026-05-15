@@ -143,8 +143,8 @@
     <div class="drum-wrapper">
       <div class="drum-fade-top"></div>
       <div class="drum-fade-bottom"></div>
-      <div class="drum-line drum-line--top"></div>
-      <div class="drum-line drum-line--bottom"></div>
+      <div class="drum-line drum-line--top"><span></span><span></span><span></span></div>
+      <div class="drum-line drum-line--bottom"><span></span><span></span><span></span></div>
       <div class="drum-col" id="drum-ampm"></div>
       <div class="drum-col" id="drum-hour"></div>
       <div class="drum-col" id="drum-min"></div>
@@ -469,12 +469,13 @@
       closeCal();
       popup.style.display = 'block';
       initDrums();
-      const rect       = anchor.getBoundingClientRect();
-      const popupH     = 165; // wrapper 108 + button ~43 + border
+      const rect   = anchor.getBoundingClientRect();
+      const popupH = 165;
+      const popupW = 268;
       let top  = rect.top - popupH - 8;
-      if (top < 8) top = rect.bottom + 8; // 공간 없으면 아래
-      let left = rect.left;
-      if (left + 276 > window.innerWidth) left = window.innerWidth - 284;
+      if (top < 8) top = rect.bottom + 8;
+      let left = rect.right - popupW; // 오른쪽 끝 정렬
+      if (left < 8) left = 8;
       popup.style.top  = top + 'px';
       popup.style.left = left + 'px';
     }

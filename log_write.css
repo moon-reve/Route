@@ -428,27 +428,20 @@
 }
 .drum-col::-webkit-scrollbar { display: none; }
 
-/* 골드 선: 3열 각각 끊어서 표시 (linear-gradient로 틈 생성) */
+/* 골드 선: flex span으로 3열 분리 */
 .drum-line {
   position: absolute;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    var(--starline-gold) 0,
-    var(--starline-gold) calc(33.33% - 5px),
-    transparent       calc(33.33% - 5px),
-    transparent       calc(33.33% + 5px),
-    var(--starline-gold) calc(33.33% + 5px),
-    var(--starline-gold) calc(66.66% - 5px),
-    transparent       calc(66.66% - 5px),
-    transparent       calc(66.66% + 5px),
-    var(--starline-gold) calc(66.66% + 5px),
-    var(--starline-gold) 100%
-  );
+  display: flex;
+  gap: 10px;
   z-index: 3;
   pointer-events: none;
+}
+.drum-line span {
+  flex: 1;
+  height: 1px;
+  background: var(--starline-gold);
 }
 .drum-line--top    { top: calc(50% - 18px); }
 .drum-line--bottom { top: calc(50% + 17px); }
