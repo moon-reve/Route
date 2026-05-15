@@ -419,7 +419,6 @@
 
 /* 각 열: CSS padding으로 여백 */
 .drum-col {
-  position: relative;
   flex: 1;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -429,20 +428,18 @@
 }
 .drum-col::-webkit-scrollbar { display: none; }
 
-/* 골드 선: 각 열마다 끊어서 표시 */
-.drum-col::before,
-.drum-col::after {
-  content: '';
+/* 골드 선: wrapper 고정 (스크롤과 무관하게 위치) */
+.drum-line {
   position: absolute;
-  left: 6px;
-  right: 6px;
+  left: 0;
+  right: 0;
   height: 1px;
   background: var(--starline-gold);
   z-index: 3;
   pointer-events: none;
 }
-.drum-col::before { top: calc(50% - 18px); }
-.drum-col::after  { top: calc(50% + 17px); }
+.drum-line--top    { top: calc(50% - 18px); }
+.drum-line--bottom { top: calc(50% + 17px); }
 
 /* 드럼 아이템 */
 .drum-item {
