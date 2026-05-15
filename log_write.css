@@ -366,15 +366,90 @@
   color: var(--midnight-charcoal);
 }
 
-.reminder-time-input {
-  border: none;
-  outline: none;
+.reminder-time-display {
   font-family: 'Pretendard', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: var(--midnight-charcoal);
-  background: transparent;
+}
+
+/* ════════ TIME POPUP ════════ */
+#time-popup {
+  display: none;
+  position: fixed;
+  z-index: 300;
+  width: 268px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.ampm-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.ampm-btn {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border-gray-300);
+  background: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--active-border-gray-500);
   cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+  transition: all 0.12s;
+}
+
+.ampm-btn--active {
+  background: var(--midnight-charcoal);
+  border-color: var(--midnight-charcoal);
+  color: var(--pure-white);
+  font-weight: 700;
+}
+
+.time-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--active-border-gray-500);
+  margin-bottom: 4px;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.time-btn {
+  padding: 7px 0;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: 'Pretendard', sans-serif;
+  color: var(--midnight-charcoal);
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+}
+
+.time-btn:active { background: rgba(0,0,0,0.05); }
+
+.time-btn--selected {
+  background: var(--starline-gold) !important;
+  color: var(--pure-white) !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
 }
 
 .reminder-text {

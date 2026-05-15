@@ -124,9 +124,9 @@
               <span class="reminder-text">매일 지정된 시간에 리마인드 받기</span>
               <img src="images/log_toggle.svg" alt="토글" class="toggle-btn">
             </div>
-            <div class="reminder-time-row">
+            <div class="reminder-time-row" onclick="openTimePicker(this)" style="cursor:pointer">
               <span class="reminder-time-label">알림 시간</span>
-              <input type="time" class="reminder-time-input" value="09:00">
+              <span class="reminder-time-display" id="reminder-time-display">오전 9:00</span>
             </div>
           </div>
 
@@ -136,6 +136,21 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- 시간 선택 팝업 -->
+  <div id="time-popup">
+    <div class="cal-header">
+      <span class="cal-title">시간 선택</span>
+    </div>
+    <div class="ampm-row">
+      <button class="ampm-btn ampm-btn--active" id="ampm-am" onclick="selectAmPm('am')">오전</button>
+      <button class="ampm-btn" id="ampm-pm" onclick="selectAmPm('pm')">오후</button>
+    </div>
+    <div class="time-section-label">시</div>
+    <div class="time-grid" id="hour-grid"></div>
+    <div class="time-section-label">분</div>
+    <div class="time-grid" id="minute-grid"></div>
   </div>
 
   <!-- 캘린더 팝업 -->
@@ -372,12 +387,68 @@
       closeCal();
     }
 
+    // ── 시간 피커 ──
+    let selHour = 9, selMin = 0, selAmPm = 'am';
+
+    function openTimePicker(anchor) {
+      const popup = document.getElementById('time-popup');
+      if (popup.style.display === 'block') { closeTimePicker(); return; }
+      closeCal();
+      popup.style.display = 'block';
+      const rect = anchor.getBoundingClientRect();
+      let top  = rect.bottom + 8;
+      let left = rect.left;
+      if (left + 276 > window.innerWidth) left = window.innerWidth - 284;
+      if (top + 320 > window.innerHeight) top = rect.top - 330;
+      popup.style.top  = top + 'px';
+      popup.style.left = left + 'px';
+      renderTimeGrids();
+    }
+
+    function closeTimePicker() {
+      document.getElementById('time-popup').style.display = 'none';
+    }
+
+    function selectAmPm(val) {
+      selAmPm = val;
+      document.getElementById('ampm-am').classList.toggle('ampm-btn--active', val === 'am');
+      document.getElementById('ampm-pm').classList.toggle('ampm-btn--active', val === 'pm');
+      updateTimeDisplay();
+    }
+
+    function renderTimeGrids() {
+      const hGrid = document.getElementById('hour-grid');
+      hGrid.innerHTML = '';
+      for (let h = 1; h <= 12; h++) {
+        const btn = document.createElement('button');
+        btn.className = 'time-btn' + (h === selHour ? ' time-btn--selected' : '');
+        btn.textContent = h;
+        btn.onclick = () => { selHour = h; updateTimeDisplay(); renderTimeGrids(); };
+        hGrid.appendChild(btn);
+      }
+      const mGrid = document.getElementById('minute-grid');
+      mGrid.innerHTML = '';
+      for (let m = 0; m < 60; m += 5) {
+        const btn = document.createElement('button');
+        btn.className = 'time-btn' + (m === selMin ? ' time-btn--selected' : '');
+        btn.textContent = String(m).padStart(2, '0');
+        btn.onclick = () => { selMin = m; updateTimeDisplay(); renderTimeGrids(); };
+        mGrid.appendChild(btn);
+      }
+    }
+
+    function updateTimeDisplay() {
+      const ap = selAmPm === 'am' ? '오전' : '오후';
+      document.getElementById('reminder-time-display').textContent =
+        `${ap} ${selHour}:${String(selMin).padStart(2, '0')}`;
+    }
+
     // 팝업 외부 클릭 시 닫기
     document.addEventListener('click', (e) => {
-      const popup = document.getElementById('cal-popup');
-      if (!popup.contains(e.target) && !e.target.closest('.date-box')) {
-        closeCal();
-      }
+      const cal  = document.getElementById('cal-popup');
+      const time = document.getElementById('time-popup');
+      if (!cal.contains(e.target) && !e.target.closest('.date-box')) closeCal();
+      if (!time.contains(e.target) && !e.target.closest('.reminder-time-row')) closeTimePicker();
     });
 
     // 초기화
