@@ -386,56 +386,62 @@
     }
 
     // ── 드럼 시간 피커 ──
-    const ITEM_H   = 44;
-    const PAD      = 2; // 위아래 패딩 아이템 수
+    const ITEM_H = 44;
 
     const drumData = {
-      ampm: { items: ['오전', '오후'],                                         selIdx: 0 },
-      hour: { items: ['1','2','3','4','5','6','7','8','9','10','11','12'],      selIdx: 8 }, // 기본 9시
-      min:  { items: ['00','05','10','15','20','25','30','35','40','45','50','55'], selIdx: 0 },
+      ampm: { items: ['오전', '오후'],                                              selIdx: 0 },
+      hour: { items: ['1','2','3','4','5','6','7','8','9','10','11','12'],           selIdx: 8 },
+      min:  { items: ['00','05','10','15','20','25','30','35','40','45','50','55'],  selIdx: 0 },
     };
 
     function buildDrum(key) {
       const d   = drumData[key];
       const col = document.getElementById('drum-' + key);
       col.innerHTML = '';
-      // 위 패딩
-      for (let i = 0; i < PAD; i++) {
-        const p = document.createElement('div'); p.className = 'drum-pad'; col.appendChild(p);
-      }
-      // 아이템
+      // CSS padding이 여백 담당 — pad div 불필요
       d.items.forEach(text => {
-        const div = document.createElement('div'); div.className = 'drum-item'; div.textContent = text; col.appendChild(div);
+        const div = document.createElement('div');
+        div.className = 'drum-item';
+        div.textContent = text;
+        col.appendChild(div);
       });
-      // 아래 패딩
-      for (let i = 0; i < PAD; i++) {
-        const p = document.createElement('div'); p.className = 'drum-pad'; col.appendChild(p);
-      }
+      // 스크롤 위치: index × ITEM_H
       col.scrollTop = d.selIdx * ITEM_H;
-      updateDrumStyle(key);
+      updateDrumStyle(col, d.selIdx);
 
       let timer;
       col.addEventListener('scroll', () => {
-        updateDrumStyle(key);
+        const cur = col.scrollTop / ITEM_H;
+        updateDrumStyle(col, cur);
         clearTimeout(timer);
         timer = setTimeout(() => {
           const idx = Math.max(0, Math.min(Math.round(col.scrollTop / ITEM_H), d.items.length - 1));
           d.selIdx = idx;
           col.scrollTo({ top: idx * ITEM_H, behavior: 'smooth' });
-          updateDrumStyle(key);
+          updateDrumStyle(col, idx);
         }, 120);
       });
     }
 
-    function updateDrumStyle(key) {
-      const d    = drumData[key];
-      const col  = document.getElementById('drum-' + key);
-      const cur  = col.scrollTop / ITEM_H;
+    function updateDrumStyle(col, cur) {
       col.querySelectorAll('.drum-item').forEach((el, i) => {
         const dist = Math.abs(i - cur);
-        if (dist < 0.6)      { el.style.opacity = '1';    el.style.fontWeight = '700'; el.style.fontSize = '19px'; }
-        else if (dist < 1.5) { el.style.opacity = '0.35'; el.style.fontWeight = '400'; el.style.fontSize = '16px'; }
-        else                  { el.style.opacity = '0.12'; el.style.fontWeight = '400'; el.style.fontSize = '14px'; }
+        if (dist < 0.5) {
+          el.style.opacity    = '1';
+          el.style.fontWeight = '700';
+          el.style.fontSize   = '18px';
+          el.style.color      = 'var(--midnight-charcoal)';
+        } else if (dist < 1.5) {
+          el.style.opacity    = '0.3';
+          el.style.fontWeight = '400';
+          el.style.fontSize   = '15px';
+          el.style.color      = 'rgba(26,28,30,0.5)';
+        } else {
+          el.style.opacity    = '0.1';
+          el.style.fontWeight = '400';
+          el.style.fontSize   = '13px';
+          el.style.color      = 'rgba(26,28,30,0.3)';
+        }
       });
     }
 

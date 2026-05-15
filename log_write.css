@@ -389,16 +389,16 @@
   font-family: 'Pretendard', sans-serif;
 }
 
-/* 드럼 영역 */
+/* 드럼 영역: 3행(위1+중앙1+아래1) = 132px */
 .drum-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 220px;
+  height: 132px;
   overflow: hidden;
 }
 
-/* 선택 표시선 (스타라인 골드) */
+/* 선택 표시선 (스타라인 골드) — 3열 구분선 포함 */
 .drum-selector {
   position: absolute;
   top: 50%;
@@ -412,35 +412,40 @@
   z-index: 2;
 }
 
-/* 위아래 페이드 */
+/* 위아래 페이드: 한 줄 높이 */
 .drum-fade-top,
 .drum-fade-bottom {
   position: absolute;
   left: 0;
   right: 0;
-  height: 88px;
+  height: 44px;
   pointer-events: none;
   z-index: 1;
 }
 .drum-fade-top {
   top: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, transparent 100%);
 }
 .drum-fade-bottom {
   bottom: 0;
-  background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(255,255,255,0.92) 0%, transparent 100%);
 }
 
-/* 각 열 */
+/* 각 열: CSS padding으로만 위아래 여백 (pad div 없음) */
 .drum-col {
   flex: 1;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 88px 0;  /* (220 - 44) / 2 = 88 */
+  padding: 44px 0; /* (132 - 44) / 2 = 44 */
 }
 .drum-col::-webkit-scrollbar { display: none; }
+
+/* 열 구분선 */
+.drum-col + .drum-col {
+  border-left: 1px solid rgba(0,0,0,0.07);
+}
 
 /* 드럼 아이템 */
 .drum-item {
@@ -449,16 +454,11 @@
   align-items: center;
   justify-content: center;
   scroll-snap-align: center;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
-  color: rgba(26,28,30,0.25);
-  transition: opacity 0.1s;
+  color: rgba(26,28,30,0.22);
+  transition: font-size 0.1s, font-weight 0.1s, color 0.1s, opacity 0.1s;
   user-select: none;
-}
-
-.drum-pad {
-  height: 44px;
-  scroll-snap-align: none;
 }
 
 /* 확인 버튼 */
