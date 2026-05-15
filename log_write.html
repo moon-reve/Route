@@ -119,10 +119,10 @@
           </div>
 
           <!-- 리마인더 -->
-          <div class="section-reminder" id="section-reminder">
+          <div class="section-reminder" id="section-reminder" data-active="false">
             <div class="reminder-row">
               <span class="reminder-text">매일 지정된 시간에 리마인드 받기</span>
-              <img src="images/log_toggle.svg" alt="토글" class="toggle-btn">
+              <img src="images/log_toggle.svg" alt="토글" class="toggle-btn" onclick="toggleReminder()">
             </div>
             <div class="reminder-time-row" onclick="openTimePicker(this)" style="cursor:pointer">
               <span class="reminder-time-label">알림 시간</span>
@@ -237,6 +237,16 @@
 
       resetDates();
       closeCal();
+      closeTimePicker();
+      document.getElementById('section-reminder').dataset.active = 'false';
+    }
+
+    // ── 리마인더 토글 ──
+    function toggleReminder() {
+      const section = document.getElementById('section-reminder');
+      const isActive = section.dataset.active === 'true';
+      section.dataset.active = isActive ? 'false' : 'true';
+      if (isActive) closeTimePicker();
     }
 
     // ── 히어로 이미지 업로드 ──

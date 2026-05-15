@@ -487,6 +487,15 @@
   width: 44px;
   height: 24px;
   cursor: pointer;
+  transition: filter 0.15s;
+}
+
+/* 토글 OFF 상태 */
+.section-reminder[data-active="false"] .toggle-btn {
+  filter: grayscale(1) opacity(0.3);
+}
+.section-reminder[data-active="false"] .reminder-time-row {
+  display: none;
 }
 
 /* ════════ SUBMIT BUTTON ════════ */
