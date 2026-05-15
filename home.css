@@ -375,12 +375,14 @@
 
 /* card text-box */
 .card-text-box {
+  height: 100px;
   padding: 12px;
   background: var(--gray-100);
   border-radius: 0 0 10px 10px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow: hidden;
 }
 
 .card-title {
