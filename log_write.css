@@ -428,13 +428,25 @@
 }
 .drum-col::-webkit-scrollbar { display: none; }
 
-/* 골드 선: wrapper 고정 (스크롤과 무관하게 위치) */
+/* 골드 선: 3열 각각 끊어서 표시 (linear-gradient로 틈 생성) */
 .drum-line {
   position: absolute;
   left: 0;
   right: 0;
   height: 1px;
-  background: var(--starline-gold);
+  background: linear-gradient(
+    to right,
+    var(--starline-gold) 0,
+    var(--starline-gold) calc(33.33% - 5px),
+    transparent       calc(33.33% - 5px),
+    transparent       calc(33.33% + 5px),
+    var(--starline-gold) calc(33.33% + 5px),
+    var(--starline-gold) calc(66.66% - 5px),
+    transparent       calc(66.66% - 5px),
+    transparent       calc(66.66% + 5px),
+    var(--starline-gold) calc(66.66% + 5px),
+    var(--starline-gold) 100%
+  );
   z-index: 3;
   pointer-events: none;
 }
