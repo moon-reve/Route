@@ -33,6 +33,7 @@
             <div class="chip">인강</div>
             <div class="chip">도서</div>
             <div class="chip">매거진</div>
+            <div class="chip">프로젝트</div>
           </div>
 
           <!-- 상태 바 -->
@@ -52,8 +53,14 @@
             </div>
           </div>
 
+          <!-- 필터 뷰 -->
+          <div class="filter-view" id="filter-view" style="display:none">
+            <div class="filter-summary-card" id="filter-summary"></div>
+            <div class="filter-list-card" id="filter-list"></div>
+          </div>
+
           <!-- 타임라인 -->
-          <div class="timeline">
+          <div class="timeline" id="timeline">
 
             <!-- WEEK 01 — DONE (기본 축소) -->
             <div class="card card--done-closed">
@@ -399,6 +406,117 @@
   </div>
 
   <script>
+    /* ── 필터 탭 ── */
+    const FILTER_CONFIG = {
+      '인강': {
+        color: '#D4A853',
+        items: [
+          { title: '피그마 기초',      week: 'W01', iconType: 'done',       statusLabel: '완료',    statusClass: 'tag--gold' },
+          { title: '리액트 기초',      week: 'W02', iconType: 'done',       statusLabel: '완료',    statusClass: 'tag--gold' },
+          { title: 'CSS 고급',        week: 'W03', iconType: 'done',       statusLabel: '완료',    statusClass: 'tag--gold' },
+          { title: 'HTML/CSS 구조',   week: 'W04', iconType: 'active',     statusLabel: '진행 중', statusClass: 'tag--in-progress' },
+          { title: '리액트 컴포넌트', week: 'W05', iconType: 'inactive',   statusLabel: '예정',    statusClass: 'tag--plan' },
+        ]
+      },
+      '도서': {
+        color: '#47B5A7',
+        items: [
+          { title: 'UX 심리학',       week: 'W01', iconType: 'done',       statusLabel: '완료',    statusClass: 'tag--gold' },
+          { title: '린 UX',           week: 'W02', iconType: 'done',       statusLabel: '완료',    statusClass: 'tag--gold' },
+          { title: '린 스타트업',     week: 'W03', iconType: 'unfinished', statusLabel: '미완료',  statusClass: 'tag--unfinished' },
+          { title: '인터랙션 디자인', week: 'W04', iconType: 'inactive',   statusLabel: '예정',    statusClass: 'tag--plan' },
+          { title: '포트폴리오 전략', week: 'W06', iconType: 'inactive',   statusLabel: '예정',    statusClass: 'tag--plan' },
+        ]
+      },
+      '매거진': {
+        color: '#7B9EAD',
+        items: [
+          { title: '디자인 트렌드',    week: 'W01', iconType: 'done-sage', statusLabel: '선취득', statusClass: 'tag--sage' },
+          { title: 'UX 케이스 스터디', week: 'W05', iconType: 'done-sage', statusLabel: '선취득', statusClass: 'tag--sage' },
+        ]
+      },
+      '프로젝트': {
+        color: '#9E90BC',
+        items: [
+          { title: '포트폴리오 리뉴얼 - 앱 기획', week: 'W03', iconType: 'done',     statusLabel: '완료', statusClass: 'tag--gold' },
+          { title: '시장 분석 리포트',             week: 'W04', iconType: 'inactive', statusLabel: '예정', statusClass: 'tag--plan' },
+        ]
+      }
+    };
+
+    function getIconHTML(iconType) {
+      if (iconType === 'unfinished') return '<div class="item-icon item-icon--unfinished"></div>';
+      const map = {
+        'done':      'images/roadmap_icon_done.svg',
+        'done-sage': 'images/roadmap_icon_done_sage.svg',
+        'active':    'images/roadmap_icon_active.svg',
+        'inactive':  'images/roadmap_icon_inactive.svg',
+      };
+      return `<img src="${map[iconType]}" class="item-icon" alt="">`;
+    }
+
+    function renderFilterView(label, config) {
+      const doneCount = config.items.filter(i => i.iconType === 'done' || i.iconType === 'done-sage').length;
+      const total     = config.items.length;
+      const pct       = Math.round(doneCount / total * 100);
+      const inProgress = config.items.filter(i => i.iconType === 'active').length;
+      const unfinished = config.items.filter(i => i.iconType === 'unfinished').length;
+      const planned    = config.items.filter(i => i.iconType === 'inactive').length;
+
+      let stats = `완료 ${doneCount}`;
+      if (inProgress) stats += ` · 진행 중 ${inProgress}`;
+      if (unfinished) stats += ` · 미완료 ${unfinished}`;
+      if (planned)    stats += ` · 예정 ${planned}`;
+
+      document.getElementById('filter-summary').innerHTML = `
+        <div class="filter-summary-row">
+          <span class="filter-summary-label">${label}</span>
+          <span class="filter-summary-stats">${stats}</span>
+        </div>
+        <div class="filter-progress-track">
+          <div class="filter-progress-fill" style="width:${pct}%; background:${config.color}"></div>
+        </div>`;
+
+      document.getElementById('filter-list').innerHTML = config.items.map(item => `
+        <div class="filter-item">
+          ${getIconHTML(item.iconType)}
+          <span class="filter-item-title">${item.title}</span>
+          <span class="filter-week-badge">${item.week}</span>
+          <span class="tag ${item.statusClass}">${item.statusLabel}</span>
+        </div>`).join('');
+    }
+
+    document.querySelectorAll('.nav-chips .chip').forEach(chip => {
+      chip.addEventListener('click', function () {
+        const label = this.textContent.trim();
+        document.querySelectorAll('.nav-chips .chip').forEach(c => {
+          c.classList.remove('chip--active');
+          c.style.background = '';
+          c.style.borderColor = '';
+          c.style.color = '';
+        });
+        this.classList.add('chip--active');
+
+        const timeline   = document.getElementById('timeline');
+        const filterView = document.getElementById('filter-view');
+
+        if (label === '전체 항로') {
+          timeline.style.display   = '';
+          filterView.style.display = 'none';
+        } else {
+          const config = FILTER_CONFIG[label];
+          if (config) {
+            this.style.background  = config.color;
+            this.style.borderColor = config.color;
+            this.style.color       = '#fff';
+            renderFilterView(label, config);
+            timeline.style.display   = 'none';
+            filterView.style.display = '';
+          }
+        }
+      });
+    });
+
     function toggleCard(card) {
       const closedHeader = card.querySelector('.done-closed-header');
       const openContent  = card.querySelector('.done-open-content');
