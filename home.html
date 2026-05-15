@@ -223,6 +223,8 @@
               </div>
             </div>
 
+            <button class="read-more-btn" id="read-more-btn">Read more</button>
+
           </section>
 
         </div><!-- /contents -->
@@ -266,6 +268,33 @@
       cardList.scrollLeft = scrollLeft - walk;
     });
 
+    // Read More
+    let visibleArticleCount = 3;
+    let currentCat = null;
+
+    function applyArticles() {
+      const articles = [...document.querySelectorAll('.article-item')];
+      const readMoreBtn = document.getElementById('read-more-btn');
+
+      if (!currentCat) {
+        articles.forEach((item, i) => {
+          item.style.display = i < visibleArticleCount ? '' : 'none';
+        });
+        readMoreBtn.style.display = visibleArticleCount < articles.length ? '' : 'none';
+      } else {
+        const matching = articles.filter(a => a.dataset.category === currentCat);
+        articles.forEach(item => {
+          item.style.display = item.dataset.category === currentCat ? '' : 'none';
+        });
+        readMoreBtn.style.display = 'none';
+      }
+    }
+
+    document.getElementById('read-more-btn').addEventListener('click', () => {
+      visibleArticleCount += 2;
+      applyArticles();
+    });
+
     // 카테고리별 색상 (RGB)
     const categoryColors = {
       design:    [232, 148, 26 ],
@@ -294,10 +323,14 @@
       const cat = catMap[label];
       const moreCard = document.getElementById('card-more');
 
+      // 아티클 상태 업데이트
+      currentCat = cat;
+      if (!cat) visibleArticleCount = 3;
+
       if (!cat) {
         // 전체: 카테고리별 첫 번째 카드만 표시
         const seen = new Set();
-        document.querySelectorAll('.card:not(.card--more)').forEach(card => {
+        document.querySelectorAll('.card:not(.card-more-btn)').forEach(card => {
           const cardCat = card.dataset.category;
           if (!seen.has(cardCat)) {
             card.style.display = '';
@@ -307,29 +340,20 @@
           }
         });
         if (moreCard) moreCard.style.display = '';
-
-        // 최신 3개 아티클만 표시
-        document.querySelectorAll('.article-item').forEach((item, i) => {
-          item.style.display = i < 3 ? '' : 'none';
-        });
       } else {
         // 특정 카테고리: 해당 카드 전체 + 더보기 숨김
-        document.querySelectorAll('.card:not(.card--more)').forEach(card => {
+        document.querySelectorAll('.card:not(.card-more-btn)').forEach(card => {
           card.style.display = card.dataset.category === cat ? '' : 'none';
         });
         if (moreCard) moreCard.style.display = 'none';
-
-        // 해당 카테고리 아티클 전체 표시
-        document.querySelectorAll('.article-item').forEach(item => {
-          item.style.display = item.dataset.category === cat ? '' : 'none';
-        });
       }
 
+      applyArticles();
+
       // 섹션 표시 여부
-      const anyCard    = [...document.querySelectorAll('.card')].some(c => c.style.display !== 'none');
-      const anyArticle = [...document.querySelectorAll('.article-item')].some(a => a.style.display !== 'none');
-      document.querySelector('.section-cards').style.display    = anyCard    ? '' : 'none';
-      document.querySelector('.section-articles').style.display = anyArticle ? '' : 'none';
+      const anyCard = [...document.querySelectorAll('.card:not(.card-more-btn)')].some(c => c.style.display !== 'none');
+      document.querySelector('.section-cards').style.display    = anyCard ? '' : 'none';
+      document.querySelector('.section-articles').style.display = '';
 
       // DOM 업데이트 후 스크롤 초기화
       requestAnimationFrame(() => { cardList.scrollLeft = 0; });

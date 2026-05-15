@@ -501,6 +501,24 @@
   line-height: 1.4;
 }
 
+/* ── Read More 버튼 ── */
+.read-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 14px 0;
+  background: none;
+  border: none;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--active-border-gray-500);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
 /* ── 430px 미만: 카테고리 칩 축소 ── */
 @media (max-width: 429px) {
   .chip {
