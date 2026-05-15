@@ -119,7 +119,7 @@
           </div>
 
           <!-- 리마인더 -->
-          <div class="section-reminder" id="section-reminder" data-active="false">
+          <div class="section-reminder" id="section-reminder" data-active="true">
             <div class="reminder-row">
               <span class="reminder-text">매일 지정된 시간에 리마인드 받기</span>
               <div class="toggle-switch" onclick="toggleReminder()"></div>
@@ -238,7 +238,7 @@
       resetDates();
       closeCal();
       closeTimePicker();
-      document.getElementById('section-reminder').dataset.active = 'false';
+      document.getElementById('section-reminder').dataset.active = 'true';
     }
 
     // ── 리마인더 토글 ──
