@@ -294,9 +294,6 @@
       const cat = catMap[label];
       const moreCard = document.getElementById('card-more');
 
-      // 카드 리스트 스크롤 초기화
-      cardList.scrollLeft = 0;
-
       if (!cat) {
         // 전체: 카테고리별 첫 번째 카드만 표시
         const seen = new Set();
@@ -333,6 +330,9 @@
       const anyArticle = [...document.querySelectorAll('.article-item')].some(a => a.style.display !== 'none');
       document.querySelector('.section-cards').style.display    = anyCard    ? '' : 'none';
       document.querySelector('.section-articles').style.display = anyArticle ? '' : 'none';
+
+      // DOM 업데이트 후 스크롤 초기화
+      requestAnimationFrame(() => { cardList.scrollLeft = 0; });
     }
 
     // 칩 클릭 이벤트
