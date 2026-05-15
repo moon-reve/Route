@@ -344,7 +344,6 @@
 
 /* card: 180px wide, column, radius 10px, border */
 .card {
-  text-decoration: none;
   flex-shrink: 0;
   width: 180px;
   scroll-snap-align: start;
@@ -353,6 +352,11 @@
   border-radius: 10px;
   border: 1px solid var(--inactive-gray-200);
   overflow: hidden;
+}
+
+.card[onclick],
+.article-item[onclick] {
+  cursor: pointer;
 }
 
 /* card img-box: height 120px, padding 18px 25px, bg #E6E3DE */
