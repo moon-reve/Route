@@ -305,7 +305,7 @@
 .section-cards {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   margin-left: -24px;
   margin-right: -24px;
 }
@@ -373,14 +373,14 @@
   object-fit: contain;
 }
 
-/* card text-box: height 80px, padding 10px, bg var(--gray-100) */
+/* card text-box */
 .card-text-box {
-  height: 80px;
-  padding: 10px;
+  padding: 12px;
   background: var(--gray-100);
   border-radius: 0 0 10px 10px;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .card-title {
@@ -391,6 +391,15 @@
   line-height: 1.4;
 }
 
+.card-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--gray-700);
+  line-height: 120%;
+  letter-spacing: -0.22px;
+}
+
 /* ════════════════════════════
    ④ ARTICLES
 ════════════════════════════ */
@@ -398,7 +407,7 @@
 .section-articles {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 /* article-item: row, gap 16px, padding 0 0 20px, border-bottom */
