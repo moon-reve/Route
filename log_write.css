@@ -389,27 +389,13 @@
   font-family: 'Pretendard', sans-serif;
 }
 
-/* 드럼 영역: 3행(위1+중앙1+아래1) = 132px */
+/* 드럼 영역: 3행 × 36px = 108px */
 .drum-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 132px;
+  height: 108px;
   overflow: hidden;
-}
-
-/* 선택 표시선 (스타라인 골드) — 3열 구분선 포함 */
-.drum-selector {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 44px;
-  transform: translateY(-50%);
-  border-top: 1px solid var(--starline-gold);
-  border-bottom: 1px solid var(--starline-gold);
-  pointer-events: none;
-  z-index: 2;
 }
 
 /* 위아래 페이드: 한 줄 높이 */
@@ -418,7 +404,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 44px;
+  height: 36px;
   pointer-events: none;
   z-index: 1;
 }
@@ -431,33 +417,44 @@
   background: linear-gradient(to top, rgba(255,255,255,0.92) 0%, transparent 100%);
 }
 
-/* 각 열: CSS padding으로만 위아래 여백 (pad div 없음) */
+/* 각 열: CSS padding으로 여백 */
 .drum-col {
+  position: relative;
   flex: 1;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 44px 0; /* (132 - 44) / 2 = 44 */
+  padding: 36px 0; /* (108 - 36) / 2 = 36 */
 }
 .drum-col::-webkit-scrollbar { display: none; }
 
-/* 열 구분선 */
-.drum-col + .drum-col {
-  border-left: 1px solid rgba(0,0,0,0.07);
+/* 골드 선: 각 열마다 끊어서 표시 */
+.drum-col::before,
+.drum-col::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  height: 1px;
+  background: var(--starline-gold);
+  z-index: 3;
+  pointer-events: none;
 }
+.drum-col::before { top: calc(50% - 18px); }
+.drum-col::after  { top: calc(50% + 17px); }
 
 /* 드럼 아이템 */
 .drum-item {
-  height: 44px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   scroll-snap-align: center;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   color: rgba(26,28,30,0.22);
-  transition: font-size 0.1s, font-weight 0.1s, color 0.1s, opacity 0.1s;
+  transition: font-size 0.1s, font-weight 0.1s, color 0.1s;
   user-select: none;
 }
 
