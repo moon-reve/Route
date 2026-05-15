@@ -306,7 +306,7 @@
 .week-dot--gold     { background: var(--champagne-gold); }
 .week-dot--sage     { background: var(--dusty-sage); }
 .week-dot--mint     { background: var(--fresh-mint); }
-.week-dot--blue     { background: var(--slate-blue); }
+.week-dot--blue     { background: var(--dusty-rose); }
 .week-dot--lavender { background: var(--dusty-lavender); }
 .week-dot--orange   { background: var(--starline-gold); }
 
@@ -513,7 +513,7 @@
 .tag--gold       { background: rgba(212,168,83,0.2);   color: var(--champagne-gold); }
 .tag--sage       { background: rgba(143,175,138,0.2);  color: var(--dusty-sage); }
 .tag--mint       { background: rgba(71,181,167,0.2);   color: var(--fresh-mint); }
-.tag--blue       { background: rgba(123,158,173,0.2);  color: var(--slate-blue); }
+.tag--blue       { background: rgba(212,132,154,0.2);  color: var(--dusty-rose); }
 .tag--lavender   { background: rgba(158,144,188,0.2);  color: var(--dusty-lavender); }
 .tag--unfinished { background: rgba(196,135,106,0.2);  color: var(--muted-terracotta); }
 .tag--in-progress{ background: rgba(232,148,26,0.2);   color: var(--starline-gold); font-weight: 600; }
@@ -642,7 +642,7 @@
 }
 
 .filter-summary-card {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 14px 16px;
   display: flex;
@@ -683,7 +683,7 @@
 }
 
 .filter-list-card {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   overflow: hidden;
   backdrop-filter: blur(2px);
