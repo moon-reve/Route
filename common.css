@@ -137,4 +137,6 @@ body {
   display: block;
   width: auto;
   height: auto;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
