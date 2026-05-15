@@ -69,7 +69,7 @@
             <h2 class="section-title">새로운 항로를 위한 나침반</h2>
             <div class="card-list">
 
-              <a href="detail_card1" class="card">
+              <a href="detail_card1" class="card" data-category="design">
                 <div class="card-img-box">
                   <img src="images/home_card1_img.svg" alt="">
                 </div>
@@ -79,20 +79,26 @@
                 </div>
               </a>
 
-              <div class="card">
+              <div class="card" data-category="design">
                 <div class="card-img-box">
                   <img src="images/home_card2_img.svg" alt="">
                 </div>
+                <div class="card-text-box">
+                  <span class="card-title">디자인 시스템 기초 가이드</span>
+                  <p class="card-text">일관성 있는 인터페이스를 위한 시스템 규칙</p>
+                </div>
+              </div>
+
+              <div class="card" data-category="design">
+                <div class="card-img-box"></div>
                 <div class="card-text-box">
                   <span class="card-title">폰트 조합의 황금비율</span>
                   <p class="card-text">세리프와 산세리프를 섞어 고급스러운 무드를 만드는 2:1 법칙 가이드</p>
                 </div>
               </div>
 
-              <div class="card">
-                <div class="card-img-box">
-                  <img src="images/home_card2_img.svg" alt="">
-                </div>
+              <div class="card" data-category="design">
+                <div class="card-img-box"></div>
                 <div class="card-text-box">
                   <span class="card-title">그리드 시스템 101</span>
                   <p class="card-text">반응형 웹을 위한 12컬럼 그리드와 8px 단위 설계법의 기초</p>
@@ -181,17 +187,19 @@
       cardList.scrollLeft = scrollLeft - walk;
     });
 
-    // card-text-box 배경색 + card 테두리색 적용
-    const cardColors = [
-      { bg: 'rgba(232,148,26,0.2)',  border: 'rgba(232,148,26,0.7)'  },
-      { bg: 'rgba(143,175,138,0.2)', border: 'rgba(143,175,138,0.7)' },
-      { bg: 'rgba(196,135,106,0.2)', border: 'rgba(196,135,106,0.7)' }
-    ];
-    document.querySelectorAll('.card').forEach((card, i) => {
-      const c = cardColors[i % cardColors.length];
-      card.style.border = `1px solid ${c.border}`;
+    // 카테고리별 카드 색상
+    const categoryColors = {
+      design:    [232, 148, 26 ],  // Starline Gold
+      dev:       [71,  181, 167],  // Fresh Mint
+      plan:      [158, 144, 188],  // Dusty Lavender
+      marketing: [212, 132, 154],  // Rose Pink
+    };
+    document.querySelectorAll('.card').forEach(card => {
+      const cat = card.dataset.category || 'design';
+      const [r, g, b] = categoryColors[cat] || categoryColors.design;
+      card.style.border = `1px solid rgba(${r},${g},${b},0.7)`;
       const textBox = card.querySelector('.card-text-box');
-      if (textBox) textBox.style.background = c.bg;
+      if (textBox) textBox.style.background = `rgba(${r},${g},${b},0.2)`;
     });
   </script>
   <script src="common.js"></script>
