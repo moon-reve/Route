@@ -417,8 +417,8 @@
 }
 
 .more-circle {
-  width: 44px;
-  height: 44px;
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
   background: var(--inactive-gray-200);
   display: flex;
@@ -427,8 +427,8 @@
 }
 
 .more-arrow {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-right: 2px solid var(--gray-700);
   border-top: 2px solid var(--gray-700);
   transform: rotate(45deg) translateX(-1px);
