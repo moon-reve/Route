@@ -17,6 +17,11 @@
 </head>
 <body>
 
+  <!-- 숨김 파일 인풋 (히어로 이미지) -->
+  <input type="file" id="hero-file-input" accept="image/*" style="display:none" onchange="handleHeroImage(event)">
+  <!-- 숨김 파일 인풋 (프로젝트 파일) -->
+  <input type="file" id="project-file-input" style="display:none" onchange="handleProjectFile(event)">
+
   <div class="screen">
     <div class="scroll-area">
       <div class="log-container">
@@ -34,8 +39,11 @@
 
           <!-- 히어로 썸네일 -->
           <div class="hero-section">
-            <div class="hero-illustration">
-              <img src="images/log_hero_img.svg" alt="">
+            <div class="hero-illustration" onclick="uploadHeroImage()">
+              <img src="images/log_hero_img.svg" alt="" id="hero-img">
+              <div class="hero-upload-overlay">
+                <span class="hero-upload-label">사진 변경</span>
+              </div>
               <span class="hero-caption" id="hero-caption">탭하여 오늘의 항해 순간을 담아보세요</span>
             </div>
           </div>
@@ -65,13 +73,21 @@
             <div class="input-group" id="link-group" style="display:none">
               <label class="input-label" id="link-label">학습할 링크 (선택)</label>
               <div class="input-box">
-                <input type="url" placeholder="URL을 붙여넣으면 제목이 자동 입력돼요">
+                <input type="url" id="link-input" placeholder="URL을 붙여넣으면 제목이 자동 입력돼요">
+              </div>
+            </div>
+            <!-- 프로젝트 파일 업로드 (선택) -->
+            <div class="input-group" id="file-upload-group" style="display:none">
+              <label class="input-label">파일 업로드 (선택)</label>
+              <div class="input-box input-box--file" onclick="document.getElementById('project-file-input').click()">
+                <span class="file-name-text" id="file-name-text">파일을 선택해주세요</span>
+                <img src="images/log_calendar.svg" alt="" class="file-icon">
               </div>
             </div>
             <div class="input-group">
               <label class="input-label" id="title-label">제목 (필수)</label>
               <div class="input-box">
-                <input type="text" placeholder="예) 피그마 오토레이아웃 마스터 클래스">
+                <input type="text" id="title-input" placeholder="오늘은 어떤 기록을 해볼까요">
               </div>
             </div>
           </div>
@@ -81,7 +97,7 @@
             <div class="input-group">
               <label class="input-label">간단한 설명 (선택)</label>
               <div class="input-box input-box--textarea">
-                <textarea placeholder="이 항로에 대해 간단히 설명해 주세요" rows="3"></textarea>
+                <textarea id="desc-input" placeholder="왜 이렇게 했는지, 무엇을 느꼈는지 — 나중에 면접 준비할 때 가장 도움이 될 기록이에요" rows="3"></textarea>
               </div>
             </div>
           </div>
@@ -91,7 +107,7 @@
             <div class="section-label">목표 기간을 설정해 주세요</div>
             <div class="date-row">
               <div class="date-box" onclick="openCal('start', this)">
-                <span class="date-text" id="start-date-text">시작일 선택</span>
+                <span class="date-text date-placeholder" id="start-date-text">시작일 선택</span>
                 <img src="images/log_calendar.svg" alt="" class="calendar-icon">
               </div>
               <span class="date-sep">~</span>
@@ -104,8 +120,14 @@
 
           <!-- 리마인더 -->
           <div class="section-reminder" id="section-reminder">
-            <span class="reminder-text">매일 지정된 시간에 리마인드 받기</span>
-            <img src="images/log_toggle.svg" alt="토글" class="toggle-btn">
+            <div class="reminder-row">
+              <span class="reminder-text">매일 지정된 시간에 리마인드 받기</span>
+              <img src="images/log_toggle.svg" alt="토글" class="toggle-btn">
+            </div>
+            <div class="reminder-time-row">
+              <span class="reminder-time-label">알림 시간</span>
+              <input type="time" class="reminder-time-input" value="09:00">
+            </div>
           </div>
 
           <!-- 제출 버튼 -->
@@ -130,46 +152,100 @@
   </div>
 
   <script>
-    // ── 탭 전환 ──
+    // ── 탭별 설정 ──
+    const TAB_CONFIG = {
+      log: {
+        titleLabel:   '제목 (필수)',
+        titlePH:      '오늘은 어떤 기록을 해볼까요',
+        descPH:       '왜 이렇게 했는지, 무엇을 느꼈는지 — 나중에 면접 준비할 때 가장 도움이 될 기록이에요',
+        heroCap:      '탭하여 오늘의 항해 순간을 담아보세요',
+        showLink:     false,
+        showFile:     false,
+        showLogDate:  true,
+        showDur:      false,
+        showReminder: false,
+      },
+      lecture: {
+        titleLabel:   '항로 이름 (필수)',
+        titlePH:      '예) 피그마 오토레이아웃 마스터 클래스',
+        descPH:       '이 항로에 대해 간단히 설명해 주세요',
+        heroCap:      '링크를 입력하면 썸네일이 자동으로 채워져요',
+        linkLabel:    '학습할 링크 (선택)',
+        showLink:     true,
+        showFile:     false,
+        showLogDate:  false,
+        showDur:      true,
+        showReminder: true,
+      },
+      book: {
+        titleLabel:   '타이틀 (필수)',
+        titlePH:      '타이틀을 적어주세요',
+        descPH:       '이 책에 대해 간단히 설명해 주세요',
+        heroCap:      '책 한 권이 나의 항로가 됩니다',
+        showLink:     false,
+        showFile:     false,
+        showLogDate:  false,
+        showDur:      true,
+        showReminder: true,
+      },
+      project: {
+        titleLabel:   '프로젝트 타이틀 (필수)',
+        titlePH:      '프로젝트 타이틀을 적어주세요',
+        descPH:       '프로젝트의 소개를 간단히 적어주세요',
+        heroCap:      '완성이 아닌 과정도 빛나는 궤적입니다',
+        linkLabel:    '프로젝트 링크 (선택)',
+        showLink:     true,
+        showFile:     true,
+        showLogDate:  false,
+        showDur:      true,
+        showReminder: true,
+      },
+    };
+
     function selectTab(el, type) {
       document.querySelectorAll('.resource-tab').forEach(t => t.classList.remove('resource-tab--active'));
       el.classList.add('resource-tab--active');
 
-      const linkGroup       = document.getElementById('link-group');
-      const linkLabel       = document.getElementById('link-label');
-      const titleLabel      = document.getElementById('title-label');
-      const heroCaption     = document.getElementById('hero-caption');
-      const sectionDur      = document.getElementById('section-duration');
-      const sectionReminder = document.getElementById('section-reminder');
-      const sectionLogDate  = document.getElementById('section-log-date');
+      const cfg = TAB_CONFIG[type];
+      const show = v => v ? '' : 'none';
+
+      document.getElementById('link-group').style.display        = show(cfg.showLink);
+      document.getElementById('file-upload-group').style.display = show(cfg.showFile);
+      document.getElementById('section-log-date').style.display  = show(cfg.showLogDate);
+      document.getElementById('section-duration').style.display  = show(cfg.showDur);
+      document.getElementById('section-reminder').style.display  = show(cfg.showReminder);
+
+      document.getElementById('title-label').textContent         = cfg.titleLabel;
+      document.getElementById('title-input').placeholder         = cfg.titlePH;
+      document.getElementById('desc-input').placeholder          = cfg.descPH;
+      document.getElementById('hero-caption').textContent        = cfg.heroCap;
+      if (cfg.linkLabel) document.getElementById('link-label').textContent = cfg.linkLabel;
 
       resetDates();
       closeCal();
+    }
 
-      if (type === 'log') {
-        linkGroup.style.display       = 'none';
-        sectionDur.style.display      = 'none';
-        sectionReminder.style.display = 'none';
-        sectionLogDate.style.display  = '';
-        titleLabel.textContent        = '제목 (필수)';
-        heroCaption.textContent       = '탭하여 오늘의 항해 순간을 담아보세요';
-      } else if (type === 'book') {
-        linkGroup.style.display       = 'none';
-        sectionDur.style.display      = '';
-        sectionReminder.style.display = '';
-        sectionLogDate.style.display  = 'none';
-        titleLabel.textContent        = '항로 이름 (필수)';
-        heroCaption.textContent       = '링크를 입력하면 썸네일이 자동으로 채워져요';
-      } else {
-        linkGroup.style.display       = '';
-        sectionDur.style.display      = '';
-        sectionReminder.style.display = '';
-        sectionLogDate.style.display  = 'none';
-        titleLabel.textContent        = '항로 이름 (필수)';
-        heroCaption.textContent       = '링크를 입력하면 썸네일이 자동으로 채워져요';
-        linkLabel.textContent         = type === 'project' ? '프로젝트 링크 (선택)' : '학습할 링크 (선택)';
-      }
-      closeCal();
+    // ── 히어로 이미지 업로드 ──
+    function uploadHeroImage() {
+      document.getElementById('hero-file-input').click();
+    }
+
+    function handleHeroImage(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      const img = document.getElementById('hero-img');
+      img.src = url;
+      img.style.objectFit = 'cover';
+      document.getElementById('hero-caption').style.display = 'none';
+    }
+
+    // ── 프로젝트 파일 업로드 ──
+    function handleProjectFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      document.getElementById('file-name-text').textContent = file.name;
+      document.getElementById('file-name-text').style.color = 'var(--midnight-charcoal)';
     }
 
     // ── 캘린더 ──
@@ -197,7 +273,6 @@
       startEl.classList.add('date-placeholder');
       endEl.textContent   = '종료일 선택';
       endEl.classList.add('date-placeholder');
-      // 로그 날짜는 오늘로 초기화
       setLogDateToday();
     }
 
@@ -210,10 +285,14 @@
     }
 
     function openCal(target, anchor) {
-      calTarget = target;
       const popup = document.getElementById('cal-popup');
+      // 같은 타겟의 캘린더가 이미 열려있으면 닫기 (토글)
+      if (popup.style.display === 'block' && calTarget === target) {
+        closeCal();
+        return;
+      }
+      calTarget = target;
       popup.style.display = 'block';
-
       const rect = anchor.getBoundingClientRect();
       let top  = rect.bottom + 8;
       let left = rect.left;
@@ -221,7 +300,6 @@
       if (top + 260 > window.innerHeight) top = rect.top - 268;
       popup.style.top  = top + 'px';
       popup.style.left = left + 'px';
-
       renderCal();
     }
 
@@ -245,7 +323,6 @@
       const selKey   = calTarget === 'start' ? startDate :
                        calTarget === 'end'   ? endDate   : logDate;
 
-      // 종료일 모드: 시작일 이전 날짜 비활성화 (로그 탭은 제한 없음)
       let minDate = null;
       if (calTarget === 'end' && startDate) {
         const [sy, sm, sd] = startDate.split('-').map(Number);
@@ -262,9 +339,7 @@
         btn.className   = 'cal-day';
         btn.textContent = d;
         const key = `${calYear}-${calMonth}-${d}`;
-
         if (selKey === key) btn.classList.add('cal-day--selected');
-
         const thisDate = new Date(calYear, calMonth, d);
         if (minDate && thisDate < minDate) {
           btn.classList.add('cal-day--disabled');
@@ -305,9 +380,10 @@
       }
     });
 
-    // 초기 상태: 로그 탭이므로 기간 + 리마인더 숨김, 날짜는 오늘
+    // 초기화
     document.getElementById('section-duration').style.display = 'none';
     document.getElementById('section-reminder').style.display = 'none';
+    document.getElementById('file-upload-group').style.display = 'none';
     setLogDateToday();
   </script>
 </body>

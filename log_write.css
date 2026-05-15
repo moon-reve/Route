@@ -282,13 +282,99 @@
   color: #5F5E5E;
 }
 
+/* ════════ HERO UPLOAD ════════ */
+.hero-illustration {
+  cursor: pointer;
+}
+
+.hero-upload-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.hero-illustration:hover .hero-upload-overlay {
+  opacity: 1;
+}
+
+.hero-upload-label {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.35);
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+/* ════════ FILE UPLOAD ════════ */
+.input-box--file {
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.file-name-text {
+  font-size: 14px;
+  color: #848484;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 /* ════════ REMINDER ════════ */
-/* row, space-between, center */
+/* column, gap 10px */
 .section-reminder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reminder-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.reminder-time-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--pure-white);
+  border: 1px solid var(--border-gray-300);
+  border-radius: 10px;
+}
+
+.reminder-time-label {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--midnight-charcoal);
+}
+
+.reminder-time-input {
+  border: none;
+  outline: none;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--midnight-charcoal);
+  background: transparent;
+  cursor: pointer;
 }
 
 .reminder-text {
