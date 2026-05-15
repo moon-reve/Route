@@ -169,8 +169,8 @@
 }
 
 .chip--active {
-  background: var(--starline-gold);
-  border-color: var(--starline-gold);
+  background: var(--midnight-charcoal);
+  border-color: var(--midnight-charcoal);
   font-weight: 700;
   color: var(--pure-white);
 }
@@ -402,9 +402,16 @@
   letter-spacing: -0.22px;
 }
 
-/* ── 더보기 카드 ── */
-.card--more {
-  border: 1px solid var(--border-gray-300) !important;
+/* ── 더보기 버튼 ── */
+.card-more-btn {
+  flex-shrink: 0;
+  width: 80px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -425,12 +432,6 @@
   border-right: 2px solid var(--gray-700);
   border-top: 2px solid var(--gray-700);
   transform: rotate(45deg) translateX(-1px);
-}
-
-.card--more .card-text-box {
-  background: var(--gray-100) !important;
-  justify-content: center;
-  align-items: center;
 }
 
 .card-more-text {
