@@ -69,7 +69,7 @@
             <h2 class="section-title">새로운 항로를 위한 나침반</h2>
             <div class="card-list">
 
-              <div class="card" data-category="design" onclick="location.href='detail_card1'">
+              <div class="card" data-category="design" data-href="detail_card1">
                 <div class="card-img-box">
                   <img src="images/home_card1_img.svg" alt="">
                 </div>
@@ -167,7 +167,7 @@
           <section class="section-articles">
             <h2 class="section-title">앞서간 별들의 궤적</h2>
 
-            <div class="article-item" data-category="design" onclick="location.href='detail_magazine1'">
+            <div class="article-item" data-category="design" data-href="detail_magazine1">
               <img class="article-img" src="images/home_article2_img.svg" alt="">
               <div class="article-text">
                 <p class="article-title">실무에서 바로 쓰는 피그마 오토레이아웃 활용 팁 10가지</p>
@@ -236,155 +236,7 @@
 
   </div>
 
-  <script>
-    // 카드 리스트 마우스/터치 드래그 스크롤
-    const cardList = document.querySelector('.card-list');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    cardList.addEventListener('mousedown', (e) => {
-      isDown = true;
-      cardList.classList.add('is-dragging');
-      startX = e.pageX - cardList.offsetLeft;
-      scrollLeft = cardList.scrollLeft;
-    });
-
-    cardList.addEventListener('mouseleave', () => {
-      isDown = false;
-      cardList.classList.remove('is-dragging');
-    });
-
-    cardList.addEventListener('mouseup', () => {
-      isDown = false;
-      cardList.classList.remove('is-dragging');
-    });
-
-    cardList.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - cardList.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      cardList.scrollLeft = scrollLeft - walk;
-    });
-
-    // Read More
-    let visibleArticleCount = 3;
-    let currentCat = null;
-
-    function applyArticles() {
-      const articles = [...document.querySelectorAll('.article-item')];
-      const readMoreBtn = document.getElementById('read-more-btn');
-
-      if (!currentCat) {
-        articles.forEach((item, i) => {
-          item.style.display = i < visibleArticleCount ? '' : 'none';
-        });
-        readMoreBtn.style.display = visibleArticleCount < articles.length ? '' : 'none';
-      } else {
-        const matching = articles.filter(a => a.dataset.category === currentCat);
-        articles.forEach(item => {
-          item.style.display = item.dataset.category === currentCat ? '' : 'none';
-        });
-        readMoreBtn.style.display = 'none';
-      }
-    }
-
-    document.getElementById('read-more-btn').addEventListener('click', () => {
-      visibleArticleCount += 2;
-      applyArticles();
-    });
-
-    // 카테고리별 색상 (RGB)
-    const categoryColors = {
-      design:    [232, 148, 26 ],
-      dev:       [71,  181, 167],
-      plan:      [158, 144, 188],
-      marketing: [212, 132, 154],
-    };
-    const catMap = {
-      '전체': null, '디자인': 'design', '개발': 'dev', '기획': 'plan', '마케팅': 'marketing'
-    };
-    const chipColorMap = {
-      '디자인': [232,148,26], '개발': [71,181,167], '기획': [158,144,188], '마케팅': [212,132,154]
-    };
-
-    // 카드 색상 적용 (더보기 카드 제외)
-    document.querySelectorAll('.card:not(.card--more)').forEach(card => {
-      const cat = card.dataset.category || 'design';
-      const [r, g, b] = categoryColors[cat] || categoryColors.design;
-      card.style.border = `1px solid rgba(${r},${g},${b},0.7)`;
-      const textBox = card.querySelector('.card-text-box');
-      if (textBox) textBox.style.background = `rgba(${r},${g},${b},0.2)`;
-    });
-
-    // 필터 함수
-    function applyFilter(label) {
-      const cat = catMap[label];
-      const moreCard = document.getElementById('card-more');
-
-      // 아티클 상태 업데이트
-      currentCat = cat;
-      if (!cat) visibleArticleCount = 3;
-
-      if (!cat) {
-        // 전체: 카테고리별 첫 번째 카드만 표시
-        const seen = new Set();
-        document.querySelectorAll('.card:not(.card-more-btn)').forEach(card => {
-          const cardCat = card.dataset.category;
-          if (!seen.has(cardCat)) {
-            card.style.display = '';
-            seen.add(cardCat);
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        if (moreCard) moreCard.style.display = '';
-      } else {
-        // 특정 카테고리: 해당 카드 전체 + 더보기 숨김
-        document.querySelectorAll('.card:not(.card-more-btn)').forEach(card => {
-          card.style.display = card.dataset.category === cat ? '' : 'none';
-        });
-        if (moreCard) moreCard.style.display = 'none';
-      }
-
-      applyArticles();
-
-      // 섹션 표시 여부
-      const anyCard = [...document.querySelectorAll('.card:not(.card-more-btn)')].some(c => c.style.display !== 'none');
-      document.querySelector('.section-cards').style.display    = anyCard ? '' : 'none';
-      document.querySelector('.section-articles').style.display = '';
-
-      // DOM 업데이트 후 스크롤 초기화
-      requestAnimationFrame(() => { cardList.scrollLeft = 0; });
-    }
-
-    // 칩 클릭 이벤트
-    document.querySelectorAll('.section-chips .chip').forEach(chip => {
-      chip.addEventListener('click', function () {
-        const label = this.textContent.trim();
-
-        document.querySelectorAll('.section-chips .chip').forEach(c => {
-          c.classList.remove('chip--active');
-          c.style.background = '';
-          c.style.borderColor = '';
-          c.style.color = '';
-        });
-        this.classList.add('chip--active');
-        if (chipColorMap[label]) {
-          const [r,g,b] = chipColorMap[label];
-          this.style.background  = `rgb(${r},${g},${b})`;
-          this.style.borderColor = `rgb(${r},${g},${b})`;
-          this.style.color       = '#fff';
-        }
-
-        applyFilter(label);
-      });
-    });
-
-    // 초기 전체 탭 적용
-    applyFilter('전체');
-  </script>
+  <script src="home.js"></script>
   <script src="common.js"></script>
 </body>
 </html>

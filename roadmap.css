@@ -718,3 +718,18 @@
 }
 
 /* Route 탭 활성 */
+
+/* ── roadmap 유틸리티 ── */
+.week-dots--semi { opacity: 0.5; }
+.week-dots--dim  { opacity: 0.4; }
+.week-dot--gray  { background: #CCCCCC; }
+.card-head--plan-divider {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(209,209,209,0.4);
+  cursor: pointer;
+}
+/* toggleCard 이벤트 위임 대상 */
+.card-head-row,
+.card-head {
+  cursor: pointer;
+}

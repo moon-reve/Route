@@ -59,22 +59,22 @@
           <!-- 선택지 리스트 -->
           <div class="option-list">
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <span class="option-text">UI 중심</span>
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <span class="option-text">UX 기획 중심</span>
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <span class="option-text">BX 중심</span>
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <span class="option-text">Generalist</span>
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
@@ -93,20 +93,6 @@
     </div><!-- /pre-wrap -->
   </div>
 
-  <script>
-    function selectOption(el) {
-      const isSelected = el.classList.contains('option-item--selected');
-      // 모든 선택 해제
-      document.querySelectorAll('.option-item').forEach(item => {
-        item.classList.remove('option-item--selected');
-        item.querySelector('.option-radio').src = 'images/pre_radio_empty.svg';
-      });
-      // 이미 선택된 항목 클릭 시 → 선택 취소 (toggle)
-      if (!isSelected) {
-        el.classList.add('option-item--selected');
-        el.querySelector('.option-radio').src = 'images/pre_radio_selected.svg';
-      }
-    }
-  </script>
+  <script src="pre_steps.js"></script>
 </body>
 </html>

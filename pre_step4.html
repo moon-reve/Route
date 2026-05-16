@@ -59,7 +59,7 @@
           <!-- 선택지 리스트 -->
           <div class="option-list">
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <div class="option-text-group">
                 <span class="option-text">몰입형 (주 20h+)</span>
                 <span class="option-sub">빠른 성장을 위해 하루 3시간 이상 투자</span>
@@ -67,7 +67,7 @@
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <div class="option-text-group">
                 <span class="option-text">병행형 (주 10-15h)</span>
                 <span class="option-sub">현재 직무와 커리어 성장을 동시에</span>
@@ -75,7 +75,7 @@
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <div class="option-text-group">
                 <span class="option-text">거북이형 (주 5-10h)</span>
                 <span class="option-sub">퇴근 후 한 시간씩 꾸준하게</span>
@@ -83,7 +83,7 @@
               <img src="images/pre_radio_empty.svg" alt="" class="option-radio">
             </div>
 
-            <div class="option-item" onclick="selectOption(this)">
+            <div class="option-item">
               <div class="option-text-group">
                 <span class="option-text">슬로우형</span>
                 <span class="option-sub">부담 없이 원할 때마다 조금씩</span>
@@ -105,18 +105,6 @@
     </div><!-- /pre-wrap -->
   </div>
 
-  <script>
-    function selectOption(el) {
-      const isSelected = el.classList.contains('option-item--selected');
-      document.querySelectorAll('.option-item').forEach(item => {
-        item.classList.remove('option-item--selected');
-        item.querySelector('.option-radio').src = 'images/pre_radio_empty.svg';
-      });
-      if (!isSelected) {
-        el.classList.add('option-item--selected');
-        el.querySelector('.option-radio').src = 'images/pre_radio_selected.svg';
-      }
-    }
-  </script>
+  <script src="pre_steps.js"></script>
 </body>
 </html>

@@ -25,3 +25,20 @@
       makeTab(tabs[3]) +
     `</nav>`;
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  // data-href: 클릭 시 페이지 이동
+  document.querySelectorAll('[data-href]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      location.href = this.dataset.href;
+    });
+  });
+
+  // data-action="back": 뒤로가기
+  document.querySelectorAll('[data-action="back"]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      history.back();
+    });
+  });
+});

@@ -23,17 +23,17 @@
 
           <!-- 헤더 -->
           <header class="header">
-            <a href="#" onclick="history.back(); return false;" class="btn-back">
+            <a href="#" data-action="back" class="btn-back">
               <img src="images/detail_btn_back.svg" alt="뒤로가기">
             </a>
             <div class="header-title">5월 8일의 항로</div>
             <!-- 점3개 메뉴 -->
             <div class="menu-wrap">
-              <button class="btn-menu" id="btn-menu" onclick="toggleMenuPopover(event)">
+              <button class="btn-menu" id="btn-menu">
                 <img src="images/feedback_btn_chat.svg" alt="메뉴">
               </button>
               <div class="menu-popover" id="menuPopover">
-                <button class="menu-popover-btn" id="menuPopoverBtn" onclick="toggleEditMode()">편집</button>
+                <button class="menu-popover-btn" id="menuPopoverBtn">편집</button>
               </div>
             </div>
           </header>
@@ -45,7 +45,7 @@
 
             <!-- 카드: 동영상 강의 -->
             <div class="card-video" id="card-0">
-              <button class="btn-trash" onclick="openDeleteModal('card-0')" aria-label="삭제">
+              <button class="btn-trash" data-card-id="card-0" aria-label="삭제">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.25 4.5h13.5M6 4.5V3h6v1.5M7.5 8.25v5.25M10.5 8.25v5.25M3.75 4.5l.75 10.5h9l.75-10.5" stroke="#E53E3E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -68,7 +68,7 @@
 
             <!-- 카드: 도서 -->
             <div class="card-book" id="card-1">
-              <button class="btn-trash" onclick="openDeleteModal('card-1')" aria-label="삭제">
+              <button class="btn-trash" data-card-id="card-1" aria-label="삭제">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.25 4.5h13.5M6 4.5V3h6v1.5M7.5 8.25v5.25M10.5 8.25v5.25M3.75 4.5l.75 10.5h9l.75-10.5" stroke="#E53E3E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -90,7 +90,7 @@
 
             <!-- 카드: 프로젝트 -->
             <div class="card-project" id="card-2">
-              <button class="btn-trash" onclick="openDeleteModal('card-2')" aria-label="삭제">
+              <button class="btn-trash" data-card-id="card-2" aria-label="삭제">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.25 4.5h13.5M6 4.5V3h6v1.5M7.5 8.25v5.25M10.5 8.25v5.25M3.75 4.5l.75 10.5h9l.75-10.5" stroke="#E53E3E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -128,8 +128,8 @@
       <div class="modal-card">
         <p class="modal-title">삭제하시겠습니까?</p>
         <div class="modal-btns">
-          <button class="modal-btn modal-btn--gray" onclick="closeDeleteModal()">취소</button>
-          <button class="modal-btn modal-btn--charcoal" onclick="confirmDelete()">확인</button>
+          <button class="modal-btn modal-btn--gray">취소</button>
+          <button class="modal-btn modal-btn--charcoal">확인</button>
         </div>
       </div>
     </div>
@@ -137,60 +137,7 @@
     <div id="nav-root"></div>
   </div>
 
-  <script>
-    /* ── 점3개 팝오버 ── */
-    function toggleMenuPopover(e) {
-      e.stopPropagation();
-      document.getElementById('menuPopover').classList.toggle('is-open');
-    }
-    document.addEventListener('click', () => {
-      document.getElementById('menuPopover').classList.remove('is-open');
-    });
-
-    /* ── 편집 모드 ── */
-    let editMode = false;
-
-    function enterEditMode() {
-      document.getElementById('menuPopover').classList.remove('is-open');
-      editMode = true;
-      document.querySelectorAll('.btn-trash').forEach(btn => btn.classList.add('is-visible'));
-      document.getElementById('menuPopoverBtn').textContent = '편집완료';
-    }
-
-    function exitEditMode() {
-      document.getElementById('menuPopover').classList.remove('is-open');
-      editMode = false;
-      document.querySelectorAll('.btn-trash').forEach(btn => btn.classList.remove('is-visible'));
-      document.getElementById('menuPopoverBtn').textContent = '편집';
-    }
-
-    function toggleEditMode() {
-      editMode ? exitEditMode() : enterEditMode();
-    }
-
-    /* ── 삭제 모달 ── */
-    let targetCardId = null;
-
-    function openDeleteModal(cardId) {
-      targetCardId = cardId;
-      document.getElementById('deleteModal').classList.add('is-open');
-    }
-
-    function closeDeleteModal() {
-      targetCardId = null;
-      document.getElementById('deleteModal').classList.remove('is-open');
-    }
-
-    function confirmDelete() {
-      if (targetCardId) {
-        const card = document.getElementById(targetCardId);
-        if (card) card.remove();
-        targetCardId = null;
-      }
-      document.getElementById('deleteModal').classList.remove('is-open');
-    }
-  </script>
-
+  <script src="daily_mission.js"></script>
   <script src="common.js"></script>
 </body>
 </html>
