@@ -34,11 +34,62 @@
   height: 24px;
 }
 
-.btn-back img,
-.btn-menu img {
+.btn-back img {
   width: 24px;
   height: 24px;
   object-fit: contain;
+}
+
+.btn-menu img {
+  width: 20px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* ── 팝오버 메뉴 ── */
+.menu-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.menu-popover {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--pure-white);
+  border: 1px solid var(--border-gray-300);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  min-width: 110px;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.menu-popover.is-open {
+  display: block;
+}
+
+.menu-popover-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 18px;
+  background: none;
+  border: none;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--midnight-charcoal);
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-popover-btn:hover {
+  background: var(--gray-100);
 }
 
 .header-title {
@@ -123,8 +174,93 @@
   color: #5F5E5E;
 }
 
+/* ── 휴지통 버튼 ── */
+.btn-trash {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(229,62,62,0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.btn-trash.is-visible {
+  display: flex;
+}
+
+/* ── 삭제 확인 모달 ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.40);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal-card {
+  background: var(--pure-white);
+  border-radius: 16px;
+  padding: 28px 24px 22px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.modal-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--midnight-charcoal);
+  text-align: center;
+  margin: 0;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 13px 0;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.modal-btn--gray {
+  background: var(--gray-100);
+  color: var(--active-border-gray-500);
+}
+
+.modal-btn--charcoal {
+  background: var(--midnight-charcoal);
+  color: var(--pure-white);
+}
+
 /* ════════ CARD VIDEO ════════ */
 .card-video {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border-gray-300);
@@ -182,6 +318,7 @@
 
 /* ════════ CARD BOOK ════════ */
 .card-book {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -238,6 +375,7 @@
 
 /* ════════ CARD PROJECT ════════ */
 .card-project {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
