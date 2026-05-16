@@ -173,6 +173,7 @@
         titlePH:      '오늘은 어떤 기록을 해볼까요',
         descPH:       '왜 이렇게 했는지, 무엇을 느꼈는지 — 나중에 면접 준비할 때 가장 도움이 될 기록이에요',
         heroCap:      '탭하여 오늘의 항해 순간을 담아보세요',
+        heroImg:      'images/log_hero_img.svg',
         showLink:     false,
         showFile:     false,
         showLogDate:  true,
@@ -184,6 +185,7 @@
         titlePH:      '예) 피그마 오토레이아웃 마스터 클래스',
         descPH:       '이 항로에 대해 간단히 설명해 주세요',
         heroCap:      '링크를 입력하면 썸네일이 자동으로 채워져요',
+        heroImg:      'images/log_hero_img.svg',
         linkLabel:    '학습할 링크 (선택)',
         showLink:     true,
         showFile:     false,
@@ -196,6 +198,7 @@
         titlePH:      '타이틀을 적어주세요',
         descPH:       '이 책에 대해 간단히 설명해 주세요',
         heroCap:      '책 한 권이 나의 항로가 됩니다',
+        heroImg:      'images/log_hero_book_img.svg',
         showLink:     false,
         showFile:     false,
         showLogDate:  false,
@@ -207,6 +210,7 @@
         titlePH:      '프로젝트 타이틀을 적어주세요',
         descPH:       '프로젝트의 소개를 간단히 적어주세요',
         heroCap:      '완성이 아닌 과정도 빛나는 궤적입니다',
+        heroImg:      'images/log_hero_project_img.svg',
         linkLabel:    '프로젝트 링크 (선택)',
         showLink:     true,
         showFile:     true,
@@ -233,6 +237,8 @@
       document.getElementById('title-input').placeholder         = cfg.titlePH;
       document.getElementById('desc-input').placeholder          = cfg.descPH;
       document.getElementById('hero-caption').textContent        = cfg.heroCap;
+      document.getElementById('hero-caption').style.display      = '';
+      document.getElementById('hero-img').src                    = cfg.heroImg;
       if (cfg.linkLabel) document.getElementById('link-label').textContent = cfg.linkLabel;
 
       resetDates();
