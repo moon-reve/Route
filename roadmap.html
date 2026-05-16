@@ -29,7 +29,7 @@
 
           <!-- 필터 칩 -->
           <div class="nav-chips">
-            <div class="chip chip--active">전체 항로</div>
+            <div class="chip chip--active">전체</div>
             <div class="chip">인강</div>
             <div class="chip">도서</div>
             <div class="chip">매거진</div>
@@ -305,8 +305,8 @@
               <div class="card-head-row done-closed-header" onclick="toggleCard(this.closest('.card'))" style="cursor:pointer">
                 <div class="card-head-left">
                   <span class="week-lbl week-lbl--light">WEEK 05</span>
-                  <div class="week-dots" style="opacity:0.5">
-                    <span class="week-dot week-dot--gold"></span>
+                  <div class="week-dots">
+                    <span class="week-dot" style="background:#CCCCCC"></span>
                     <span class="week-dot week-dot--blue"></span>
                   </div>
                 </div>
@@ -355,8 +355,8 @@
               <div class="card-head-row done-closed-header" onclick="toggleCard(this.closest('.card'))" style="cursor:pointer">
                 <div class="card-head-left">
                   <span class="week-lbl week-lbl--lighter">WEEK 06</span>
-                  <div class="week-dots" style="opacity:0.4">
-                    <span class="week-dot week-dot--mint"></span>
+                  <div class="week-dots">
+                    <span class="week-dot" style="background:#CCCCCC"></span>
                   </div>
                 </div>
                 <div class="card-head-right">
@@ -512,7 +512,7 @@
         const timeline   = document.getElementById('timeline');
         const filterView = document.getElementById('filter-view');
 
-        if (label === '전체 항로') {
+        if (label === '전체') {
           timeline.style.display   = '';
           filterView.style.display = 'none';
         } else {
