@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+
+  <rect width="180" height="120" fill="#FDF0F4"/>
+  <!-- 상승 그래프 배경 -->
+  <polyline points="12,96 36,78 60,68 84,52 108,44 132,30 156,18"
+            fill="none" stroke="#E8A4B8" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <!-- 그래프 채우기 -->
+  <polygon points="12,96 36,78 60,68 84,52 108,44 132,30 156,18 156,108 12,108"
+           fill="#E8A4B8" opacity="0.12"/>
+  <!-- 데이터 포인트 -->
+  <circle cx="12"  cy="96" r="4" fill="#E8A4B8" opacity="0.75"/>
+  <circle cx="60"  cy="68" r="4" fill="#E8A4B8" opacity="0.75"/>
+  <circle cx="108" cy="44" r="4" fill="#E8A4B8" opacity="0.75"/>
+  <circle cx="156" cy="18" r="5" fill="#E8A4B8" opacity="0.95"/>
+  <!-- 화살표 -->
+  <path d="M152 14 L160 18 L154 22" stroke="#E8A4B8" stroke-width="1.5" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- CTA 버튼 (상단 우측) -->
+  <rect x="104" y="6" width="68" height="18" rx="9" fill="#E8A4B8" opacity="0.90"/>
+  <text x="138" y="18" font-family="sans-serif" font-size="8" font-weight="700"
+        fill="#FFFFFF" text-anchor="middle">Click Here →</text>
+  <!-- 컬러 심리 원 3개 (하단) -->
+  <circle cx="26"  cy="78" r="10" fill="#E8A4B8" opacity="0.70"/>
+  <circle cx="48"  cy="78" r="10" fill="#D4A853" opacity="0.65"/>
+  <circle cx="70"  cy="78" r="10" fill="#8FAF8A" opacity="0.62"/>
+  <!-- +% 표시 -->
+  <text x="154" y="42" font-family="Georgia,serif" font-size="18" font-weight="700"
+        fill="#E8A4B8" opacity="0.65">+%</text>
+  <!-- 장식 점 -->
+  <circle cx="166" cy="108" r="1.5" fill="#E8A4B8" opacity="0.40"/>
+</svg>

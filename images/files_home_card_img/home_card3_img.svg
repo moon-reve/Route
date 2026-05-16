@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+
+  <!-- 베이지 배경 -->
+  <rect width="180" height="120" fill="#FDF8EE"/>
+  <!-- 세리프 A (크게, 좌측) -->
+  <text x="28" y="96" font-family="Georgia,serif" font-size="96" font-weight="700"
+        fill="#D4A853" opacity="0.75">A</text>
+  <!-- 산세리프 a (중간) -->
+  <text x="95" y="82" font-family="Arial,sans-serif" font-size="64" font-weight="300"
+        fill="#1A1C1E" opacity="0.40">a</text>
+  <!-- 2:1 비율 막대 -->
+  <rect x="112" y="22" width="48" height="12" rx="3" fill="#D4A853" opacity="0.65"/>
+  <rect x="112" y="40" width="24" height="12" rx="3" fill="#D4A853" opacity="0.40"/>
+  <rect x="112" y="58" width="36" height="12" rx="3" fill="#D4A853" opacity="0.28"/>
+  <!-- 세로 점선 가이드 -->
+  <line x1="92" y1="12" x2="92" y2="108" stroke="#D4A853" stroke-width="1"
+        stroke-dasharray="3,3" opacity="0.30"/>
+  <!-- 4포인트 별 -->
+  <path d="M158 14 L160 8 L162 14 L168 16 L162 18 L160 24 L158 18 L152 16 Z"
+        fill="#D4A853" opacity="0.50"/>
+  <!-- 작은 점별 -->
+  <circle cx="14" cy="16" r="2" fill="#D4A853" opacity="0.38"/>
+  <circle cx="170" cy="96" r="1.5" fill="#C4876A" opacity="0.32"/>
+</svg>

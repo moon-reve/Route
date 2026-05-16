@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+
+  <rect width="180" height="120" fill="#FDF8EE"/>
+  <!-- 12컬럼 그리드 (연한 Gold) -->
+  <g opacity="0.18">
+    <rect x="8"   y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="21"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="34"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="47"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="60"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="73"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="86"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="99"  y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="112" y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="125" y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="138" y="0" width="11" height="120" fill="#D4A853"/>
+    <rect x="151" y="0" width="21" height="120" fill="#D4A853"/>
+  </g>
+  <!-- 콘텐츠 블록 (그리드 위) -->
+  <rect x="8"  y="18" width="80" height="40" rx="3" fill="#1A1C1E" opacity="0.75"/>
+  <rect x="8"  y="64" width="50" height="8"  rx="2" fill="#1A1C1E" opacity="0.38"/>
+  <rect x="8"  y="76" width="66" height="8"  rx="2" fill="#1A1C1E" opacity="0.28"/>
+  <rect x="8"  y="88" width="42" height="8"  rx="2" fill="#D4A853" opacity="0.75"/>
+  <!-- 8px 수치 표시 (우측) -->
+  <text x="100" y="38" font-family="Courier New,monospace" font-size="13"
+        font-weight="700" fill="#D4A853" opacity="0.90">8px</text>
+  <line x1="98"  y1="18" x2="98"  y2="58" stroke="#D4A853" stroke-width="1" opacity="0.45"/>
+  <line x1="172" y1="18" x2="172" y2="58" stroke="#D4A853" stroke-width="1" opacity="0.45"/>
+  <line x1="98"  y1="18" x2="172" y2="18" stroke="#D4A853" stroke-width="0.8" opacity="0.35" stroke-dasharray="2,2"/>
+  <line x1="98"  y1="58" x2="172" y2="58" stroke="#D4A853" stroke-width="0.8" opacity="0.35" stroke-dasharray="2,2"/>
+  <!-- 12 컬럼 숫자 -->
+  <text x="165" y="106" font-family="Georgia,serif" font-size="28" font-weight="700"
+        fill="#D4A853" opacity="0.30">12</text>
+  <circle cx="14" cy="108" r="2" fill="#D4A853" opacity="0.35"/>
+</svg>

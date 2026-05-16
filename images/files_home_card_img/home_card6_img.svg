@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+
+  <rect width="180" height="120" fill="#EEF6F5"/>
+  <!-- 터미널 배경 -->
+  <rect x="8" y="8" width="164" height="104" rx="6" fill="#1E2228" opacity="0.92"/>
+  <!-- 터미널 상단 버튼 -->
+  <circle cx="22" cy="20" r="4" fill="#FF5F56" opacity="0.80"/>
+  <circle cx="34" cy="20" r="4" fill="#FFBD2E" opacity="0.80"/>
+  <circle cx="46" cy="20" r="4" fill="#27C93F" opacity="0.80"/>
+  <!-- 구분선 -->
+  <line x1="8" y1="28" x2="172" y2="28" stroke="#3A3F48" stroke-width="0.8"/>
+  <!-- Git 명령어들 -->
+  <text x="18" y="42" font-family="Courier New,monospace" font-size="8" fill="#6BAAA8">$ git init</text>
+  <text x="18" y="55" font-family="Courier New,monospace" font-size="8" fill="#6BAAA8">$ git add .</text>
+  <text x="18" y="68" font-family="Courier New,monospace" font-size="8" fill="#D4A853">$ git commit -m "feat: add"</text>
+  <text x="18" y="81" font-family="Courier New,monospace" font-size="8" fill="#6BAAA8">$ git push origin main</text>
+  <text x="18" y="94" font-family="Courier New,monospace" font-size="8" fill="#8FAF8A">✓ Branch merged successfully</text>
+  <!-- 커서 깜빡임 -->
+  <rect x="18" y="100" width="6" height="9" rx="1" fill="#6BAAA8" opacity="0.80"/>
+</svg>

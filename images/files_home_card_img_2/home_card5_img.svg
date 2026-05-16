@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+  <!-- 배경: 미드나잇차콜 -->
+  <rect width="180" height="120" fill="#1A1C1E"/>
+  <!-- App 루트 -->
+  <rect x="66" y="8" width="48" height="16" rx="4" fill="#6BAAA8" opacity="0.95"/>
+  <text x="90" y="19" font-family="Courier New,monospace" font-size="8"
+        font-weight="700" fill="#FFFFFF" text-anchor="middle">App</text>
+  <!-- 연결선 -->
+  <line x1="72"  y1="24" x2="42"  y2="40" stroke="#6BAAA8" stroke-width="1.2" opacity="0.55"/>
+  <line x1="90"  y1="24" x2="90"  y2="40" stroke="#6BAAA8" stroke-width="1.2" opacity="0.55"/>
+  <line x1="108" y1="24" x2="138" y2="40" stroke="#6BAAA8" stroke-width="1.2" opacity="0.55"/>
+  <!-- 2레벨 컴포넌트 -->
+  <rect x="12"  y="40" width="54" height="14" rx="3" fill="#6BAAA8" opacity="0.70"/>
+  <rect x="63"  y="40" width="54" height="14" rx="3" fill="#6BAAA8" opacity="0.70"/>
+  <rect x="114" y="40" width="54" height="14" rx="3" fill="#6BAAA8" opacity="0.70"/>
+  <text x="39"  y="50" font-family="Courier New,monospace" font-size="7" fill="#FFFFFF" text-anchor="middle">Header</text>
+  <text x="90"  y="50" font-family="Courier New,monospace" font-size="7" fill="#FFFFFF" text-anchor="middle">Main</text>
+  <text x="141" y="50" font-family="Courier New,monospace" font-size="7" fill="#FFFFFF" text-anchor="middle">Footer</text>
+  <!-- props -->
+  <line x1="90" y1="54" x2="90" y2="68" stroke="#6BAAA8" stroke-width="1"
+        stroke-dasharray="2,2" opacity="0.60"/>
+  <rect x="52" y="68" width="76" height="14" rx="3"
+        fill="none" stroke="#6BAAA8" stroke-width="1.2"/>
+  <text x="90" y="78" font-family="Courier New,monospace" font-size="7"
+        fill="#6BAAA8" text-anchor="middle">{"props"}</text>
+  <!-- state -->
+  <line x1="90" y1="82" x2="90" y2="96" stroke="#6BAAA8" stroke-width="1"
+        stroke-dasharray="2,2" opacity="0.50"/>
+  <rect x="52" y="96" width="76" height="16" rx="4"
+        fill="#6BAAA8" opacity="0.25"/>
+  <text x="90" y="107" font-family="Courier New,monospace" font-size="7"
+        fill="#6BAAA8" text-anchor="middle">useState()</text>
+  <circle cx="164" cy="10" r="2" fill="#6BAAA8" opacity="0.45"/>
+  <circle cx="14" cy="110" r="1.5" fill="#D4A853" opacity="0.38"/>
+</svg>

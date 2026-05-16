@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="120" viewBox="0 0 180 120">
+
+  <rect width="180" height="120" fill="#EEF6F5"/>
+  <!-- App 루트 -->
+  <rect x="66" y="8" width="48" height="16" rx="4" fill="#6BAAA8" opacity="0.92"/>
+  <text x="90" y="19" font-family="Courier New,monospace" font-size="8"
+        font-weight="700" fill="#FFFFFF" text-anchor="middle">App</text>
+  <!-- 연결선 -->
+  <line x1="70"  y1="24" x2="40"  y2="40" stroke="#6BAAA8" stroke-width="1.2" opacity="0.55"/>
+  <line x1="90"  y1="24" x2="90"  y2="40" stroke="#6BAAA8" stroke-width="1.2" opacity="0.55"/>
+  <line x1="110" y1="24" x2="140" y2="40" stroke="#6BAAA8" stroke-width="1.2" opacity="0.55"/>
+  <!-- 2레벨 컴포넌트 -->
+  <rect x="10"  y="40" width="54" height="14" rx="3" fill="#6BAAA8" opacity="0.65"/>
+  <rect x="63"  y="40" width="54" height="14" rx="3" fill="#6BAAA8" opacity="0.65"/>
+  <rect x="116" y="40" width="54" height="14" rx="3" fill="#6BAAA8" opacity="0.65"/>
+  <text x="37"  y="50" font-family="Courier New,monospace" font-size="7" fill="#FFFFFF" text-anchor="middle">Header</text>
+  <text x="90"  y="50" font-family="Courier New,monospace" font-size="7" fill="#FFFFFF" text-anchor="middle">Main</text>
+  <text x="143" y="50" font-family="Courier New,monospace" font-size="7" fill="#FFFFFF" text-anchor="middle">Footer</text>
+  <!-- props 화살표 -->
+  <line x1="90" y1="54" x2="90" y2="68" stroke="#6BAAA8" stroke-width="1"
+        stroke-dasharray="2,2" opacity="0.60"/>
+  <!-- 3레벨 -->
+  <rect x="52" y="68" width="76" height="14" rx="3"
+        fill="#FFFFFF" stroke="#6BAAA8" stroke-width="1.2"/>
+  <text x="90" y="78" font-family="Courier New,monospace" font-size="7"
+        fill="#6BAAA8" text-anchor="middle">{"props"}</text>
+  <!-- 하단 state 박스 -->
+  <line x1="90" y1="82" x2="90" y2="96" stroke="#6BAAA8" stroke-width="1"
+        stroke-dasharray="2,2" opacity="0.50"/>
+  <rect x="52" y="96" width="76" height="16" rx="4"
+        fill="#6BAAA8" opacity="0.20" stroke="#6BAAA8" stroke-width="1"/>
+  <text x="90" y="107" font-family="Courier New,monospace" font-size="7"
+        fill="#6BAAA8" text-anchor="middle">useState()</text>
+  <!-- 별 장식 -->
+  <circle cx="164" cy="10" r="2" fill="#6BAAA8" opacity="0.45"/>
+  <circle cx="14" cy="110" r="1.5" fill="#D4A853" opacity="0.38"/>
+</svg>
