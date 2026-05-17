@@ -92,6 +92,7 @@ function selectDay(day) {
     if (savedSection) {
       var card = document.createElement('div');
       card.className = 'log-card log-card--saved';
+      if (item.href) card.setAttribute('data-href', item.href);
       card.innerHTML =
         '<div class="log-card-top">' +
           '<span class="log-badge badge--bookmark">[저장] ' + item.type + '</span>' +
