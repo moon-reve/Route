@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 48px;
+  gap: 40px;
   padding: 40px 24px 110px;
   width: 100%;
 }
@@ -268,7 +268,7 @@
 .comment-section {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .comment-heading {
@@ -295,7 +295,7 @@
 .comment-cards {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .comment-card {
@@ -368,22 +368,22 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 16px;
+  padding: 20px 16px;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--inactive-gray-200);
   border-radius: 12px;
 }
 
 .task-icon {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .task-text {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   color: var(--gray-700);
   padding-left: 16px;
