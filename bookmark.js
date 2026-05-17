@@ -50,7 +50,7 @@
       localStorage.setItem(storageKey + '_date',  date);
       localStorage.setItem(storageKey + '_title', btn.dataset.title  || '');
       localStorage.setItem(storageKey + '_type',  btn.dataset.type   || '');
-      localStorage.setItem(storageKey + '_href',  btn.dataset.href   || '');
+      localStorage.setItem(storageKey + '_href',  btn.dataset.page   || '');
       setIcon(true);
       showToast('로그에 저장되었습니다');
     }
