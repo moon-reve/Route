@@ -154,3 +154,26 @@
   height: auto;
   display: block;
 }
+
+/* ── 북마크 저장 항목 ── */
+.badge--blue     { background: rgba(123, 158, 173, 0.15); color: var(--slate-blue); }
+.badge--bookmark { background: rgba(123, 158, 173, 0.15); color: var(--slate-blue); }
+
+.saved-section-header {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-gray-300);
+  margin-bottom: 4px;
+}
+
+.saved-section-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--slate-blue);
+}
+
+.article--saved {
+  background: rgba(123, 158, 173, 0.04);
+  border-radius: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+}

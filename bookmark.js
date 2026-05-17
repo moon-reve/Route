@@ -2,9 +2,10 @@
   var btn = document.getElementById('btn-bookmark');
   if (!btn) return;
 
-  var ACTIVE_ICON   = 'images/detail_btn_bookmark.svg'; /* 활성화: sage 채움 */
-  var INACTIVE_ICON = 'images/mag_btn_bookmark.svg';    /* 비활성화: 아웃라인 */
-  var storageKey    = 'route_saved_' + btn.dataset.key;
+  var key           = btn.dataset.key;
+  var ACTIVE_ICON   = 'images/detail_btn_bookmark.svg';
+  var INACTIVE_ICON = 'images/mag_btn_bookmark.svg';
+  var storageKey    = 'route_saved_' + key;
 
   /* ── 저장 여부 ── */
   function isSaved() {
@@ -36,14 +37,20 @@
   btn.addEventListener('click', function () {
     var saved = isSaved();
     if (saved) {
-      localStorage.removeItem(storageKey);
-      localStorage.removeItem(storageKey + '_date');
+      /* 삭제 */
+      ['', '_date', '_title', '_type', '_href'].forEach(function (suffix) {
+        localStorage.removeItem(storageKey + suffix);
+      });
       setIcon(false);
       showToast('로그에서 삭제되었습니다');
     } else {
-      var date = new Date().toISOString().slice(0, 10);
-      localStorage.setItem(storageKey, 'true');
-      localStorage.setItem(storageKey + '_date', date);
+      /* 저장 — 날짜 + 메타데이터 */
+      var date = new Date().toISOString().slice(0, 10); /* YYYY-MM-DD */
+      localStorage.setItem(storageKey,          'true');
+      localStorage.setItem(storageKey + '_date',  date);
+      localStorage.setItem(storageKey + '_title', btn.dataset.title  || '');
+      localStorage.setItem(storageKey + '_type',  btn.dataset.type   || '');
+      localStorage.setItem(storageKey + '_href',  btn.dataset.href   || '');
       setIcon(true);
       showToast('로그에 저장되었습니다');
     }

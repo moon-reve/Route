@@ -264,3 +264,20 @@
 }
 
 /* Log 탭 활성 */
+
+/* ── 북마크 저장 항목 ── */
+.cal-dot--bookmark   { background: var(--slate-blue); }
+
+.log-badge.badge--bookmark {
+  background: rgba(123, 158, 173, 0.15);
+  color: var(--slate-blue);
+}
+
+#saved-log-cards { display: flex; flex-direction: column; gap: 12px; }
+
+.log-card--saved {
+  padding: 14px 16px;
+  background: rgba(123, 158, 173, 0.06);
+  border: 1px solid rgba(123, 158, 173, 0.25);
+  border-radius: 10px;
+}
