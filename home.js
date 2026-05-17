@@ -1,4 +1,5 @@
 // 카드 리스트 드래그 스크롤 — common.js의 initDragScroll() 사용
+var cardList = document.querySelector('.card-list');
 initDragScroll('.card-list');
 
 // Read More
