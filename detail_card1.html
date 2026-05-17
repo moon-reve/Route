@@ -27,7 +27,7 @@
             <img src="images/detail_btn_back.svg" alt="뒤로가기">
           </button>
           <div class="header-title">1분 나침반</div>
-          <button class="header-btn">
+          <button class="header-btn" id="btn-bookmark" data-key="card1">
             <img src="images/detail_btn_bookmark.svg" alt="북마크">
           </button>
         </header>
@@ -86,6 +86,11 @@
     </div>
 
 
+    <!-- 북마크 토스트 -->
+    <div class="bookmark-toast is-hidden" id="bookmark-toast">
+      <span class="toast-text"></span>
+    </div>
+
     <div id="nav-root"></div>
   </div>
 
@@ -103,6 +108,7 @@
       });
     });
   </script>
+  <script src="bookmark.js"></script>
   <script src="common.js"></script>
 </body>
 </html>

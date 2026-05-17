@@ -143,3 +143,30 @@ body {
 
 /* ── 유틸리티 클래스 ── */
 .is-hidden { display: none !important; }
+
+/* ── 북마크 토스트 ── */
+.bookmark-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid var(--border-gray-300);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.toast-text {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--midnight-charcoal);
+  white-space: nowrap;
+}
