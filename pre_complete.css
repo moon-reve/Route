@@ -260,6 +260,8 @@
 
 /* ════════ ④ CTA 버튼 ════════ */
 .btn-start {
+  border: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

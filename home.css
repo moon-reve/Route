@@ -122,6 +122,8 @@
 
 /* 버튼: text 박스 기준 absolute, 피그마 수치 right:11px bottom:-11.5px */
 .hero-btn {
+  border: none;
+  cursor: pointer;
   position: absolute;
   right: 11px;
   bottom: -11.5px;

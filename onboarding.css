@@ -116,6 +116,10 @@
 
 /* ── SKIP ── */
 .skip-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   font-family: Georgia, serif;
   font-weight: 400;
   font-size: 13px;
@@ -149,6 +153,10 @@
 
 /* ── Next button ── */
 .next-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,6 +179,8 @@
 }
 
 .cta-btn {
+  border: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
