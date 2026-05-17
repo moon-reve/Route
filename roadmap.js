@@ -101,8 +101,8 @@ document.querySelectorAll('.nav-chips .chip').forEach(function (chip) {
     var filterView = document.getElementById('filter-view');
 
     if (label === '전체') {
-      timeline.style.display   = '';
-      filterView.style.display = 'none';
+      timeline.classList.remove('is-hidden');
+      filterView.classList.add('is-hidden');
     } else {
       var config = FILTER_CONFIG[label];
       if (config) {
@@ -110,8 +110,8 @@ document.querySelectorAll('.nav-chips .chip').forEach(function (chip) {
         this.style.borderColor = config.color;
         this.style.color       = '#fff';
         renderFilterView(label, config);
-        timeline.style.display   = 'none';
-        filterView.style.display = '';
+        timeline.classList.add('is-hidden');
+        filterView.classList.remove('is-hidden');
       }
     }
   });
