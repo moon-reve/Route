@@ -30,10 +30,9 @@ function formatDate(dateStr) {
   return p[0] + '. ' + p[1] + '. ' + p[2];
 }
 
-/* ── 타입별 배지 클래스 ── */
-function badgeClass(type) {
-  var map = { '아티클': 'badge--gold', '매거진': 'badge--blue' };
-  return map[type] || 'badge--bookmark';
+/* ── 배지 클래스 (아티클/매거진 모두 동일) ── */
+function badgeClass() {
+  return 'badge--blue';
 }
 
 /* ── 피드에 저장 항목 렌더링 ── */
