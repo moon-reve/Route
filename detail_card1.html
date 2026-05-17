@@ -56,7 +56,7 @@
               <h2 class="article-term-title">1. Wireframe (와이어프레임)</h2>
               <p class="article-body">와이어프레임은 제품의 골격을 그리는 과정입니다. 색상이나 구체적인 그래픽 요소보다는 레이아웃, 정보 구조, 사용자 흐름에 집중하여 설계도면 역할을 수행합니다. 팀원 간의 빠른 구조적 합의를 이끌어내는 데 목적이 있습니다.</p>
             </div>
-            <div class="article-img-box">
+            <div class="article-img-box" data-drag-scroll>
               <img src="images/detail_article1_img.svg" alt="Wireframe 일러스트">
             </div>
           </div>
@@ -67,7 +67,7 @@
               <h2 class="article-term-title">2. Prototype (프로토타입)</h2>
               <p class="article-body">프로토타입은 실제 사용자와의 상호작용을 테스트하기 위해 만들어진 시제품입니다. 클릭이나 스크롤 같은 동작이 구현되어 있어, 개발 전 단계에서 사용성을 검증하고 문제점을 발견하는 데 매우 효과적입니다.</p>
             </div>
-            <div class="article-img-box">
+            <div class="article-img-box" data-drag-scroll>
               <img src="images/detail_article2_img.svg" alt="Prototype 일러스트">
             </div>
           </div>
@@ -94,20 +94,6 @@
     <div id="nav-root"></div>
   </div>
 
-  <script>
-    // 드래그 스크롤 (article img-box용)
-    document.querySelectorAll('.article-img-box').forEach(el => {
-      let isDown = false, startX, sl;
-      el.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - el.offsetLeft; sl = el.scrollLeft; });
-      el.addEventListener('mouseleave', () => isDown = false);
-      el.addEventListener('mouseup', () => isDown = false);
-      el.addEventListener('mousemove', e => {
-        if (!isDown) return;
-        e.preventDefault();
-        el.scrollLeft = sl - (e.pageX - el.offsetLeft - startX) * 1.5;
-      });
-    });
-  </script>
   <script src="bookmark.js"></script>
   <script src="common.js"></script>
 </body>

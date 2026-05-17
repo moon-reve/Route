@@ -26,6 +26,26 @@
     `</nav>`;
 })();
 
+/* ── 드래그 스크롤 유틸 ── */
+function initDragScroll(selector) {
+  document.querySelectorAll(selector).forEach(function (el) {
+    var isDown = false, startX, sl;
+    el.addEventListener('mousedown', function (e) {
+      isDown = true;
+      startX = e.pageX - el.offsetLeft;
+      sl = el.scrollLeft;
+      el.classList.add('is-dragging');
+    });
+    el.addEventListener('mouseleave', function () { isDown = false; el.classList.remove('is-dragging'); });
+    el.addEventListener('mouseup',    function () { isDown = false; el.classList.remove('is-dragging'); });
+    el.addEventListener('mousemove',  function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      el.scrollLeft = sl - (e.pageX - el.offsetLeft - startX) * 1.5;
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   // data-href: 클릭 시 페이지 이동
   document.querySelectorAll('[data-href]').forEach(function (el) {
@@ -41,4 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
       history.back();
     });
   });
+
+  // data-drag-scroll: 드래그 스크롤 자동 초기화
+  initDragScroll('[data-drag-scroll]');
 });

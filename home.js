@@ -1,33 +1,5 @@
-// 카드 리스트 마우스/터치 드래그 스크롤
-var cardList = document.querySelector('.card-list');
-var isDown = false;
-var startX;
-var scrollLeft;
-
-cardList.addEventListener('mousedown', function (e) {
-  isDown = true;
-  cardList.classList.add('is-dragging');
-  startX = e.pageX - cardList.offsetLeft;
-  scrollLeft = cardList.scrollLeft;
-});
-
-cardList.addEventListener('mouseleave', function () {
-  isDown = false;
-  cardList.classList.remove('is-dragging');
-});
-
-cardList.addEventListener('mouseup', function () {
-  isDown = false;
-  cardList.classList.remove('is-dragging');
-});
-
-cardList.addEventListener('mousemove', function (e) {
-  if (!isDown) return;
-  e.preventDefault();
-  var x = e.pageX - cardList.offsetLeft;
-  var walk = (x - startX) * 1.5;
-  cardList.scrollLeft = scrollLeft - walk;
-});
+// 카드 리스트 드래그 스크롤 — common.js의 initDragScroll() 사용
+initDragScroll('.card-list');
 
 // Read More
 var visibleArticleCount = 3;
